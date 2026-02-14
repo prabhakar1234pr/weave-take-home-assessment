@@ -1,5 +1,11 @@
 import { Engineer, Methodology, TrendData } from '@/types/engineer';
 
+export interface DateRange {
+  from: string;
+  to: string;
+  months: number;
+}
+
 export async function getTopEngineers(): Promise<Engineer[]> {
   const response = await fetch('/api/top-engineers?limit=5');
   if (!response.ok) {
@@ -8,7 +14,10 @@ export async function getTopEngineers(): Promise<Engineer[]> {
   return response.json();
 }
 
-export async function getAllEngineers(): Promise<Engineer[]> {
+export async function getAllEngineers(): Promise<{
+  engineers: Engineer[];
+  dateRange: DateRange;
+}> {
   const response = await fetch('/api/all-engineers');
   if (!response.ok) {
     throw new Error('Failed to fetch engineers');

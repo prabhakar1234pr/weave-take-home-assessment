@@ -1,7 +1,7 @@
 'use client';
 
 import { useEffect, useState } from 'react';
-import { getAllEngineers } from '@/lib/api';
+import { getAllEngineers, DateRange } from '@/lib/api';
 import { Engineer } from '@/types/engineer';
 import { Leaderboard } from '@/components/Leaderboard';
 import { ImpactChart } from '@/components/ImpactChart';
@@ -30,14 +30,16 @@ import {
 export default function Dashboard() {
   const [engineers, setEngineers] = useState<Engineer[]>([]);
   const [selected, setSelected] = useState<Engineer | null>(null);
+  const [dateRange, setDateRange] = useState<DateRange | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
     getAllEngineers()
       .then(data => {
-        setEngineers(data);
-        if (data.length > 0) setSelected(data[0]);
+        setEngineers(data.engineers);
+        setDateRange(data.dateRange);
+        if (data.engineers.length > 0) setSelected(data.engineers[0]);
         setLoading(false);
       })
       .catch(err => {
@@ -82,7 +84,7 @@ export default function Dashboard() {
               Engineering Impact Dashboard
             </h1>
             <p className="text-sm text-muted-foreground">
-              PostHog/posthog &middot; All time
+              PostHog/posthog{dateRange && dateRange.from ? ` · ${dateRange.from} — ${dateRange.to}` : ' · All time'}
             </p>
           </div>
           <div className="flex gap-2 flex-wrap">

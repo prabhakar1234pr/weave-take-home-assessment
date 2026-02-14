@@ -1,6 +1,12 @@
-import githubData from '@/data/github_data.json';
+/**
+ * Scoring engine — calculates multi-dimensional impact scores.
+ * All functions accept data as parameters so they work with both
+ * live GitHub data and the static JSON fallback.
+ */
 
-interface ContributorData {
+// ── Types ────────────────────────────────────────────────────────────
+
+export interface ContributorData {
   name: string;
   avatar_url: string;
   prs_created: number;
@@ -12,13 +18,20 @@ interface ContributorData {
   prs_reviewed: number;
 }
 
-interface PRData {
-  merged_at: string;
+export interface PRData {
+  author_username: string;
+  title: string;
+  files_changed: number;
+  additions: number;
+  deletions: number;
+  time_to_merge_hours: number;
   created_at: string;
-  [key: string]: unknown;
+  merged_at: string;
+  reviews_count: number;
+  reviewers: string[];
 }
 
-interface EngineerScore {
+export interface EngineerScore {
   username: string;
   name: string;
   avatar_url: string;
@@ -35,46 +48,58 @@ interface EngineerScore {
   };
 }
 
-const contributors = githubData.contributors as Record<string, ContributorData>;
-const prs = (githubData.prs || []) as PRData[];
+export interface TrendSeries {
+  week: string;
+  [username: string]: string | number;
+}
 
-/** Calculate the number of months the data spans, based on PR merged dates */
-function getDataWindowMonths(): number {
-  if (prs.length === 0) return 3; // fallback
+export interface TrendResult {
+  engineers: { username: string; name: string }[];
+  series: TrendSeries[];
+}
+
+// ── Helpers ──────────────────────────────────────────────────────────
+
+function getDataWindowMonths(prs: PRData[]): number {
+  if (prs.length === 0) return 3;
   const dates = prs
-    .map(pr => new Date(pr.merged_at).getTime())
-    .filter(d => !isNaN(d));
+    .map((pr) => new Date(pr.merged_at).getTime())
+    .filter((d) => !isNaN(d));
   if (dates.length === 0) return 3;
   const earliest = Math.min(...dates);
   const latest = Math.max(...dates);
   const months = (latest - earliest) / (1000 * 60 * 60 * 24 * 30);
-  return Math.max(months, 1); // at least 1 month
+  return Math.max(months, 1);
 }
 
-/** Get the date range of the data as formatted strings */
-export function getDataDateRange(): { from: string; to: string; months: number } {
+export function getDataDateRange(prs: PRData[]): {
+  from: string;
+  to: string;
+  months: number;
+} {
   if (prs.length === 0) return { from: '', to: '', months: 0 };
   const dates = prs
-    .map(pr => new Date(pr.merged_at).getTime())
-    .filter(d => !isNaN(d));
+    .map((pr) => new Date(pr.merged_at).getTime())
+    .filter((d) => !isNaN(d));
   if (dates.length === 0) return { from: '', to: '', months: 0 };
   const earliest = new Date(Math.min(...dates));
   const latest = new Date(Math.max(...dates));
-  const months = Math.round((latest.getTime() - earliest.getTime()) / (1000 * 60 * 60 * 24 * 30));
-  const fmt = (d: Date) => d.toLocaleDateString('en-US', { month: 'short', year: 'numeric' });
+  const months = Math.round(
+    (latest.getTime() - earliest.getTime()) / (1000 * 60 * 60 * 24 * 30)
+  );
+  const fmt = (d: Date) =>
+    d.toLocaleDateString('en-US', { month: 'short', year: 'numeric' });
   return { from: fmt(earliest), to: fmt(latest), months: Math.max(months, 1) };
 }
 
-const dataWindowMonths = getDataWindowMonths();
+// ── Scoring Functions ────────────────────────────────────────────────
 
 function calculateQualityScore(c: ContributorData): number {
-  // Fast merge time = quality (inverse relationship)
-  // Cap at 72 hours (3 days)
   const mergeTime = Math.min(c.avg_time_to_merge_hours, 72);
   const mergeScore = 100 * (1 - mergeTime / 72);
 
-  // Reasonable PR size (sweet spot around 200-500 lines)
-  const avgChanges = (c.total_additions + c.total_deletions) / Math.max(c.prs_created, 1);
+  const avgChanges =
+    (c.total_additions + c.total_deletions) / Math.max(c.prs_created, 1);
   let sizeScore: number;
   if (avgChanges >= 200 && avgChanges <= 500) {
     sizeScore = 100;
@@ -84,71 +109,59 @@ function calculateQualityScore(c: ContributorData): number {
     sizeScore = Math.max(50, 100 - (avgChanges - 500) / 20);
   }
 
-  // Active reviewer = understands quality
   const reviewActivity = Math.min(c.reviews_given / 20, 1) * 100;
 
-  return 0.50 * mergeScore + 0.30 * sizeScore + 0.20 * reviewActivity;
+  return 0.5 * mergeScore + 0.3 * sizeScore + 0.2 * reviewActivity;
 }
 
-function calculateVelocityScore(c: ContributorData): number {
-  const prCount = c.prs_created;
-  const filesChanged = c.total_files_changed;
-
-  // Consistency: PRs per month (dynamically calculated from data window)
-  const prsPerMonth = prCount / dataWindowMonths;
+function calculateVelocityScore(
+  c: ContributorData,
+  windowMonths: number
+): number {
+  const prsPerMonth = c.prs_created / windowMonths;
   const consistencyScore = Math.min(prsPerMonth / 10, 1) * 100;
 
-  // Complexity: avg files per PR
-  const avgFiles = filesChanged / Math.max(prCount, 1);
+  const avgFiles =
+    c.total_files_changed / Math.max(c.prs_created, 1);
   const complexityScore = Math.min(avgFiles / 15, 1) * 100;
 
-  return 0.40 * consistencyScore + 0.60 * complexityScore;
+  return 0.4 * consistencyScore + 0.6 * complexityScore;
 }
 
 function calculateCollaborationScore(c: ContributorData): number {
-  const reviewsGiven = c.reviews_given;
-  const prsReviewed = c.prs_reviewed;
+  const reviewVolume = Math.min(c.reviews_given / 30, 1) * 100;
 
-  // Review volume
-  const reviewVolume = Math.min(reviewsGiven / 30, 1) * 100;
-
-  // Review depth (reviews per unique PR)
   let reviewDepth = 0;
-  if (prsReviewed > 0) {
-    reviewDepth = Math.min(reviewsGiven / prsReviewed / 3, 1) * 100;
+  if (c.prs_reviewed > 0) {
+    reviewDepth = Math.min(c.reviews_given / c.prs_reviewed / 3, 1) * 100;
   }
 
-  return 0.70 * reviewVolume + 0.30 * reviewDepth;
+  return 0.7 * reviewVolume + 0.3 * reviewDepth;
 }
 
 function calculateLeadershipScore(c: ContributorData): number {
-  const filesChanged = c.total_files_changed;
-  const prsCreated = c.prs_created;
-  const reviewsGiven = c.reviews_given;
+  const ownership = Math.min(c.total_files_changed / 200, 1) * 100;
 
-  // Code ownership (lots of files touched)
-  const ownership = Math.min(filesChanged / 200, 1) * 100;
-
-  // Dual role: both author AND reviewer
-  const isAuthor = prsCreated > 0;
-  const isReviewer = reviewsGiven > 0;
   let balance = 0;
-  if (isAuthor && isReviewer) {
-    balance = Math.min((prsCreated + reviewsGiven) / 40, 1) * 100;
+  if (c.prs_created > 0 && c.reviews_given > 0) {
+    balance =
+      Math.min((c.prs_created + c.reviews_given) / 40, 1) * 100;
   }
 
-  return 0.60 * ownership + 0.40 * balance;
+  return 0.6 * ownership + 0.4 * balance;
 }
 
-function calculateImpactScore(username: string): EngineerScore {
-  const c = contributors[username];
-
+function scoreContributor(
+  username: string,
+  c: ContributorData,
+  windowMonths: number
+): EngineerScore {
   const quality = calculateQualityScore(c);
-  const velocity = calculateVelocityScore(c);
+  const velocity = calculateVelocityScore(c, windowMonths);
   const collaboration = calculateCollaborationScore(c);
   const leadership = calculateLeadershipScore(c);
-
-  const impact = 0.30 * quality + 0.30 * velocity + 0.20 * collaboration + 0.20 * leadership;
+  const impact =
+    0.3 * quality + 0.3 * velocity + 0.2 * collaboration + 0.2 * leadership;
 
   return {
     username,
@@ -168,21 +181,86 @@ function calculateImpactScore(username: string): EngineerScore {
   };
 }
 
-export function getAllEngineers(): EngineerScore[] {
+// ── Public API ───────────────────────────────────────────────────────
+
+export function analyzeEngineers(
+  contributors: Record<string, ContributorData>,
+  prs: PRData[]
+): EngineerScore[] {
+  const windowMonths = getDataWindowMonths(prs);
   const scores: EngineerScore[] = [];
 
   for (const username of Object.keys(contributors)) {
     const c = contributors[username];
     if (c.prs_created < 2) continue;
-    scores.push(calculateImpactScore(username));
+    scores.push(scoreContributor(username, c, windowMonths));
   }
 
   scores.sort((a, b) => b.impact_score - a.impact_score);
   return scores;
 }
 
-export function getTopEngineers(limit: number = 5): EngineerScore[] {
-  return getAllEngineers().slice(0, limit);
+export function analyzeTopEngineers(
+  contributors: Record<string, ContributorData>,
+  prs: PRData[],
+  limit: number = 5
+): EngineerScore[] {
+  return analyzeEngineers(contributors, prs).slice(0, limit);
+}
+
+/**
+ * Generate weekly PR-merge trend data for the top N engineers.
+ */
+export function generateTrends(
+  prs: PRData[],
+  contributors: Record<string, ContributorData>,
+  top: number = 5
+): TrendResult {
+  if (prs.length === 0) return { engineers: [], series: [] };
+
+  // Determine top engineers
+  const topEngineers = analyzeEngineers(contributors, prs).slice(0, top);
+  const topUsernames = new Set(topEngineers.map((e) => e.username));
+
+  // Group PRs by ISO week
+  const weekMap: Record<string, Record<string, number>> = {};
+
+  for (const pr of prs) {
+    if (!topUsernames.has(pr.author_username)) continue;
+    const merged = new Date(pr.merged_at);
+    if (isNaN(merged.getTime())) continue;
+
+    const weekStart = getWeekStart(merged);
+    const weekKey = weekStart.toISOString().slice(0, 10);
+
+    if (!weekMap[weekKey]) weekMap[weekKey] = {};
+    weekMap[weekKey][pr.author_username] =
+      (weekMap[weekKey][pr.author_username] || 0) + 1;
+  }
+
+  // Sort weeks chronologically
+  const sortedWeeks = Object.keys(weekMap).sort();
+
+  const series: TrendSeries[] = sortedWeeks.map((weekKey) => {
+    const d = new Date(weekKey);
+    const label = d.toLocaleDateString('en-US', {
+      month: 'short',
+      day: 'numeric',
+    });
+    const entry: TrendSeries = { week: label };
+    for (const eng of topEngineers) {
+      entry[eng.username] = weekMap[weekKey][eng.username] || 0;
+    }
+    return entry;
+  });
+
+  return {
+    engineers: topEngineers.map((e) => ({
+      username: e.username,
+      name: e.name || e.username,
+    })),
+    series,
+  };
 }
 
 export function getMethodology() {
@@ -231,4 +309,15 @@ export function getMethodology() {
     philosophy:
       "This approach resists gaming. You can't just spam commits, make tiny PRs, or rubber-stamp reviews. Real impact requires quality code, consistent delivery, helpful reviews, and technical ownership.",
   };
+}
+
+// ── Utility ──────────────────────────────────────────────────────────
+
+function getWeekStart(date: Date): Date {
+  const d = new Date(date);
+  const day = d.getUTCDay();
+  const diff = d.getUTCDate() - day + (day === 0 ? -6 : 1); // Monday
+  d.setUTCDate(diff);
+  d.setUTCHours(0, 0, 0, 0);
+  return d;
 }
