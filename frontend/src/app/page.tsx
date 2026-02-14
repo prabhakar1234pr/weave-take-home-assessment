@@ -82,7 +82,7 @@ export default function Dashboard() {
               Engineering Impact Dashboard
             </h1>
             <p className="text-sm text-muted-foreground">
-              PostHog/posthog &middot; Last 90 days
+              PostHog/posthog &middot; All time
             </p>
           </div>
           <div className="flex gap-2 flex-wrap">

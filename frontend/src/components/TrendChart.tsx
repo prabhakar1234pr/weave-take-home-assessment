@@ -59,7 +59,7 @@ export function TrendChart() {
       <CardHeader>
         <CardTitle>Weekly PR Activity</CardTitle>
         <CardDescription>
-          Merged pull requests per week for the top 5 engineers over the last 90 days
+          Merged pull requests per week for the top 5 engineers
         </CardDescription>
       </CardHeader>
       <CardContent>

@@ -1,9 +1,6 @@
 import { NextResponse } from 'next/server';
-import { getAllEngineers, getDataDateRange } from '@/lib/analyzer';
+import { getAllEngineers } from '@/lib/analyzer';
 
 export async function GET() {
-  return NextResponse.json({
-    engineers: getAllEngineers(),
-    dateRange: getDataDateRange(),
-  });
+  return NextResponse.json(getAllEngineers());
 }
