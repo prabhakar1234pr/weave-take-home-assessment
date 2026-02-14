@@ -15,7 +15,7 @@ export interface DashboardData {
 }
 
 export async function getAllEngineers(): Promise<DashboardData> {
-  const response = await fetch(`/api/all-engineers?_t=${Date.now()}`);
+  const response = await fetch('/api/all-engineers');
   if (!response.ok) {
     throw new Error('Failed to fetch engineers');
   }
@@ -29,8 +29,6 @@ export async function getTrends(opts?: {
   const params = new URLSearchParams({ top: '5' });
   if (opts?.from) params.set('from', opts.from);
   if (opts?.to) params.set('to', opts.to);
-  params.set('_t', String(Date.now()));
-
   const response = await fetch(`/api/trends?${params}`);
   if (!response.ok) {
     throw new Error('Failed to fetch trends');

@@ -2,7 +2,7 @@ import { NextResponse } from 'next/server';
 import { getGitHubData } from '@/lib/github';
 import { analyzeEngineers, getDataDateRange, generateInsights } from '@/lib/analyzer';
 
-export const dynamic = 'force-dynamic';
+export const revalidate = 300; // ISR: cache at edge for 5 min, revalidate in background
 
 export async function GET() {
   try {
