@@ -100,16 +100,18 @@ async function fetchMergedPRs(): Promise<RawPR[]> {
   const MAX_PAGES = 50; // up to 5000 PRs
 
   while (hasNextPage && pages < MAX_PAGES) {
-    const response = await fetch(GRAPHQL_URL, {
+    const body = JSON.stringify({
+      query: PR_QUERY,
+      variables: { owner, name, cursor },
+    });
+
+    const response: Response = await fetch(GRAPHQL_URL, {
       method: 'POST',
       headers: {
         Authorization: `Bearer ${token}`,
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify({
-        query: PR_QUERY,
-        variables: { owner, name, cursor },
-      }),
+      body,
     });
 
     if (!response.ok) {
@@ -117,7 +119,8 @@ async function fetchMergedPRs(): Promise<RawPR[]> {
       throw new Error(`GitHub API error ${response.status}: ${text}`);
     }
 
-    const json = await response.json();
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    const json: any = await response.json();
 
     if (json.errors) {
       throw new Error(`GraphQL error: ${json.errors[0].message}`);
