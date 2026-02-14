@@ -44,6 +44,16 @@ const DIMENSIONS = [
   { key: 'leadership_score', label: 'Leadership', color: '#8b5cf6' },
 ] as const;
 
+const tooltipStyle = {
+  backgroundColor: 'hsl(var(--popover))',
+  border: '1px solid hsl(var(--border))',
+  borderRadius: '10px',
+  color: 'hsl(var(--popover-foreground))',
+  fontSize: '12px',
+  padding: '8px 12px',
+  boxShadow: '0 4px 12px rgba(0,0,0,0.08)',
+};
+
 export function CompareView({ engineers }: Props) {
   const [leftUsername, setLeftUsername] = useState(engineers[0]?.username ?? '');
   const [rightUsername, setRightUsername] = useState(engineers[1]?.username ?? '');
@@ -67,16 +77,14 @@ export function CompareView({ engineers }: Props) {
   function EngineerCard({ engineer, side }: { engineer: Engineer | null; side: 'left' | 'right' }) {
     if (!engineer) return null;
     return (
-      <div className={`flex items-center gap-3 ${side === 'right' ? 'flex-row-reverse text-right' : ''}`}>
-        <Avatar className="size-10 border-2 border-border">
+      <div className={`flex items-center gap-2.5 ${side === 'right' ? 'flex-row-reverse text-right' : ''}`}>
+        <Avatar className="size-8 border border-border shadow-sm">
           <AvatarImage src={engineer.avatar_url} alt={engineer.name || engineer.username} />
-          <AvatarFallback className="text-sm font-semibold">
-            {getInitials(engineer.name, engineer.username)}
-          </AvatarFallback>
+          <AvatarFallback className="text-xs font-semibold">{getInitials(engineer.name, engineer.username)}</AvatarFallback>
         </Avatar>
         <div className="min-w-0">
-          <div className="font-semibold text-sm truncate">{engineer.name || engineer.username}</div>
-          <div className="text-xs text-muted-foreground">
+          <div className="font-semibold text-xs truncate">{engineer.name || engineer.username}</div>
+          <div className="text-[10px] text-muted-foreground">
             Impact: <span className="font-bold tabular-nums">{engineer.impact_score.toFixed(1)}</span>
           </div>
         </div>
@@ -86,20 +94,18 @@ export function CompareView({ engineers }: Props) {
 
   return (
     <div className="space-y-6">
-      {/* Selector row */}
+      {/* Selector */}
       <Card>
-        <CardHeader>
-          <CardTitle>Comparative Analysis</CardTitle>
-          <CardDescription>Select two engineers to compare across all impact dimensions</CardDescription>
+        <CardHeader className="pb-3">
+          <CardTitle className="text-lg">Comparative Analysis</CardTitle>
+          <CardDescription className="text-xs">Select two engineers to compare across all impact dimensions</CardDescription>
         </CardHeader>
         <CardContent>
           <div className="grid grid-cols-1 sm:grid-cols-[1fr_auto_1fr] gap-4 items-end">
-            <div className="space-y-2">
-              <label className="text-sm font-medium text-muted-foreground">Engineer A</label>
+            <div className="space-y-1.5">
+              <label className="text-[10px] font-bold text-muted-foreground uppercase tracking-wider">Engineer A</label>
               <Select value={leftUsername} onValueChange={setLeftUsername}>
-                <SelectTrigger>
-                  <SelectValue placeholder="Select engineer" />
-                </SelectTrigger>
+                <SelectTrigger className="h-9 text-sm"><SelectValue placeholder="Select engineer" /></SelectTrigger>
                 <SelectContent>
                   {engineers.map(e => (
                     <SelectItem key={e.username} value={e.username}>
@@ -109,15 +115,13 @@ export function CompareView({ engineers }: Props) {
                 </SelectContent>
               </Select>
             </div>
-            <div className="hidden sm:flex items-center justify-center pt-6">
-              <Badge variant="outline" className="text-xs px-3 py-1">VS</Badge>
+            <div className="hidden sm:flex items-center justify-center pt-5">
+              <Badge variant="outline" className="text-[10px] px-2.5">VS</Badge>
             </div>
-            <div className="space-y-2">
-              <label className="text-sm font-medium text-muted-foreground">Engineer B</label>
+            <div className="space-y-1.5">
+              <label className="text-[10px] font-bold text-muted-foreground uppercase tracking-wider">Engineer B</label>
               <Select value={rightUsername} onValueChange={setRightUsername}>
-                <SelectTrigger>
-                  <SelectValue placeholder="Select engineer" />
-                </SelectTrigger>
+                <SelectTrigger className="h-9 text-sm"><SelectValue placeholder="Select engineer" /></SelectTrigger>
                 <SelectContent>
                   {engineers.map(e => (
                     <SelectItem key={e.username} value={e.username}>
@@ -134,72 +138,42 @@ export function CompareView({ engineers }: Props) {
       {left && right && (
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
           {/* Radar overlay */}
-          <Card>
+          <Card className="overflow-hidden">
             <CardHeader className="pb-2">
-              <CardTitle className="text-lg">Dimension Overlay</CardTitle>
+              <CardTitle className="text-sm">Dimension Overlay</CardTitle>
               <div className="flex items-center justify-between mt-2">
                 <EngineerCard engineer={left} side="left" />
                 <EngineerCard engineer={right} side="right" />
               </div>
             </CardHeader>
             <CardContent>
-              <ResponsiveContainer width="100%" height={320}>
+              <ResponsiveContainer width="100%" height={300}>
                 <RadarChart data={radarData} outerRadius="65%">
-                  <PolarGrid stroke="#e5e7eb" />
-                  <PolarAngleAxis dataKey="dimension" tick={{ fill: '#6b7280', fontSize: 12 }} />
-                  <PolarRadiusAxis angle={90} domain={[0, 100]} tick={{ fill: '#9ca3af', fontSize: 11 }} />
-                  <Radar
-                    name={left.name || left.username}
-                    dataKey={leftUsername}
-                    stroke="#3b82f6"
-                    fill="#3b82f6"
-                    fillOpacity={0.2}
-                    strokeWidth={2}
-                  />
-                  <Radar
-                    name={right.name || right.username}
-                    dataKey={rightUsername}
-                    stroke="#ef4444"
-                    fill="#ef4444"
-                    fillOpacity={0.2}
-                    strokeWidth={2}
-                  />
-                  <Tooltip
-                    contentStyle={{
-                      backgroundColor: '#1f2937',
-                      border: 'none',
-                      borderRadius: '8px',
-                      color: '#fff',
-                      fontSize: '13px',
-                    }}
-                  />
-                  <Legend wrapperStyle={{ fontSize: '13px', paddingTop: 8 }} />
+                  <PolarGrid stroke="hsl(var(--border))" />
+                  <PolarAngleAxis dataKey="dimension" tick={{ fill: 'hsl(var(--muted-foreground))', fontSize: 11 }} />
+                  <PolarRadiusAxis angle={90} domain={[0, 100]} tick={{ fill: 'hsl(var(--muted-foreground))', fontSize: 10 }} />
+                  <Radar name={left.name || left.username} dataKey={leftUsername} stroke="#3b82f6" fill="#3b82f6" fillOpacity={0.15} strokeWidth={2} />
+                  <Radar name={right.name || right.username} dataKey={rightUsername} stroke="#ef4444" fill="#ef4444" fillOpacity={0.15} strokeWidth={2} />
+                  <Tooltip contentStyle={tooltipStyle} />
+                  <Legend wrapperStyle={{ fontSize: '11px', paddingTop: 8 }} iconType="circle" iconSize={8} />
                 </RadarChart>
               </ResponsiveContainer>
             </CardContent>
           </Card>
 
           {/* Bar chart stats */}
-          <Card>
+          <Card className="overflow-hidden">
             <CardHeader className="pb-2">
-              <CardTitle className="text-lg">Raw Stats Comparison</CardTitle>
+              <CardTitle className="text-sm">Raw Stats Comparison</CardTitle>
             </CardHeader>
             <CardContent>
-              <ResponsiveContainer width="100%" height={320}>
-                <BarChart data={statsData} layout="vertical" margin={{ left: 20, right: 20, top: 5, bottom: 5 }}>
-                  <CartesianGrid strokeDasharray="3 3" stroke="#e5e7eb" horizontal={false} />
-                  <XAxis type="number" tick={{ fill: '#6b7280', fontSize: 12 }} />
-                  <YAxis dataKey="label" type="category" tick={{ fill: '#6b7280', fontSize: 12 }} width={100} />
-                  <Tooltip
-                    contentStyle={{
-                      backgroundColor: '#1f2937',
-                      border: 'none',
-                      borderRadius: '8px',
-                      color: '#fff',
-                      fontSize: '13px',
-                    }}
-                  />
-                  <Legend wrapperStyle={{ fontSize: '13px', paddingTop: 8 }} />
+              <ResponsiveContainer width="100%" height={300}>
+                <BarChart data={statsData} layout="vertical" margin={{ left: 10, right: 10, top: 5, bottom: 5 }}>
+                  <CartesianGrid strokeDasharray="3 3" stroke="hsl(var(--border))" strokeOpacity={0.5} horizontal={false} />
+                  <XAxis type="number" tick={{ fill: 'hsl(var(--muted-foreground))', fontSize: 11 }} />
+                  <YAxis dataKey="label" type="category" tick={{ fill: 'hsl(var(--muted-foreground))', fontSize: 11 }} width={90} />
+                  <Tooltip contentStyle={tooltipStyle} />
+                  <Legend wrapperStyle={{ fontSize: '11px', paddingTop: 8 }} iconType="circle" iconSize={8} />
                   <Bar dataKey="left" name={left.name || left.username} fill="#3b82f6" radius={[0, 4, 4, 0]} />
                   <Bar dataKey="right" name={right.name || right.username} fill="#ef4444" radius={[0, 4, 4, 0]} />
                 </BarChart>
@@ -207,53 +181,47 @@ export function CompareView({ engineers }: Props) {
             </CardContent>
           </Card>
 
-          {/* Dimension-by-dimension breakdown */}
-          <Card className="lg:col-span-2">
+          {/* Score-by-Score */}
+          <Card className="lg:col-span-2 overflow-hidden">
             <CardHeader className="pb-2">
-              <CardTitle className="text-lg">Score-by-Score Breakdown</CardTitle>
+              <CardTitle className="text-sm">Score-by-Score Breakdown</CardTitle>
             </CardHeader>
             <CardContent>
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
                 {DIMENSIONS.map(dim => {
                   const lScore = left[dim.key] as number;
                   const rScore = right[dim.key] as number;
                   const lWins = lScore > rScore;
                   const tie = lScore === rScore;
                   return (
-                    <div key={dim.key} className="rounded-lg border p-4 space-y-3">
-                      <div className="text-sm font-semibold" style={{ color: dim.color }}>
-                        {dim.label}
-                      </div>
+                    <div key={dim.key} className="rounded-xl border p-3.5 space-y-2.5">
+                      <div className="text-xs font-bold uppercase tracking-wider" style={{ color: dim.color }}>{dim.label}</div>
                       {/* Left */}
-                      <div className="space-y-1">
-                        <div className="flex items-center justify-between text-sm">
+                      <div className="space-y-0.5">
+                        <div className="flex items-center justify-between text-xs">
                           <span className="text-muted-foreground truncate">{left.name || left.username}</span>
-                          <span className={`font-bold tabular-nums ${lWins && !tie ? 'text-blue-600' : ''}`}>
-                            {lScore.toFixed(1)}
-                          </span>
+                          <span className={`font-bold tabular-nums ${lWins && !tie ? 'text-blue-600' : ''}`}>{lScore.toFixed(1)}</span>
                         </div>
-                        <div className="h-2 bg-muted rounded-full overflow-hidden">
-                          <div className="h-full rounded-full bg-blue-500 transition-all duration-500" style={{ width: `${Math.min(lScore, 100)}%` }} />
+                        <div className="h-1.5 bg-muted rounded-full overflow-hidden">
+                          <div className="h-full rounded-full bg-blue-500 transition-all duration-700 ease-out" style={{ width: `${Math.min(lScore, 100)}%` }} />
                         </div>
                       </div>
                       {/* Right */}
-                      <div className="space-y-1">
-                        <div className="flex items-center justify-between text-sm">
+                      <div className="space-y-0.5">
+                        <div className="flex items-center justify-between text-xs">
                           <span className="text-muted-foreground truncate">{right.name || right.username}</span>
-                          <span className={`font-bold tabular-nums ${!lWins && !tie ? 'text-red-500' : ''}`}>
-                            {rScore.toFixed(1)}
-                          </span>
+                          <span className={`font-bold tabular-nums ${!lWins && !tie ? 'text-red-500' : ''}`}>{rScore.toFixed(1)}</span>
                         </div>
-                        <div className="h-2 bg-muted rounded-full overflow-hidden">
-                          <div className="h-full rounded-full bg-red-500 transition-all duration-500" style={{ width: `${Math.min(rScore, 100)}%` }} />
+                        <div className="h-1.5 bg-muted rounded-full overflow-hidden">
+                          <div className="h-full rounded-full bg-red-500 transition-all duration-700 ease-out" style={{ width: `${Math.min(rScore, 100)}%` }} />
                         </div>
                       </div>
                       {/* Delta */}
                       <div className="text-center">
                         {tie ? (
-                          <Badge variant="outline" className="text-xs">Tied</Badge>
+                          <Badge variant="outline" className="text-[10px] h-4 px-1.5">Tied</Badge>
                         ) : (
-                          <Badge variant={lWins ? 'default' : 'destructive'} className="text-xs">
+                          <Badge variant={lWins ? 'default' : 'destructive'} className="text-[10px] h-4 px-1.5">
                             {lWins ? (left.name || left.username) : (right.name || right.username)} +{Math.abs(lScore - rScore).toFixed(1)}
                           </Badge>
                         )}

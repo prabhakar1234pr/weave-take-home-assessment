@@ -21,16 +21,14 @@ interface Props {
 }
 
 function getInitials(name: string, username: string) {
-  if (name) {
-    return name.split(' ').map(n => n[0]).join('').toUpperCase().slice(0, 2);
-  }
+  if (name) return name.split(' ').map(n => n[0]).join('').toUpperCase().slice(0, 2);
   return username.slice(0, 2).toUpperCase();
 }
 
 function scoreColor(score: number): string {
-  if (score >= 70) return 'text-emerald-600';
-  if (score >= 40) return 'text-amber-600';
-  return 'text-red-500';
+  if (score >= 70) return 'text-emerald-600 dark:text-emerald-400';
+  if (score >= 40) return 'text-amber-600 dark:text-amber-400';
+  return 'text-red-500 dark:text-red-400';
 }
 
 export function EngineersTable({ engineers, onSelect, selected }: Props) {
@@ -38,16 +36,16 @@ export function EngineersTable({ engineers, onSelect, selected }: Props) {
     <Card className="overflow-hidden py-0">
       <Table>
         <TableHeader>
-          <TableRow className="bg-muted/50">
-            <TableHead className="w-12">#</TableHead>
-            <TableHead>Engineer</TableHead>
-            <TableHead className="text-right">Impact</TableHead>
-            <TableHead className="text-right">Quality</TableHead>
-            <TableHead className="text-right">Velocity</TableHead>
-            <TableHead className="text-right">Collab</TableHead>
-            <TableHead className="text-right">Leadership</TableHead>
-            <TableHead className="text-right">PRs</TableHead>
-            <TableHead className="text-right">Reviews</TableHead>
+          <TableRow className="bg-muted/40 hover:bg-muted/40">
+            <TableHead className="w-10 text-[10px] uppercase tracking-wider">#</TableHead>
+            <TableHead className="text-[10px] uppercase tracking-wider">Engineer</TableHead>
+            <TableHead className="text-right text-[10px] uppercase tracking-wider">Impact</TableHead>
+            <TableHead className="text-right text-[10px] uppercase tracking-wider">Quality</TableHead>
+            <TableHead className="text-right text-[10px] uppercase tracking-wider">Velocity</TableHead>
+            <TableHead className="text-right text-[10px] uppercase tracking-wider">Collab</TableHead>
+            <TableHead className="text-right text-[10px] uppercase tracking-wider">Leadership</TableHead>
+            <TableHead className="text-right text-[10px] uppercase tracking-wider">PRs</TableHead>
+            <TableHead className="text-right text-[10px] uppercase tracking-wider">Reviews</TableHead>
           </TableRow>
         </TableHeader>
         <TableBody>
@@ -59,22 +57,18 @@ export function EngineersTable({ engineers, onSelect, selected }: Props) {
                 selected?.username === engineer.username ? 'bg-primary/5' : ''
               }`}
             >
-              <TableCell className="font-mono text-muted-foreground text-xs">
+              <TableCell className="font-mono text-muted-foreground text-[10px]">
                 {index + 1}
               </TableCell>
               <TableCell>
-                <div className="flex items-center gap-3">
-                  <Avatar>
+                <div className="flex items-center gap-2.5">
+                  <Avatar className="size-7">
                     <AvatarImage src={engineer.avatar_url} alt={engineer.name || engineer.username} />
-                    <AvatarFallback className="text-xs">
-                      {getInitials(engineer.name, engineer.username)}
-                    </AvatarFallback>
+                    <AvatarFallback className="text-[10px]">{getInitials(engineer.name, engineer.username)}</AvatarFallback>
                   </Avatar>
                   <div className="min-w-0">
-                    <div className="font-medium truncate">
-                      {engineer.name || engineer.username}
-                    </div>
-                    <div className="text-xs text-muted-foreground">@{engineer.username}</div>
+                    <div className="text-xs font-medium truncate">{engineer.name || engineer.username}</div>
+                    <div className="text-[10px] text-muted-foreground">@{engineer.username}</div>
                   </div>
                 </div>
               </TableCell>
@@ -82,13 +76,13 @@ export function EngineersTable({ engineers, onSelect, selected }: Props) {
                 <Tooltip>
                   <TooltipTrigger asChild>
                     <span>
-                      <Badge variant={index < 3 ? 'default' : 'secondary'} className="tabular-nums">
+                      <Badge variant={index < 3 ? 'default' : 'secondary'} className="tabular-nums text-[10px] h-5">
                         {engineer.impact_score.toFixed(1)}
                       </Badge>
                     </span>
                   </TooltipTrigger>
                   <TooltipContent>
-                    <div className="space-y-1 text-xs">
+                    <div className="space-y-0.5 text-xs">
                       <div>Quality: {engineer.quality_score.toFixed(1)}</div>
                       <div>Velocity: {engineer.velocity_score.toFixed(1)}</div>
                       <div>Collab: {engineer.collaboration_score.toFixed(1)}</div>
@@ -97,22 +91,22 @@ export function EngineersTable({ engineers, onSelect, selected }: Props) {
                   </TooltipContent>
                 </Tooltip>
               </TableCell>
-              <TableCell className={`text-right font-mono tabular-nums text-sm ${scoreColor(engineer.quality_score)}`}>
+              <TableCell className={`text-right font-mono tabular-nums text-xs ${scoreColor(engineer.quality_score)}`}>
                 {engineer.quality_score.toFixed(1)}
               </TableCell>
-              <TableCell className={`text-right font-mono tabular-nums text-sm ${scoreColor(engineer.velocity_score)}`}>
+              <TableCell className={`text-right font-mono tabular-nums text-xs ${scoreColor(engineer.velocity_score)}`}>
                 {engineer.velocity_score.toFixed(1)}
               </TableCell>
-              <TableCell className={`text-right font-mono tabular-nums text-sm ${scoreColor(engineer.collaboration_score)}`}>
+              <TableCell className={`text-right font-mono tabular-nums text-xs ${scoreColor(engineer.collaboration_score)}`}>
                 {engineer.collaboration_score.toFixed(1)}
               </TableCell>
-              <TableCell className={`text-right font-mono tabular-nums text-sm ${scoreColor(engineer.leadership_score)}`}>
+              <TableCell className={`text-right font-mono tabular-nums text-xs ${scoreColor(engineer.leadership_score)}`}>
                 {engineer.leadership_score.toFixed(1)}
               </TableCell>
-              <TableCell className="text-right tabular-nums text-sm">
+              <TableCell className="text-right tabular-nums text-xs">
                 {engineer.stats.prs_created}
               </TableCell>
-              <TableCell className="text-right tabular-nums text-sm">
+              <TableCell className="text-right tabular-nums text-xs">
                 {engineer.stats.reviews_given}
               </TableCell>
             </TableRow>
