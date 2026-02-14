@@ -20,7 +20,11 @@ export async function GET(request: NextRequest) {
 
     // Show top 5 of the selected time range
     const trends = generateTrends(filteredPRs, data.contributors, top, undefined, from || undefined);
-    return NextResponse.json(trends);
+    return NextResponse.json(trends, {
+      headers: {
+        'Cache-Control': 'public, s-maxage=300, stale-while-revalidate=600',
+      },
+    });
   } catch (error) {
     console.error('Trends API error:', error);
     return NextResponse.json({ engineers: [], series: [] });
