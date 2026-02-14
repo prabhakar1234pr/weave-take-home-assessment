@@ -1,5 +1,3 @@
-import { google } from '@ai-sdk/google';
-import { streamText } from 'ai';
 import { getGitHubData } from '@/lib/github';
 import { analyzeEngineers, generateInsights, getDataDateRange } from '@/lib/analyzer';
 
@@ -8,19 +6,26 @@ export const dynamic = 'force-dynamic';
 export async function POST(req: Request) {
   const { messages } = await req.json();
 
+  const apiKey = process.env.GOOGLE_GENERATIVE_AI_API_KEY;
+  if (!apiKey) {
+    return new Response(
+      JSON.stringify({ error: 'GOOGLE_GENERATIVE_AI_API_KEY not set' }),
+      { status: 500, headers: { 'Content-Type': 'application/json' } }
+    );
+  }
+
   // Get the same data the dashboard uses
   const data = await getGitHubData();
   const engineers = analyzeEngineers(data.contributors, data.prs);
   const insights = generateInsights(engineers, data.contributors);
   const dateRange = getDataDateRange(data.prs);
 
-  // Build a rich context string from all dashboard data
   const context = JSON.stringify({
     repo: data.repo,
     dateRange,
     totalPRs: data.prs.length,
     totalContributors: engineers.length,
-    engineers: engineers.map((e, i) => ({
+    engineers: engineers.slice(0, 50).map((e, i) => ({
       rank: i + 1,
       username: e.username,
       name: e.name,
@@ -43,9 +48,7 @@ export async function POST(req: Request) {
     })),
   });
 
-  const result = streamText({
-    model: google('gemini-2.0-flash'),
-    system: `You are an AI assistant embedded in an Engineering Impact Dashboard that analyzes the PostHog/posthog GitHub repository.
+  const systemPrompt = `You are an AI assistant embedded in an Engineering Impact Dashboard that analyzes the PostHog/posthog GitHub repository.
 
 You have access to the full dashboard data below. Use it to answer ANY question the user asks about engineers, their performance, rankings, comparisons, trends, etc.
 
@@ -68,9 +71,84 @@ RULES:
 - Keep responses concise but informative.
 - If comparing engineers, use a structured format.
 - You can answer questions about any metric: PRs, reviews, merge time, scores, rankings, etc.
-- If the user asks something not related to the dashboard data, politely redirect them.`,
-    messages,
+- If the user asks something not related to the dashboard data, politely redirect them.`;
+
+  // Build Gemini API request
+  const geminiMessages = [
+    { role: 'user', parts: [{ text: systemPrompt }] },
+    { role: 'model', parts: [{ text: 'Understood. I have access to the full Engineering Impact Dashboard data. How can I help you?' }] },
+    ...messages.map((m: { role: string; content: string }) => ({
+      role: m.role === 'assistant' ? 'model' : 'user',
+      parts: [{ text: m.content }],
+    })),
+  ];
+
+  const geminiRes = await fetch(
+    `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:streamGenerateContent?alt=sse&key=${apiKey}`,
+    {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        contents: geminiMessages,
+        generationConfig: {
+          temperature: 0.7,
+          maxOutputTokens: 1024,
+        },
+      }),
+    }
+  );
+
+  if (!geminiRes.ok) {
+    const errText = await geminiRes.text();
+    console.error('[Chat] Gemini API error:', geminiRes.status, errText);
+    return new Response('AI service error', { status: 502 });
+  }
+
+  // Stream the SSE response as plain text
+  const encoder = new TextEncoder();
+  const stream = new ReadableStream({
+    async start(controller) {
+      const reader = geminiRes.body!.getReader();
+      const decoder = new TextDecoder();
+      let buffer = '';
+
+      try {
+        while (true) {
+          const { done, value } = await reader.read();
+          if (done) break;
+          buffer += decoder.decode(value, { stream: true });
+
+          const lines = buffer.split('\n');
+          buffer = lines.pop() || '';
+
+          for (const line of lines) {
+            if (!line.startsWith('data: ')) continue;
+            const jsonStr = line.slice(6).trim();
+            if (!jsonStr || jsonStr === '[DONE]') continue;
+
+            try {
+              const parsed = JSON.parse(jsonStr);
+              const text = parsed?.candidates?.[0]?.content?.parts?.[0]?.text;
+              if (text) {
+                controller.enqueue(encoder.encode(text));
+              }
+            } catch {
+              // skip malformed JSON chunks
+            }
+          }
+        }
+      } catch (err) {
+        console.error('[Chat] Stream error:', err);
+      } finally {
+        controller.close();
+      }
+    },
   });
 
-  return result.toTextStreamResponse();
+  return new Response(stream, {
+    headers: {
+      'Content-Type': 'text/plain; charset=utf-8',
+      'Transfer-Encoding': 'chunked',
+    },
+  });
 }
