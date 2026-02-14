@@ -76,14 +76,20 @@ export function ChatBot() {
       }
     } catch (err) {
       console.error('Chat error:', err);
-      setMessages((prev) => [
-        ...prev,
-        {
-          id: assistantId,
-          role: 'assistant',
-          content: 'Sorry, something went wrong. Please try again.',
-        },
-      ]);
+      // Only add error message if we haven't already added an assistant message with content
+      setMessages((prev) => {
+        const lastMsg = prev.find((m) => m.id === assistantId);
+        if (lastMsg && lastMsg.content) return prev; // already got a response
+        const filtered = prev.filter((m) => m.id !== assistantId);
+        return [
+          ...filtered,
+          {
+            id: assistantId,
+            role: 'assistant' as const,
+            content: 'Sorry, something went wrong. Please try again.',
+          },
+        ];
+      });
     } finally {
       setIsLoading(false);
     }

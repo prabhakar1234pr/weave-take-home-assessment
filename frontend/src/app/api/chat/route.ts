@@ -101,7 +101,16 @@ RULES:
   if (!geminiRes.ok) {
     const errText = await geminiRes.text();
     console.error('[Chat] Gemini API error:', geminiRes.status, errText);
-    return new Response('AI service error', { status: 502 });
+    if (geminiRes.status === 429) {
+      return new Response('Rate limit reached. Please wait a minute and try again.', {
+        status: 200,
+        headers: { 'Content-Type': 'text/plain; charset=utf-8' },
+      });
+    }
+    return new Response('AI service is temporarily unavailable. Please try again later.', {
+      status: 200,
+      headers: { 'Content-Type': 'text/plain; charset=utf-8' },
+    });
   }
 
   // Stream the SSE response as plain text
