@@ -1,7 +1,6 @@
 /**
  * Scoring engine — calculates multi-dimensional impact scores.
- * All functions accept data as parameters so they work with both
- * live GitHub data and the static JSON fallback.
+ * Uses population-relative normalization so scoring adapts to any data window.
  */
 
 // ── Types ────────────────────────────────────────────────────────────
@@ -58,19 +57,70 @@ export interface TrendResult {
   series: TrendSeries[];
 }
 
-// ── Helpers ──────────────────────────────────────────────────────────
-
-function getDataWindowMonths(prs: PRData[]): number {
-  if (prs.length === 0) return 3;
-  const dates = prs
-    .map((pr) => new Date(pr.merged_at).getTime())
-    .filter((d) => !isNaN(d));
-  if (dates.length === 0) return 3;
-  const earliest = Math.min(...dates);
-  const latest = Math.max(...dates);
-  const months = (latest - earliest) / (1000 * 60 * 60 * 24 * 30);
-  return Math.max(months, 1);
+export interface Insight {
+  label: string;
+  username: string;
+  name: string;
+  avatar_url: string;
+  value: string;
+  description: string;
 }
+
+// ── Population Stats ─────────────────────────────────────────────────
+
+interface PopulationStats {
+  maxPrs: number;
+  maxReviewsGiven: number;
+  maxFilesChanged: number;
+  maxAvgFilesPerPr: number;
+  maxCombined: number;
+  p90MergeHours: number;
+}
+
+function computePopulationStats(
+  contributors: Record<string, ContributorData>
+): PopulationStats {
+  const eligible = Object.values(contributors).filter(
+    (c) => c.prs_created >= 2
+  );
+
+  if (eligible.length === 0) {
+    return {
+      maxPrs: 1,
+      maxReviewsGiven: 1,
+      maxFilesChanged: 1,
+      maxAvgFilesPerPr: 1,
+      maxCombined: 1,
+      p90MergeHours: 72,
+    };
+  }
+
+  const mergeTimes = eligible
+    .filter((c) => c.avg_time_to_merge_hours > 0)
+    .map((c) => c.avg_time_to_merge_hours)
+    .sort((a, b) => a - b);
+  const p90Idx = Math.floor(mergeTimes.length * 0.9);
+  const p90MergeHours = mergeTimes[p90Idx] ?? 72;
+
+  return {
+    maxPrs: Math.max(...eligible.map((c) => c.prs_created)),
+    maxReviewsGiven: Math.max(...eligible.map((c) => c.reviews_given), 1),
+    maxFilesChanged: Math.max(...eligible.map((c) => c.total_files_changed), 1),
+    maxAvgFilesPerPr: Math.max(
+      ...eligible.map(
+        (c) => c.total_files_changed / Math.max(c.prs_created, 1)
+      ),
+      1
+    ),
+    maxCombined: Math.max(
+      ...eligible.map((c) => c.prs_created + c.reviews_given),
+      1
+    ),
+    p90MergeHours,
+  };
+}
+
+// ── Helpers ──────────────────────────────────────────────────────────
 
 export function getDataDateRange(prs: PRData[]): {
   from: string;
@@ -94,10 +144,15 @@ export function getDataDateRange(prs: PRData[]): {
 
 // ── Scoring Functions ────────────────────────────────────────────────
 
-function calculateQualityScore(c: ContributorData): number {
-  const mergeTime = Math.min(c.avg_time_to_merge_hours, 72);
-  const mergeScore = 100 * (1 - mergeTime / 72);
+function calculateQualityScore(
+  c: ContributorData,
+  pop: PopulationStats
+): number {
+  // Merge speed: lower is better. Use P90 as ceiling for outlier robustness.
+  const mergeTime = Math.min(c.avg_time_to_merge_hours, pop.p90MergeHours);
+  const mergeScore = 100 * (1 - mergeTime / pop.p90MergeHours);
 
+  // PR size sweet spot: 200-500 lines (industry standard, window-independent)
   const avgChanges =
     (c.total_additions + c.total_deletions) / Math.max(c.prs_created, 1);
   let sizeScore: number;
@@ -109,28 +164,37 @@ function calculateQualityScore(c: ContributorData): number {
     sizeScore = Math.max(50, 100 - (avgChanges - 500) / 20);
   }
 
-  const reviewActivity = Math.min(c.reviews_given / 20, 1) * 100;
+  // Review activity: normalize by population max
+  const reviewActivity =
+    Math.min(c.reviews_given / pop.maxReviewsGiven, 1) * 100;
 
   return 0.5 * mergeScore + 0.3 * sizeScore + 0.2 * reviewActivity;
 }
 
 function calculateVelocityScore(
   c: ContributorData,
-  windowMonths: number
+  pop: PopulationStats
 ): number {
-  const prsPerMonth = c.prs_created / windowMonths;
-  const consistencyScore = Math.min(prsPerMonth / 10, 1) * 100;
+  // Consistency: PR count relative to population max
+  const consistencyScore = Math.min(c.prs_created / pop.maxPrs, 1) * 100;
 
-  const avgFiles =
-    c.total_files_changed / Math.max(c.prs_created, 1);
-  const complexityScore = Math.min(avgFiles / 15, 1) * 100;
+  // Complexity: avg files per PR relative to population max
+  const avgFiles = c.total_files_changed / Math.max(c.prs_created, 1);
+  const complexityScore =
+    Math.min(avgFiles / pop.maxAvgFilesPerPr, 1) * 100;
 
   return 0.4 * consistencyScore + 0.6 * complexityScore;
 }
 
-function calculateCollaborationScore(c: ContributorData): number {
-  const reviewVolume = Math.min(c.reviews_given / 30, 1) * 100;
+function calculateCollaborationScore(
+  c: ContributorData,
+  pop: PopulationStats
+): number {
+  // Review volume: normalize by population max
+  const reviewVolume =
+    Math.min(c.reviews_given / pop.maxReviewsGiven, 1) * 100;
 
+  // Review depth: ratio metric, no window dependency
   let reviewDepth = 0;
   if (c.prs_reviewed > 0) {
     reviewDepth = Math.min(c.reviews_given / c.prs_reviewed / 3, 1) * 100;
@@ -139,13 +203,19 @@ function calculateCollaborationScore(c: ContributorData): number {
   return 0.7 * reviewVolume + 0.3 * reviewDepth;
 }
 
-function calculateLeadershipScore(c: ContributorData): number {
-  const ownership = Math.min(c.total_files_changed / 200, 1) * 100;
+function calculateLeadershipScore(
+  c: ContributorData,
+  pop: PopulationStats
+): number {
+  // Code ownership: normalize by population max
+  const ownership =
+    Math.min(c.total_files_changed / pop.maxFilesChanged, 1) * 100;
 
+  // Dual role: both author AND reviewer, normalize by population max
   let balance = 0;
   if (c.prs_created > 0 && c.reviews_given > 0) {
     balance =
-      Math.min((c.prs_created + c.reviews_given) / 40, 1) * 100;
+      Math.min((c.prs_created + c.reviews_given) / pop.maxCombined, 1) * 100;
   }
 
   return 0.6 * ownership + 0.4 * balance;
@@ -154,12 +224,12 @@ function calculateLeadershipScore(c: ContributorData): number {
 function scoreContributor(
   username: string,
   c: ContributorData,
-  windowMonths: number
+  pop: PopulationStats
 ): EngineerScore {
-  const quality = calculateQualityScore(c);
-  const velocity = calculateVelocityScore(c, windowMonths);
-  const collaboration = calculateCollaborationScore(c);
-  const leadership = calculateLeadershipScore(c);
+  const quality = calculateQualityScore(c, pop);
+  const velocity = calculateVelocityScore(c, pop);
+  const collaboration = calculateCollaborationScore(c, pop);
+  const leadership = calculateLeadershipScore(c, pop);
   const impact =
     0.3 * quality + 0.3 * velocity + 0.2 * collaboration + 0.2 * leadership;
 
@@ -187,13 +257,13 @@ export function analyzeEngineers(
   contributors: Record<string, ContributorData>,
   prs: PRData[]
 ): EngineerScore[] {
-  const windowMonths = getDataWindowMonths(prs);
+  const pop = computePopulationStats(contributors);
   const scores: EngineerScore[] = [];
 
   for (const username of Object.keys(contributors)) {
     const c = contributors[username];
     if (c.prs_created < 2) continue;
-    scores.push(scoreContributor(username, c, windowMonths));
+    scores.push(scoreContributor(username, c, pop));
   }
 
   scores.sort((a, b) => b.impact_score - a.impact_score);
@@ -208,9 +278,107 @@ export function analyzeTopEngineers(
   return analyzeEngineers(contributors, prs).slice(0, limit);
 }
 
-/**
- * Generate weekly PR-merge trend data for the top N engineers.
- */
+// ── Insights ─────────────────────────────────────────────────────────
+
+export function generateInsights(
+  engineers: EngineerScore[],
+  contributors: Record<string, ContributorData>
+): Insight[] {
+  if (engineers.length === 0) return [];
+
+  const insights: Insight[] = [];
+
+  // Fastest Merger — lowest avg merge time among top half
+  const withMerge = engineers.filter((e) => e.stats.avg_merge_time > 0);
+  if (withMerge.length > 0) {
+    const fastest = withMerge.reduce((a, b) =>
+      a.stats.avg_merge_time < b.stats.avg_merge_time ? a : b
+    );
+    insights.push({
+      label: 'Fastest Merger',
+      username: fastest.username,
+      name: fastest.name,
+      avatar_url: fastest.avatar_url,
+      value: `${fastest.stats.avg_merge_time.toFixed(1)}h avg`,
+      description: 'Lowest average time from PR creation to merge',
+    });
+  }
+
+  // Review Champion — most reviews given
+  const reviewChamp = engineers.reduce((a, b) =>
+    a.stats.reviews_given > b.stats.reviews_given ? a : b
+  );
+  insights.push({
+    label: 'Review Champion',
+    username: reviewChamp.username,
+    name: reviewChamp.name,
+    avatar_url: reviewChamp.avatar_url,
+    value: `${reviewChamp.stats.reviews_given} reviews`,
+    description: 'Most code reviews submitted across the team',
+  });
+
+  // Most Prolific — most PRs merged
+  const prolific = engineers.reduce((a, b) =>
+    a.stats.prs_created > b.stats.prs_created ? a : b
+  );
+  insights.push({
+    label: 'Most Prolific',
+    username: prolific.username,
+    name: prolific.name,
+    avatar_url: prolific.avatar_url,
+    value: `${prolific.stats.prs_created} PRs`,
+    description: 'Highest number of merged pull requests',
+  });
+
+  // Broadest Reach — most files changed
+  const broadest = engineers.reduce((a, b) =>
+    a.stats.files_changed > b.stats.files_changed ? a : b
+  );
+  insights.push({
+    label: 'Broadest Reach',
+    username: broadest.username,
+    name: broadest.name,
+    avatar_url: broadest.avatar_url,
+    value: `${broadest.stats.files_changed} files`,
+    description: 'Most files modified across the codebase',
+  });
+
+  // Most Well-Rounded — highest minimum dimension score
+  const wellRounded = engineers.reduce((a, b) => {
+    const minA = Math.min(
+      a.quality_score,
+      a.velocity_score,
+      a.collaboration_score,
+      a.leadership_score
+    );
+    const minB = Math.min(
+      b.quality_score,
+      b.velocity_score,
+      b.collaboration_score,
+      b.leadership_score
+    );
+    return minA > minB ? a : b;
+  });
+  const minScore = Math.min(
+    wellRounded.quality_score,
+    wellRounded.velocity_score,
+    wellRounded.collaboration_score,
+    wellRounded.leadership_score
+  );
+  insights.push({
+    label: 'Most Well-Rounded',
+    username: wellRounded.username,
+    name: wellRounded.name,
+    avatar_url: wellRounded.avatar_url,
+    value: `${minScore.toFixed(0)}+ across all`,
+    description: 'Highest minimum score across all four dimensions',
+  });
+
+  return insights;
+}
+
+// ── Trends ───────────────────────────────────────────────────────────
+
 export function generateTrends(
   prs: PRData[],
   contributors: Record<string, ContributorData>,
@@ -218,11 +386,9 @@ export function generateTrends(
 ): TrendResult {
   if (prs.length === 0) return { engineers: [], series: [] };
 
-  // Determine top engineers
   const topEngineers = analyzeEngineers(contributors, prs).slice(0, top);
   const topUsernames = new Set(topEngineers.map((e) => e.username));
 
-  // Group PRs by ISO week
   const weekMap: Record<string, Record<string, number>> = {};
 
   for (const pr of prs) {
@@ -238,7 +404,6 @@ export function generateTrends(
       (weekMap[weekKey][pr.author_username] || 0) + 1;
   }
 
-  // Sort weeks chronologically
   const sortedWeeks = Object.keys(weekMap).sort();
 
   const series: TrendSeries[] = sortedWeeks.map((weekKey) => {
@@ -266,7 +431,7 @@ export function generateTrends(
 export function getMethodology() {
   return {
     overview:
-      'Impact measured across four dimensions with weighted scoring. Avoids vanity metrics like lines of code.',
+      'Impact measured across four dimensions with weighted scoring. Uses population-relative normalization — all thresholds adapt to the actual data.',
     dimensions: [
       {
         name: 'Code Quality',
@@ -275,7 +440,7 @@ export function getMethodology() {
         signals: [
           'Merge efficiency (lower time = higher quality)',
           'PR size optimization (200-500 lines sweet spot)',
-          'Review engagement (understands quality standards)',
+          'Review engagement relative to peers',
         ],
       },
       {
@@ -283,7 +448,7 @@ export function getMethodology() {
         weight: 0.3,
         description: 'Consistent delivery of complex work',
         signals: [
-          'PRs per month (consistency)',
+          'PR output relative to peers (consistency)',
           'Files changed per PR (complexity handling)',
         ],
       },
@@ -292,7 +457,7 @@ export function getMethodology() {
         weight: 0.2,
         description: 'Helping teammates through code reviews',
         signals: [
-          'Reviews given (volume)',
+          'Reviews given relative to peers (volume)',
           'Comments per PR reviewed (depth)',
         ],
       },
@@ -301,13 +466,13 @@ export function getMethodology() {
         weight: 0.2,
         description: 'Code ownership and balanced contributions',
         signals: [
-          'Files touched (ownership breadth)',
+          'Files touched relative to peers (ownership breadth)',
           'Both authoring and reviewing (technical authority)',
         ],
       },
     ],
     philosophy:
-      "This approach resists gaming. You can't just spam commits, make tiny PRs, or rubber-stamp reviews. Real impact requires quality code, consistent delivery, helpful reviews, and technical ownership.",
+      "This approach resists gaming. You can't just spam commits, make tiny PRs, or rubber-stamp reviews. All metrics are normalized against the population, so scores reflect relative standing — not arbitrary thresholds.",
   };
 }
 
@@ -316,7 +481,7 @@ export function getMethodology() {
 function getWeekStart(date: Date): Date {
   const d = new Date(date);
   const day = d.getUTCDay();
-  const diff = d.getUTCDate() - day + (day === 0 ? -6 : 1); // Monday
+  const diff = d.getUTCDate() - day + (day === 0 ? -6 : 1);
   d.setUTCDate(diff);
   d.setUTCHours(0, 0, 0, 0);
   return d;

@@ -259,7 +259,7 @@ function aggregateData(rawPRs: RawPR[]): GitHubData {
 
 let cachedData: GitHubData | null = null;
 let cacheTimestamp = 0;
-const CACHE_DURATION = 6 * 60 * 60 * 1000; // 6 hours
+const CACHE_DURATION = 5 * 60 * 1000; // 5 minutes — enables near-real-time polling
 
 /**
  * Returns GitHub data. Fetches from API if GITHUB_TOKEN is set,

@@ -37,3 +37,12 @@ export interface TrendData {
   engineers: TrendEngineer[];
   series: Record<string, string | number>[];
 }
+
+export interface Insight {
+  label: string;
+  username: string;
+  name: string;
+  avatar_url: string;
+  value: string;
+  description: string;
+}
