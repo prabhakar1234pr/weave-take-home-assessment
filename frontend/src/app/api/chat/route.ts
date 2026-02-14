@@ -6,10 +6,10 @@ export const dynamic = 'force-dynamic';
 export async function POST(req: Request) {
   const { messages } = await req.json();
 
-  const apiKey = process.env.GOOGLE_GENERATIVE_AI_API_KEY;
+  const apiKey = process.env.GROQ_API_KEY;
   if (!apiKey) {
     return new Response(
-      JSON.stringify({ error: 'GOOGLE_GENERATIVE_AI_API_KEY not set' }),
+      JSON.stringify({ error: 'GROQ_API_KEY not set' }),
       { status: 500, headers: { 'Content-Type': 'application/json' } }
     );
   }
@@ -73,35 +73,34 @@ RULES:
 - You can answer questions about any metric: PRs, reviews, merge time, scores, rankings, etc.
 - If the user asks something not related to the dashboard data, politely redirect them.`;
 
-  // Build Gemini API request
-  const geminiMessages = [
-    { role: 'user', parts: [{ text: systemPrompt }] },
-    { role: 'model', parts: [{ text: 'Understood. I have access to the full Engineering Impact Dashboard data. How can I help you?' }] },
+  // Build Groq (OpenAI-compatible) messages
+  const groqMessages = [
+    { role: 'system' as const, content: systemPrompt },
     ...messages.map((m: { role: string; content: string }) => ({
-      role: m.role === 'assistant' ? 'model' : 'user',
-      parts: [{ text: m.content }],
+      role: m.role as 'user' | 'assistant',
+      content: m.content,
     })),
   ];
 
-  const geminiRes = await fetch(
-    `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:streamGenerateContent?alt=sse&key=${apiKey}`,
-    {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({
-        contents: geminiMessages,
-        generationConfig: {
-          temperature: 0.7,
-          maxOutputTokens: 1024,
-        },
-      }),
-    }
-  );
+  const groqRes = await fetch('https://api.groq.com/openai/v1/chat/completions', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      Authorization: `Bearer ${apiKey}`,
+    },
+    body: JSON.stringify({
+      model: 'llama-3.3-70b-versatile',
+      messages: groqMessages,
+      stream: true,
+      temperature: 0.7,
+      max_tokens: 1024,
+    }),
+  });
 
-  if (!geminiRes.ok) {
-    const errText = await geminiRes.text();
-    console.error('[Chat] Gemini API error:', geminiRes.status, errText);
-    if (geminiRes.status === 429) {
+  if (!groqRes.ok) {
+    const errText = await groqRes.text();
+    console.error('[Chat] Groq API error:', groqRes.status, errText);
+    if (groqRes.status === 429) {
       return new Response('Rate limit reached. Please wait a minute and try again.', {
         status: 200,
         headers: { 'Content-Type': 'text/plain; charset=utf-8' },
@@ -113,11 +112,11 @@ RULES:
     });
   }
 
-  // Stream the SSE response as plain text
+  // Stream the SSE response as plain text (OpenAI/Groq format)
   const encoder = new TextEncoder();
   const stream = new ReadableStream({
     async start(controller) {
-      const reader = geminiRes.body!.getReader();
+      const reader = groqRes.body!.getReader();
       const decoder = new TextDecoder();
       let buffer = '';
 
@@ -137,7 +136,7 @@ RULES:
 
             try {
               const parsed = JSON.parse(jsonStr);
-              const text = parsed?.candidates?.[0]?.content?.parts?.[0]?.text;
+              const text = parsed?.choices?.[0]?.delta?.content;
               if (text) {
                 controller.enqueue(encoder.encode(text));
               }

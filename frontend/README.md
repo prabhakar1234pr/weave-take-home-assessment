@@ -46,7 +46,7 @@ The target audience is a busy engineering leader who needs a clear, at-a-glance 
 | **Trend Analysis** | Weekly PR activity area chart with presets (1W / 1M / 3M / 6M / 1Y / All) and a custom date range picker |
 | **Compare View** | Side-by-side comparison of any two engineers with radar overlay and bar charts |
 | **Methodology** | Full transparency on how every score is calculated — formulas, weights, and anti-gaming properties |
-| **AI Chatbot** | Gemini-powered assistant that can answer questions about the data (e.g., "Who is the best engineer?") |
+| **AI Chatbot** | Groq-powered assistant that can answer questions about the data (e.g., "Who is the best engineer?") |
 | **Real-Time Polling** | Auto-refreshes every 5 minutes with a live status indicator |
 | **Background Backfill** | Vercel Cron job progressively fetches older PRs (pre-2020) and persists to Vercel Blob storage |
 | **Static Fallback** | Works without a GitHub token using a bundled BigQuery snapshot (~23K PRs) |
@@ -169,7 +169,7 @@ All three layers are merged and deduplicated at query time, producing a single u
 | **Charts** | [Recharts](https://recharts.org/) — area charts, radar charts, bar charts |
 | **Styling** | [Tailwind CSS v4](https://tailwindcss.com/) |
 | **Icons** | [Lucide React](https://lucide.dev/) |
-| **AI Chatbot** | [Google Gemini 2.0 Flash](https://ai.google.dev/) — streaming via SSE |
+| **AI Chatbot** | [Groq](https://console.groq.com/) (llama-3.3-70b-versatile) — streaming via SSE |
 | **Data Sources** | GitHub GraphQL API (live) + Google BigQuery / GH Archive (historical) |
 | **Persistent Storage** | [Vercel Blob](https://vercel.com/docs/storage/vercel-blob) — backfill data |
 | **Scheduling** | [Vercel Cron Jobs](https://vercel.com/docs/cron-jobs) — every 6 hours |
@@ -261,7 +261,7 @@ Open [http://localhost:3000](http://localhost:3000).
 |---|---|---|---|
 | `GITHUB_TOKEN` | No | — | GitHub Personal Access Token with `public_repo` scope. Without it, the dashboard uses the static BigQuery snapshot. [Create one here](https://github.com/settings/tokens). |
 | `GITHUB_REPO` | No | `PostHog/posthog` | The `owner/repo` to analyze. |
-| `GOOGLE_GENERATIVE_AI_API_KEY` | No | — | Google Gemini API key for the AI chatbot. [Get one here](https://aistudio.google.com/apikey). Without it, the chatbot will show an error. |
+| `GROQ_API_KEY` | No | — | Groq API key for the AI chatbot. [Get one here](https://console.groq.com/keys). Without it, the chatbot will show an error. |
 | `CRON_SECRET` | No | — | Bearer token for authenticating Vercel Cron invocations in production. |
 | `BLOB_READ_WRITE_TOKEN` | No | — | Auto-injected by Vercel when a Blob store is connected to the project. Required for backfill persistence. |
 
@@ -309,7 +309,7 @@ Open [http://localhost:3000](http://localhost:3000).
 
 3. **Vercel Blob for backfill persistence** — Serverless functions are stateless, so the cron job persists backfilled data to Vercel Blob. Dashboard API routes load it on cold start.
 
-4. **Streaming AI responses** — The chatbot streams Gemini responses via Server-Sent Events for a responsive conversational experience.
+4. **Streaming AI responses** — The chatbot streams Groq responses via Server-Sent Events for a responsive conversational experience.
 
 ---
 
@@ -334,7 +334,7 @@ Open [http://localhost:3000](http://localhost:3000).
 1. Push to GitHub
 2. Import the repository in [Vercel](https://vercel.com/)
 3. Set the **Root Directory** to `frontend`
-4. Add environment variables: `GITHUB_TOKEN`, `GOOGLE_GENERATIVE_AI_API_KEY` (optional: `CRON_SECRET`)
+4. Add environment variables: `GITHUB_TOKEN`, `GROQ_API_KEY` (optional: `CRON_SECRET`)
 5. Create a **Blob Store** under Storage and connect it to the project (for backfill persistence)
 6. Deploy — Vercel auto-detects Next.js and schedules the cron job
 
