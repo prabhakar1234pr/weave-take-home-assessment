@@ -443,17 +443,54 @@ let cachedData: GitHubData | null = null;
 let cacheTimestamp = 0;
 const CACHE_DURATION = 5 * 60 * 1000; // 5 minutes
 
-// Backfill data stored in memory (survives across requests on same instance)
+// In-memory copy (warm cache for same-instance reuse)
 let backfillData: { contributors: Record<string, ContributorData>; prs: PROutput[] } | null = null;
+
+// ── Vercel Blob persistence for backfill data ───────────────────────
+
+const BACKFILL_BLOB_KEY = 'backfill-data.json';
+
+async function saveBackfillToBlob(data: { contributors: Record<string, ContributorData>; prs: PROutput[] }) {
+  try {
+    const { put } = await import('@vercel/blob');
+    await put(BACKFILL_BLOB_KEY, JSON.stringify(data), {
+      access: 'public',
+      addRandomSuffix: false,
+    });
+    console.log(`[Backfill] Saved ${data.prs.length} PRs to Vercel Blob.`);
+  } catch (err) {
+    console.warn('[Backfill] Failed to save to Vercel Blob:', err);
+  }
+}
+
+async function loadBackfillFromBlob(): Promise<{ contributors: Record<string, ContributorData>; prs: PROutput[] } | null> {
+  try {
+    const { list } = await import('@vercel/blob');
+    const { blobs } = await list({ prefix: BACKFILL_BLOB_KEY });
+    if (blobs.length === 0) return null;
+
+    const res = await fetch(blobs[0].url);
+    if (!res.ok) return null;
+    const data = await res.json();
+    console.log(`[Backfill] Loaded ${data.prs?.length ?? 0} PRs from Vercel Blob.`);
+    return data;
+  } catch (err) {
+    console.warn('[Backfill] Failed to load from Vercel Blob:', err);
+    return null;
+  }
+}
 
 /**
  * Called by the cron job to store backfilled older data.
+ * Persists to Vercel Blob so it survives across serverless invocations.
  */
-export function setBackfillData(data: { contributors: Record<string, ContributorData>; prs: PROutput[] }) {
+export async function setBackfillData(data: { contributors: Record<string, ContributorData>; prs: PROutput[] }) {
   backfillData = data;
   // Invalidate cache so next request picks up the backfill
   cachedData = null;
   cacheTimestamp = 0;
+  // Persist to Vercel Blob
+  await saveBackfillToBlob(data);
 }
 
 export { aggregateRawPRs };
@@ -471,6 +508,11 @@ export async function getGitHubData(): Promise<GitHubData> {
   // Load BigQuery base data
   const staticImport = await import('@/data/github_data.json');
   let baseData = staticImport.default as unknown as GitHubData;
+
+  // Load backfill data from Vercel Blob if not in memory
+  if (!backfillData) {
+    backfillData = await loadBackfillFromBlob();
+  }
 
   // If we have backfill data, merge it into the base
   if (backfillData) {

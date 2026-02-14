@@ -9,7 +9,7 @@ let backfillComplete = false;
 
 /**
  * Background backfill route — fetches older PRs (pre-GH-Archive, pre-2020)
- * via the GitHub API and merges them into the in-memory dataset.
+ * via the GitHub API and persists them to Vercel Blob storage.
  *
  * Automatically stops once it has reached the very first commit.
  * Called by Vercel Cron or manually: GET /api/cron/backfill
@@ -56,7 +56,7 @@ export async function GET(request: NextRequest) {
     }
 
     const aggregated = aggregateRawPRs(olderPRs);
-    setBackfillData(aggregated);
+    await setBackfillData(aggregated);
 
     const contributorCount = Object.keys(aggregated.contributors).length;
 
