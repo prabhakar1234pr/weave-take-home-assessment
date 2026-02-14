@@ -29,7 +29,7 @@ export async function getTrends(opts?: {
   const params = new URLSearchParams({ top: '5' });
   if (opts?.from) params.set('from', opts.from);
   if (opts?.to) params.set('to', opts.to);
-  const response = await fetch(`/api/trends?${params}`);
+  const response = await fetch(`/api/trends?${params}`, { cache: 'no-store' });
   if (!response.ok) {
     throw new Error('Failed to fetch trends');
   }
