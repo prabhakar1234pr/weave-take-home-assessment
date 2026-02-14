@@ -18,7 +18,9 @@ export async function GET(request: NextRequest) {
     if (from) filteredPRs = filteredPRs.filter((pr) => pr.merged_at >= from);
     if (to) filteredPRs = filteredPRs.filter((pr) => pr.merged_at <= to);
 
-    const trends = generateTrends(filteredPRs, data.contributors, top);
+    // Always use ALL data to determine the top engineers (consistent across time ranges),
+    // but only chart the filtered PRs for the selected time window.
+    const trends = generateTrends(filteredPRs, data.contributors, top, data.prs, from || undefined);
     return NextResponse.json(trends);
   } catch (error) {
     console.error('Trends API error:', error);

@@ -382,13 +382,17 @@ export function generateInsights(
 export function generateTrends(
   prs: PRData[],
   contributors: Record<string, ContributorData>,
-  top: number = 5
+  top: number = 5,
+  allPrs?: PRData[],
+  fromDate?: string
 ): TrendResult {
-  if (prs.length === 0) return { engineers: [], series: [] };
-
-  const topEngineers = analyzeEngineers(contributors, prs).slice(0, top);
+  // Use all-time data for ranking so the same 5 engineers are shown across all time ranges.
+  const rankingPrs = allPrs && allPrs.length > 0 ? allPrs : prs;
+  const topEngineers = analyzeEngineers(contributors, rankingPrs).slice(0, top);
+  if (topEngineers.length === 0) return { engineers: [], series: [] };
   const topUsernames = new Set(topEngineers.map((e) => e.username));
 
+  // Build weekly buckets from the filtered PRs
   const weekMap: Record<string, Record<string, number>> = {};
 
   for (const pr of prs) {
@@ -404,9 +408,38 @@ export function generateTrends(
       (weekMap[weekKey][pr.author_username] || 0) + 1;
   }
 
-  const sortedWeeks = Object.keys(weekMap).sort();
+  // Fill in ALL weeks from the range start to today for a continuous timeline
+  const nowWeek = getWeekStart(new Date());
+  const nowWeekKey = nowWeek.toISOString().slice(0, 10);
 
-  const series: TrendSeries[] = sortedWeeks.map((weekKey) => {
+  // Determine the start of the range
+  const existingWeeks = Object.keys(weekMap).sort();
+  let rangeStart: Date;
+  if (fromDate) {
+    rangeStart = getWeekStart(new Date(fromDate));
+  } else if (existingWeeks.length > 0) {
+    rangeStart = new Date(existingWeeks[0]);
+  } else {
+    rangeStart = nowWeek;
+  }
+
+  const filledWeeks: string[] = [];
+  const cursor = new Date(rangeStart);
+  while (cursor <= nowWeek) {
+    const key = cursor.toISOString().slice(0, 10);
+    filledWeeks.push(key);
+    if (!weekMap[key]) weekMap[key] = {};
+    cursor.setUTCDate(cursor.getUTCDate() + 7);
+  }
+  // Ensure the current week is included
+  if (!weekMap[nowWeekKey]) {
+    weekMap[nowWeekKey] = {};
+    if (!filledWeeks.includes(nowWeekKey)) filledWeeks.push(nowWeekKey);
+  }
+
+  const allWeeks = filledWeeks.sort();
+
+  const series: TrendSeries[] = allWeeks.map((weekKey) => {
     const d = new Date(weekKey);
     const label = d.toLocaleDateString('en-US', {
       month: 'short',
@@ -414,7 +447,7 @@ export function generateTrends(
     });
     const entry: TrendSeries = { week: label };
     for (const eng of topEngineers) {
-      entry[eng.username] = weekMap[weekKey][eng.username] || 0;
+      entry[eng.username] = weekMap[weekKey]?.[eng.username] || 0;
     }
     return entry;
   });

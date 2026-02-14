@@ -10,6 +10,7 @@ import { TrendChart } from '@/components/TrendChart';
 import { CompareView } from '@/components/CompareView';
 import { Methodology } from '@/components/Methodology';
 import { Loading } from '@/components/Loading';
+import { ChatBot } from '@/components/ChatBot';
 import { Alert, AlertTitle, AlertDescription } from '@/components/ui/alert';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
@@ -229,6 +230,8 @@ export default function Dashboard() {
           Built for <span className="font-medium text-foreground/70">Weave (YC W25)</span> · PostHog/posthog · Auto-refreshes every 5 min
         </footer>
       </main>
+
+      <ChatBot />
     </div>
   );
 }
