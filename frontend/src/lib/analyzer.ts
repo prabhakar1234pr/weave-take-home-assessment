@@ -288,21 +288,18 @@ export function generateInsights(
 
   const insights: Insight[] = [];
 
-  // Fastest Merger — lowest avg merge time among top half
-  const withMerge = engineers.filter((e) => e.stats.avg_merge_time > 0);
-  if (withMerge.length > 0) {
-    const fastest = withMerge.reduce((a, b) =>
-      a.stats.avg_merge_time < b.stats.avg_merge_time ? a : b
-    );
-    insights.push({
-      label: 'Fastest Merger',
-      username: fastest.username,
-      name: fastest.name,
-      avatar_url: fastest.avatar_url,
-      value: `${fastest.stats.avg_merge_time.toFixed(1)}h avg`,
-      description: 'Lowest average time from PR creation to merge',
-    });
-  }
+  // Quality Champion — highest quality score
+  const qualityChamp = engineers.reduce((a, b) =>
+    a.quality_score > b.quality_score ? a : b
+  );
+  insights.push({
+    label: 'Quality Champion',
+    username: qualityChamp.username,
+    name: qualityChamp.name,
+    avatar_url: qualityChamp.avatar_url,
+    value: `${qualityChamp.quality_score.toFixed(1)} score`,
+    description: 'Highest code quality across merge speed, PR size & reviews',
+  });
 
   // Review Champion — most reviews given
   const reviewChamp = engineers.reduce((a, b) =>
@@ -343,35 +340,17 @@ export function generateInsights(
     description: 'Most files modified across the codebase',
   });
 
-  // Most Well-Rounded — highest minimum dimension score
-  const wellRounded = engineers.reduce((a, b) => {
-    const minA = Math.min(
-      a.quality_score,
-      a.velocity_score,
-      a.collaboration_score,
-      a.leadership_score
-    );
-    const minB = Math.min(
-      b.quality_score,
-      b.velocity_score,
-      b.collaboration_score,
-      b.leadership_score
-    );
-    return minA > minB ? a : b;
-  });
-  const minScore = Math.min(
-    wellRounded.quality_score,
-    wellRounded.velocity_score,
-    wellRounded.collaboration_score,
-    wellRounded.leadership_score
+  // Velocity Leader — highest velocity score
+  const velocityLeader = engineers.reduce((a, b) =>
+    a.velocity_score > b.velocity_score ? a : b
   );
   insights.push({
-    label: 'Most Well-Rounded',
-    username: wellRounded.username,
-    name: wellRounded.name,
-    avatar_url: wellRounded.avatar_url,
-    value: `${minScore.toFixed(0)}+ across all`,
-    description: 'Highest minimum score across all four dimensions',
+    label: 'Velocity Leader',
+    username: velocityLeader.username,
+    name: velocityLeader.name,
+    avatar_url: velocityLeader.avatar_url,
+    value: `${velocityLeader.velocity_score.toFixed(1)} score`,
+    description: 'Top delivery velocity — consistent, complex output',
   });
 
   return insights;

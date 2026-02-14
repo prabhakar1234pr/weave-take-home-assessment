@@ -263,11 +263,11 @@ function KpiCard({ label, value, icon, color }: { label: string; value: string |
 // ── Insight Card ─────────────────────────────────────────────────────
 
 const INSIGHT_ICONS: Record<string, React.ReactNode> = {
-  'Fastest Merger':     <Zap className="size-4 text-yellow-500" />,
+  'Quality Champion':   <Zap className="size-4 text-yellow-500" />,
   'Review Champion':    <MessageSquareText className="size-4 text-blue-500" />,
   'Most Prolific':      <Rocket className="size-4 text-emerald-500" />,
   'Broadest Reach':     <FolderTree className="size-4 text-violet-500" />,
-  'Most Well-Rounded':  <Star className="size-4 text-amber-500" />,
+  'Velocity Leader':    <Star className="size-4 text-amber-500" />,
 };
 
 function InsightCard({ insight }: { insight: Insight }) {
