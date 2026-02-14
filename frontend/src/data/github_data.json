@@ -1,0 +1,4228 @@
+{
+  "fetched_at": "2026-02-13T20:04:38.420150",
+  "repo": "PostHog/posthog",
+  "contributors": {
+    "rafaeelaudibert": {
+      "name": "rafaeelaudibert",
+      "avatar_url": "https://avatars.githubusercontent.com/u/32079912?v=4",
+      "prs_created": 7,
+      "total_files_changed": 135,
+      "total_additions": 2609,
+      "total_deletions": 240,
+      "avg_time_to_merge_hours": 64.13,
+      "reviews_given": 24,
+      "prs_reviewed": 15
+    },
+    "github-advanced-security[bot]": {
+      "name": "github-advanced-security[bot]",
+      "avatar_url": "https://avatars.githubusercontent.com/in/57789?v=4",
+      "prs_created": 0,
+      "total_files_changed": 0,
+      "total_additions": 0,
+      "total_deletions": 0,
+      "avg_time_to_merge_hours": 0,
+      "reviews_given": 3,
+      "prs_reviewed": 3
+    },
+    "graphite-app[bot]": {
+      "name": "graphite-app[bot]",
+      "avatar_url": "https://avatars.githubusercontent.com/in/158384?v=4",
+      "prs_created": 0,
+      "total_files_changed": 0,
+      "total_additions": 0,
+      "total_deletions": 0,
+      "avg_time_to_merge_hours": 0,
+      "reviews_given": 76,
+      "prs_reviewed": 51
+    },
+    "greptile-apps[bot]": {
+      "name": "greptile-apps[bot]",
+      "avatar_url": "https://avatars.githubusercontent.com/in/867647?v=4",
+      "prs_created": 0,
+      "total_files_changed": 0,
+      "total_additions": 0,
+      "total_deletions": 0,
+      "avg_time_to_merge_hours": 0,
+      "reviews_given": 109,
+      "prs_reviewed": 103
+    },
+    "fercgomes": {
+      "name": "fercgomes",
+      "avatar_url": "https://avatars.githubusercontent.com/u/28491014?v=4",
+      "prs_created": 2,
+      "total_files_changed": 11,
+      "total_additions": 194,
+      "total_deletions": 111,
+      "avg_time_to_merge_hours": 24.29,
+      "reviews_given": 8,
+      "prs_reviewed": 6
+    },
+    "eli-r-ph": {
+      "name": "eli-r-ph",
+      "avatar_url": "https://avatars.githubusercontent.com/u/197809444?v=4",
+      "prs_created": 6,
+      "total_files_changed": 52,
+      "total_additions": 1524,
+      "total_deletions": 469,
+      "avg_time_to_merge_hours": 59.03,
+      "reviews_given": 8,
+      "prs_reviewed": 8
+    },
+    "nickbest-ph": {
+      "name": "nickbest-ph",
+      "avatar_url": "https://avatars.githubusercontent.com/u/206742387?v=4",
+      "prs_created": 5,
+      "total_files_changed": 8,
+      "total_additions": 115,
+      "total_deletions": 15,
+      "avg_time_to_merge_hours": 12.35,
+      "reviews_given": 6,
+      "prs_reviewed": 5
+    },
+    "lucasheriques": {
+      "name": "lucasheriques",
+      "avatar_url": "https://avatars.githubusercontent.com/u/12522524?v=4",
+      "prs_created": 1,
+      "total_files_changed": 2,
+      "total_additions": 225,
+      "total_deletions": 0,
+      "avg_time_to_merge_hours": 205.56,
+      "reviews_given": 7,
+      "prs_reviewed": 7
+    },
+    "meikelmosby": {
+      "name": "meikelmosby",
+      "avatar_url": "https://avatars.githubusercontent.com/u/8418536?v=4",
+      "prs_created": 7,
+      "total_files_changed": 36,
+      "total_additions": 1591,
+      "total_deletions": 771,
+      "avg_time_to_merge_hours": 38.09,
+      "reviews_given": 2,
+      "prs_reviewed": 2
+    },
+    "havenbarnes": {
+      "name": "havenbarnes",
+      "avatar_url": "https://avatars.githubusercontent.com/u/12489563?v=4",
+      "prs_created": 1,
+      "total_files_changed": 1,
+      "total_additions": 1,
+      "total_deletions": 1,
+      "avg_time_to_merge_hours": 0.39,
+      "reviews_given": 12,
+      "prs_reviewed": 7
+    },
+    "Piccirello": {
+      "name": "Piccirello",
+      "avatar_url": "https://avatars.githubusercontent.com/u/8296030?v=4",
+      "prs_created": 1,
+      "total_files_changed": 6,
+      "total_additions": 101,
+      "total_deletions": 3,
+      "avg_time_to_merge_hours": 61.6,
+      "reviews_given": 5,
+      "prs_reviewed": 4
+    },
+    "thmsobrmlr": {
+      "name": "thmsobrmlr",
+      "avatar_url": "https://avatars.githubusercontent.com/u/1851359?u=e5f9ba71b53c84c21e5daf84ae618fd530d5b44d&v=4",
+      "prs_created": 0,
+      "total_files_changed": 0,
+      "total_additions": 0,
+      "total_deletions": 0,
+      "avg_time_to_merge_hours": 0,
+      "reviews_given": 4,
+      "prs_reviewed": 3
+    },
+    "ReeceJones": {
+      "name": "ReeceJones",
+      "avatar_url": "https://avatars.githubusercontent.com/u/21371637?v=4",
+      "prs_created": 2,
+      "total_files_changed": 23,
+      "total_additions": 2193,
+      "total_deletions": 48,
+      "avg_time_to_merge_hours": 119.34,
+      "reviews_given": 10,
+      "prs_reviewed": 5
+    },
+    "yasen-posthog": {
+      "name": "yasen-posthog",
+      "avatar_url": "https://avatars.githubusercontent.com/u/213223200?v=4",
+      "prs_created": 4,
+      "total_files_changed": 24,
+      "total_additions": 1601,
+      "total_deletions": 390,
+      "avg_time_to_merge_hours": 39.73,
+      "reviews_given": 7,
+      "prs_reviewed": 4
+    },
+    "adboio": {
+      "name": "adboio",
+      "avatar_url": "https://avatars.githubusercontent.com/u/23323033?v=4",
+      "prs_created": 11,
+      "total_files_changed": 52,
+      "total_additions": 1279,
+      "total_deletions": 575,
+      "avg_time_to_merge_hours": 94.13,
+      "reviews_given": 9,
+      "prs_reviewed": 7
+    },
+    "adamleithp": {
+      "name": "adamleithp",
+      "avatar_url": "https://avatars.githubusercontent.com/u/814190?v=4",
+      "prs_created": 9,
+      "total_files_changed": 121,
+      "total_additions": 1739,
+      "total_deletions": 1219,
+      "avg_time_to_merge_hours": 28.62,
+      "reviews_given": 4,
+      "prs_reviewed": 4
+    },
+    "jordanm-posthog": {
+      "name": "jordanm-posthog",
+      "avatar_url": "https://avatars.githubusercontent.com/u/245956587?v=4",
+      "prs_created": 3,
+      "total_files_changed": 27,
+      "total_additions": 95356,
+      "total_deletions": 58,
+      "avg_time_to_merge_hours": 197.35,
+      "reviews_given": 5,
+      "prs_reviewed": 4
+    },
+    "Twixes": {
+      "name": "Twixes",
+      "avatar_url": "https://avatars.githubusercontent.com/u/4550621?v=4",
+      "prs_created": 7,
+      "total_files_changed": 44,
+      "total_additions": 700,
+      "total_deletions": 287,
+      "avg_time_to_merge_hours": 29.89,
+      "reviews_given": 16,
+      "prs_reviewed": 5
+    },
+    "pl": {
+      "name": "pl",
+      "avatar_url": "https://avatars.githubusercontent.com/u/69904?v=4",
+      "prs_created": 4,
+      "total_files_changed": 21,
+      "total_additions": 807,
+      "total_deletions": 578,
+      "avg_time_to_merge_hours": 18.25,
+      "reviews_given": 14,
+      "prs_reviewed": 7
+    },
+    "webjunkie": {
+      "name": "webjunkie",
+      "avatar_url": "https://avatars.githubusercontent.com/u/59713?v=4",
+      "prs_created": 4,
+      "total_files_changed": 14,
+      "total_additions": 664,
+      "total_deletions": 186,
+      "avg_time_to_merge_hours": 72.84,
+      "reviews_given": 10,
+      "prs_reviewed": 7
+    },
+    "Radu-Raicea": {
+      "name": "Radu-Raicea",
+      "avatar_url": "https://avatars.githubusercontent.com/u/15457029?v=4",
+      "prs_created": 2,
+      "total_files_changed": 37,
+      "total_additions": 155,
+      "total_deletions": 332,
+      "avg_time_to_merge_hours": 1.13,
+      "reviews_given": 10,
+      "prs_reviewed": 4
+    },
+    "andrewm4894": {
+      "name": "andrewm4894",
+      "avatar_url": "https://avatars.githubusercontent.com/u/2178292?v=4",
+      "prs_created": 8,
+      "total_files_changed": 21,
+      "total_additions": 850,
+      "total_deletions": 74,
+      "avg_time_to_merge_hours": 24.48,
+      "reviews_given": 20,
+      "prs_reviewed": 12
+    },
+    "veryayskiy": {
+      "name": "veryayskiy",
+      "avatar_url": "https://avatars.githubusercontent.com/u/13624984?v=4",
+      "prs_created": 5,
+      "total_files_changed": 19,
+      "total_additions": 397,
+      "total_deletions": 45,
+      "avg_time_to_merge_hours": 1.35,
+      "reviews_given": 9,
+      "prs_reviewed": 7
+    },
+    "pauldambra": {
+      "name": "pauldambra",
+      "avatar_url": "https://avatars.githubusercontent.com/u/984817?v=4",
+      "prs_created": 7,
+      "total_files_changed": 42,
+      "total_additions": 1196,
+      "total_deletions": 274,
+      "avg_time_to_merge_hours": 26.83,
+      "reviews_given": 28,
+      "prs_reviewed": 11
+    },
+    "andehen": {
+      "name": "andehen",
+      "avatar_url": "https://avatars.githubusercontent.com/u/754494?v=4",
+      "prs_created": 2,
+      "total_files_changed": 6,
+      "total_additions": 56,
+      "total_deletions": 36,
+      "avg_time_to_merge_hours": 14.79,
+      "reviews_given": 5,
+      "prs_reviewed": 4
+    },
+    "jurajmajerik": {
+      "name": "jurajmajerik",
+      "avatar_url": "https://avatars.githubusercontent.com/u/22996112?v=4",
+      "prs_created": 1,
+      "total_files_changed": 1,
+      "total_additions": 2,
+      "total_deletions": 2,
+      "avg_time_to_merge_hours": 17.71,
+      "reviews_given": 1,
+      "prs_reviewed": 1
+    },
+    "TueHaulund": {
+      "name": "TueHaulund",
+      "avatar_url": "https://avatars.githubusercontent.com/u/2675352?v=4",
+      "prs_created": 2,
+      "total_files_changed": 11,
+      "total_additions": 1407,
+      "total_deletions": 9,
+      "avg_time_to_merge_hours": 17.0,
+      "reviews_given": 11,
+      "prs_reviewed": 11
+    },
+    "natalia-amorim": {
+      "name": "natalia-amorim",
+      "avatar_url": "https://avatars.githubusercontent.com/u/230627483?u=ca828fdce17cccc00c7915a5057f8bd124633b44&v=4",
+      "prs_created": 0,
+      "total_files_changed": 0,
+      "total_additions": 0,
+      "total_deletions": 0,
+      "avg_time_to_merge_hours": 0,
+      "reviews_given": 1,
+      "prs_reviewed": 1
+    },
+    "copilot-pull-request-reviewer[bot]": {
+      "name": "copilot-pull-request-reviewer[bot]",
+      "avatar_url": "https://avatars.githubusercontent.com/in/946600?v=4",
+      "prs_created": 0,
+      "total_files_changed": 0,
+      "total_additions": 0,
+      "total_deletions": 0,
+      "avg_time_to_merge_hours": 0,
+      "reviews_given": 37,
+      "prs_reviewed": 25
+    },
+    "richardsolomou": {
+      "name": "richardsolomou",
+      "avatar_url": "https://avatars.githubusercontent.com/u/2622273?v=4",
+      "prs_created": 4,
+      "total_files_changed": 40,
+      "total_additions": 345,
+      "total_deletions": 156,
+      "avg_time_to_merge_hours": 10.84,
+      "reviews_given": 3,
+      "prs_reviewed": 3
+    },
+    "jabahamondes": {
+      "name": "jabahamondes",
+      "avatar_url": "https://avatars.githubusercontent.com/u/205275836?v=4",
+      "prs_created": 3,
+      "total_files_changed": 5,
+      "total_additions": 27,
+      "total_deletions": 15,
+      "avg_time_to_merge_hours": 38.32,
+      "reviews_given": 4,
+      "prs_reviewed": 3
+    },
+    "lricoy": {
+      "name": "lricoy",
+      "avatar_url": "https://avatars.githubusercontent.com/u/2034367?v=4",
+      "prs_created": 0,
+      "total_files_changed": 0,
+      "total_additions": 0,
+      "total_deletions": 0,
+      "avg_time_to_merge_hours": 0,
+      "reviews_given": 4,
+      "prs_reviewed": 4
+    },
+    "jonmcwest": {
+      "name": "jonmcwest",
+      "avatar_url": "https://avatars.githubusercontent.com/u/66999846?v=4",
+      "prs_created": 4,
+      "total_files_changed": 41,
+      "total_additions": 1128,
+      "total_deletions": 1208,
+      "avg_time_to_merge_hours": 27.04,
+      "reviews_given": 2,
+      "prs_reviewed": 2
+    },
+    "frankh": {
+      "name": "frankh",
+      "avatar_url": "https://avatars.githubusercontent.com/u/2088870?v=4",
+      "prs_created": 1,
+      "total_files_changed": 9,
+      "total_additions": 386,
+      "total_deletions": 11,
+      "avg_time_to_merge_hours": 1.33,
+      "reviews_given": 5,
+      "prs_reviewed": 4
+    },
+    "carlos-marchal-ph": {
+      "name": "carlos-marchal-ph",
+      "avatar_url": "https://avatars.githubusercontent.com/u/228468567?u=70aa8eb992538175861e2eaa6b5f8efa89991f7d&v=4",
+      "prs_created": 0,
+      "total_files_changed": 0,
+      "total_additions": 0,
+      "total_deletions": 0,
+      "avg_time_to_merge_hours": 0,
+      "reviews_given": 1,
+      "prs_reviewed": 1
+    },
+    "fasyy612": {
+      "name": "fasyy612",
+      "avatar_url": "https://avatars.githubusercontent.com/u/19719193?v=4",
+      "prs_created": 5,
+      "total_files_changed": 31,
+      "total_additions": 730,
+      "total_deletions": 139,
+      "avg_time_to_merge_hours": 8.63,
+      "reviews_given": 3,
+      "prs_reviewed": 2
+    },
+    "rossgray": {
+      "name": "rossgray",
+      "avatar_url": "https://avatars.githubusercontent.com/u/5103732?v=4",
+      "prs_created": 1,
+      "total_files_changed": 2,
+      "total_additions": 1,
+      "total_deletions": 6,
+      "avg_time_to_merge_hours": 0.41,
+      "reviews_given": 1,
+      "prs_reviewed": 1
+    },
+    "sakce": {
+      "name": "sakce",
+      "avatar_url": "https://avatars.githubusercontent.com/u/49978945?v=4",
+      "prs_created": 5,
+      "total_files_changed": 15,
+      "total_additions": 644,
+      "total_deletions": 130,
+      "avg_time_to_merge_hours": 20.63,
+      "reviews_given": 12,
+      "prs_reviewed": 6
+    },
+    "andrewjmcgehee": {
+      "name": "andrewjmcgehee",
+      "avatar_url": "https://avatars.githubusercontent.com/u/23667085?v=4",
+      "prs_created": 4,
+      "total_files_changed": 106,
+      "total_additions": 8469,
+      "total_deletions": 8128,
+      "avg_time_to_merge_hours": 190.37,
+      "reviews_given": 21,
+      "prs_reviewed": 5
+    },
+    "mariusandra": {
+      "name": "mariusandra",
+      "avatar_url": "https://avatars.githubusercontent.com/u/53387?v=4",
+      "prs_created": 2,
+      "total_files_changed": 11,
+      "total_additions": 312,
+      "total_deletions": 257,
+      "avg_time_to_merge_hours": 43.26,
+      "reviews_given": 9,
+      "prs_reviewed": 8
+    },
+    "sortafreel": {
+      "name": "sortafreel",
+      "avatar_url": "https://avatars.githubusercontent.com/u/354488?v=4",
+      "prs_created": 1,
+      "total_files_changed": 2,
+      "total_additions": 67,
+      "total_deletions": 5,
+      "avg_time_to_merge_hours": 1.1,
+      "reviews_given": 6,
+      "prs_reviewed": 4
+    },
+    "anirudhpillai": {
+      "name": "anirudhpillai",
+      "avatar_url": "https://avatars.githubusercontent.com/u/15368923?v=4",
+      "prs_created": 1,
+      "total_files_changed": 1,
+      "total_additions": 15,
+      "total_deletions": 11,
+      "avg_time_to_merge_hours": 0.51,
+      "reviews_given": 1,
+      "prs_reviewed": 1
+    },
+    "ksvat": {
+      "name": "ksvat",
+      "avatar_url": "https://avatars.githubusercontent.com/u/147102038?v=4",
+      "prs_created": 2,
+      "total_files_changed": 2,
+      "total_additions": 30,
+      "total_deletions": 61,
+      "avg_time_to_merge_hours": 12.37,
+      "reviews_given": 2,
+      "prs_reviewed": 2
+    },
+    "joshsny": {
+      "name": "joshsny",
+      "avatar_url": "https://avatars.githubusercontent.com/u/7135900?v=4",
+      "prs_created": 1,
+      "total_files_changed": 2,
+      "total_additions": 157,
+      "total_deletions": 3,
+      "avg_time_to_merge_hours": 0.16,
+      "reviews_given": 5,
+      "prs_reviewed": 5
+    },
+    "charlesvien": {
+      "name": "charlesvien",
+      "avatar_url": "https://avatars.githubusercontent.com/u/5378415?u=bac6f689eb793c9b79883545b6b3b8ca7e9ce8b3&v=4",
+      "prs_created": 0,
+      "total_files_changed": 0,
+      "total_additions": 0,
+      "total_deletions": 0,
+      "avg_time_to_merge_hours": 0,
+      "reviews_given": 1,
+      "prs_reviewed": 1
+    },
+    "skoob13": {
+      "name": "skoob13",
+      "avatar_url": "https://avatars.githubusercontent.com/u/13541795?v=4",
+      "prs_created": 3,
+      "total_files_changed": 34,
+      "total_additions": 2447,
+      "total_deletions": 67,
+      "avg_time_to_merge_hours": 96.74,
+      "reviews_given": 6,
+      "prs_reviewed": 3
+    },
+    "lmenezes": {
+      "name": "lmenezes",
+      "avatar_url": "https://avatars.githubusercontent.com/u/750074?v=4",
+      "prs_created": 1,
+      "total_files_changed": 13,
+      "total_additions": 189,
+      "total_deletions": 99,
+      "avg_time_to_merge_hours": 97.37,
+      "reviews_given": 11,
+      "prs_reviewed": 7
+    },
+    "z0br0wn": {
+      "name": "z0br0wn",
+      "avatar_url": "https://avatars.githubusercontent.com/u/5431182?v=4",
+      "prs_created": 1,
+      "total_files_changed": 4,
+      "total_additions": 113,
+      "total_deletions": 45,
+      "avg_time_to_merge_hours": 70.65,
+      "reviews_given": 3,
+      "prs_reviewed": 2
+    },
+    "robbie-c": {
+      "name": "robbie-c",
+      "avatar_url": "https://avatars.githubusercontent.com/u/2056078?v=4",
+      "prs_created": 2,
+      "total_files_changed": 6,
+      "total_additions": 132,
+      "total_deletions": 139,
+      "avg_time_to_merge_hours": 9.85,
+      "reviews_given": 5,
+      "prs_reviewed": 1
+    },
+    "vdekrijger": {
+      "name": "vdekrijger",
+      "avatar_url": "https://avatars.githubusercontent.com/u/66254686?v=4",
+      "prs_created": 5,
+      "total_files_changed": 16,
+      "total_additions": 190,
+      "total_deletions": 91,
+      "avg_time_to_merge_hours": 42.88,
+      "reviews_given": 9,
+      "prs_reviewed": 6
+    },
+    "benjackwhite": {
+      "name": "benjackwhite",
+      "avatar_url": "https://avatars.githubusercontent.com/u/2536520?v=4",
+      "prs_created": 1,
+      "total_files_changed": 10,
+      "total_additions": 311,
+      "total_deletions": 40,
+      "avg_time_to_merge_hours": 413.93,
+      "reviews_given": 0,
+      "prs_reviewed": 0
+    },
+    "georgemunyoro": {
+      "name": "georgemunyoro",
+      "avatar_url": "https://avatars.githubusercontent.com/u/32019551?u=ac82efb17bff16ead844880a4971d9e52355fe1a&v=4",
+      "prs_created": 0,
+      "total_files_changed": 0,
+      "total_additions": 0,
+      "total_deletions": 0,
+      "avg_time_to_merge_hours": 0,
+      "reviews_given": 1,
+      "prs_reviewed": 1
+    },
+    "EDsCODE": {
+      "name": "EDsCODE",
+      "avatar_url": "https://avatars.githubusercontent.com/u/13127476?u=2a386defcb1d46405ed55144922da81fe9c1d00e&v=4",
+      "prs_created": 0,
+      "total_files_changed": 0,
+      "total_additions": 0,
+      "total_deletions": 0,
+      "avg_time_to_merge_hours": 0,
+      "reviews_given": 1,
+      "prs_reviewed": 1
+    },
+    "marandaneto": {
+      "name": "marandaneto",
+      "avatar_url": "https://avatars.githubusercontent.com/u/5731772?u=190f7538e376f434998ecf5f2a831a86ccfec372&v=4",
+      "prs_created": 0,
+      "total_files_changed": 0,
+      "total_additions": 0,
+      "total_deletions": 0,
+      "avg_time_to_merge_hours": 0,
+      "reviews_given": 3,
+      "prs_reviewed": 3
+    },
+    "jose-sequeira": {
+      "name": "jose-sequeira",
+      "avatar_url": "https://avatars.githubusercontent.com/u/117165826?v=4",
+      "prs_created": 7,
+      "total_files_changed": 40,
+      "total_additions": 807,
+      "total_deletions": 267,
+      "avg_time_to_merge_hours": 4.67,
+      "reviews_given": 11,
+      "prs_reviewed": 7
+    },
+    "rorylshanks": {
+      "name": "rorylshanks",
+      "avatar_url": "https://avatars.githubusercontent.com/u/6383578?u=605800cb04316004a427c3085ebe6be9181f83b9&v=4",
+      "prs_created": 0,
+      "total_files_changed": 0,
+      "total_additions": 0,
+      "total_deletions": 0,
+      "avg_time_to_merge_hours": 0,
+      "reviews_given": 2,
+      "prs_reviewed": 2
+    },
+    "chatgpt-codex-connector[bot]": {
+      "name": "chatgpt-codex-connector[bot]",
+      "avatar_url": "https://avatars.githubusercontent.com/in/1144995?v=4",
+      "prs_created": 0,
+      "total_files_changed": 0,
+      "total_additions": 0,
+      "total_deletions": 0,
+      "avg_time_to_merge_hours": 0,
+      "reviews_given": 10,
+      "prs_reviewed": 9
+    },
+    "haacked": {
+      "name": "haacked",
+      "avatar_url": "https://avatars.githubusercontent.com/u/19977?v=4",
+      "prs_created": 3,
+      "total_files_changed": 8,
+      "total_additions": 741,
+      "total_deletions": 60,
+      "avg_time_to_merge_hours": 79.67,
+      "reviews_given": 8,
+      "prs_reviewed": 4
+    },
+    "matheus-vb": {
+      "name": "matheus-vb",
+      "avatar_url": "https://avatars.githubusercontent.com/u/88170905?v=4",
+      "prs_created": 1,
+      "total_files_changed": 2,
+      "total_additions": 196,
+      "total_deletions": 162,
+      "avg_time_to_merge_hours": 29.0,
+      "reviews_given": 3,
+      "prs_reviewed": 3
+    },
+    "a-lider": {
+      "name": "a-lider",
+      "avatar_url": "https://avatars.githubusercontent.com/u/221966567?v=4",
+      "prs_created": 1,
+      "total_files_changed": 2,
+      "total_additions": 42,
+      "total_deletions": 0,
+      "avg_time_to_merge_hours": 34.17,
+      "reviews_given": 3,
+      "prs_reviewed": 3
+    },
+    "mp-hog": {
+      "name": "mp-hog",
+      "avatar_url": "https://avatars.githubusercontent.com/u/252936290?v=4",
+      "prs_created": 2,
+      "total_files_changed": 7,
+      "total_additions": 248,
+      "total_deletions": 60,
+      "avg_time_to_merge_hours": 23.88,
+      "reviews_given": 4,
+      "prs_reviewed": 2
+    },
+    "estefaniarabadan": {
+      "name": "estefaniarabadan",
+      "avatar_url": "https://avatars.githubusercontent.com/u/10627591?v=4",
+      "prs_created": 1,
+      "total_files_changed": 4,
+      "total_additions": 54,
+      "total_deletions": 40,
+      "avg_time_to_merge_hours": 16.97,
+      "reviews_given": 0,
+      "prs_reviewed": 0
+    },
+    "MarconLP": {
+      "name": "MarconLP",
+      "avatar_url": "https://avatars.githubusercontent.com/u/13001502?v=4",
+      "prs_created": 3,
+      "total_files_changed": 20,
+      "total_additions": 1511,
+      "total_deletions": 223,
+      "avg_time_to_merge_hours": 112.57,
+      "reviews_given": 2,
+      "prs_reviewed": 2
+    },
+    "hpouillot": {
+      "name": "hpouillot",
+      "avatar_url": "https://avatars.githubusercontent.com/u/3455883?v=4",
+      "prs_created": 3,
+      "total_files_changed": 59,
+      "total_additions": 2573,
+      "total_deletions": 1019,
+      "avg_time_to_merge_hours": 57.07,
+      "reviews_given": 7,
+      "prs_reviewed": 2
+    },
+    "ablaszkiewicz": {
+      "name": "ablaszkiewicz",
+      "avatar_url": "https://avatars.githubusercontent.com/u/54682207?v=4",
+      "prs_created": 2,
+      "total_files_changed": 3,
+      "total_additions": 78,
+      "total_deletions": 20,
+      "avg_time_to_merge_hours": 7.29,
+      "reviews_given": 7,
+      "prs_reviewed": 4
+    },
+    "k11kirky": {
+      "name": "k11kirky",
+      "avatar_url": "https://avatars.githubusercontent.com/u/4571455?v=4",
+      "prs_created": 1,
+      "total_files_changed": 8,
+      "total_additions": 1255,
+      "total_deletions": 0,
+      "avg_time_to_merge_hours": 47.82,
+      "reviews_given": 0,
+      "prs_reviewed": 0
+    },
+    "clr182": {
+      "name": "clr182",
+      "avatar_url": "https://avatars.githubusercontent.com/u/38156512?v=4",
+      "prs_created": 1,
+      "total_files_changed": 1,
+      "total_additions": 3,
+      "total_deletions": 1,
+      "avg_time_to_merge_hours": 18.49,
+      "reviews_given": 1,
+      "prs_reviewed": 1
+    },
+    "sampennington": {
+      "name": "sampennington",
+      "avatar_url": "https://avatars.githubusercontent.com/u/56024559?v=4",
+      "prs_created": 2,
+      "total_files_changed": 3,
+      "total_additions": 6,
+      "total_deletions": 4,
+      "avg_time_to_merge_hours": 8.92,
+      "reviews_given": 4,
+      "prs_reviewed": 2
+    },
+    "gesh": {
+      "name": "gesh",
+      "avatar_url": "https://avatars.githubusercontent.com/u/6430745?v=4",
+      "prs_created": 2,
+      "total_files_changed": 57,
+      "total_additions": 229,
+      "total_deletions": 65,
+      "avg_time_to_merge_hours": 22.29,
+      "reviews_given": 3,
+      "prs_reviewed": 2
+    },
+    "oliverb123": {
+      "name": "oliverb123",
+      "avatar_url": "https://avatars.githubusercontent.com/u/8105072?v=4",
+      "prs_created": 1,
+      "total_files_changed": 2,
+      "total_additions": 86,
+      "total_deletions": 65,
+      "avg_time_to_merge_hours": 12.17,
+      "reviews_given": 5,
+      "prs_reviewed": 5
+    },
+    "tatoalo": {
+      "name": "tatoalo",
+      "avatar_url": "https://avatars.githubusercontent.com/u/2117114?v=4",
+      "prs_created": 2,
+      "total_files_changed": 10,
+      "total_additions": 87,
+      "total_deletions": 1,
+      "avg_time_to_merge_hours": 15.85,
+      "reviews_given": 7,
+      "prs_reviewed": 5
+    },
+    "darkopia": {
+      "name": "darkopia",
+      "avatar_url": "https://avatars.githubusercontent.com/u/80100530?v=4",
+      "prs_created": 1,
+      "total_files_changed": 1,
+      "total_additions": 1,
+      "total_deletions": 1,
+      "avg_time_to_merge_hours": 0.32,
+      "reviews_given": 0,
+      "prs_reviewed": 0
+    },
+    "rodrigoi": {
+      "name": "rodrigoi",
+      "avatar_url": "https://avatars.githubusercontent.com/u/233601?v=4",
+      "prs_created": 1,
+      "total_files_changed": 2,
+      "total_additions": 169,
+      "total_deletions": 24,
+      "avg_time_to_merge_hours": 1.25,
+      "reviews_given": 6,
+      "prs_reviewed": 4
+    },
+    "arthurdedeus": {
+      "name": "arthurdedeus",
+      "avatar_url": "https://avatars.githubusercontent.com/u/54866778?v=4",
+      "prs_created": 3,
+      "total_files_changed": 32,
+      "total_additions": 1064,
+      "total_deletions": 124,
+      "avg_time_to_merge_hours": 23.37,
+      "reviews_given": 3,
+      "prs_reviewed": 3
+    },
+    "ordehi": {
+      "name": "ordehi",
+      "avatar_url": "https://avatars.githubusercontent.com/u/45109738?v=4",
+      "prs_created": 1,
+      "total_files_changed": 2,
+      "total_additions": 63,
+      "total_deletions": 10,
+      "avg_time_to_merge_hours": 23.88,
+      "reviews_given": 0,
+      "prs_reviewed": 0
+    },
+    "joethreepwood": {
+      "name": "joethreepwood",
+      "avatar_url": "https://avatars.githubusercontent.com/u/84011561?u=d469952b982836ec5827819cd80dcef2c11c771f&v=4",
+      "prs_created": 0,
+      "total_files_changed": 0,
+      "total_additions": 0,
+      "total_deletions": 0,
+      "avg_time_to_merge_hours": 0,
+      "reviews_given": 1,
+      "prs_reviewed": 1
+    },
+    "Gilbert09": {
+      "name": "Gilbert09",
+      "avatar_url": "https://avatars.githubusercontent.com/u/1459269?u=0edde3eeb61b9d9c80cf8e432bae838fee58f179&v=4",
+      "prs_created": 0,
+      "total_files_changed": 0,
+      "total_additions": 0,
+      "total_deletions": 0,
+      "avg_time_to_merge_hours": 0,
+      "reviews_given": 5,
+      "prs_reviewed": 3
+    },
+    "dmarticus": {
+      "name": "dmarticus",
+      "avatar_url": "https://avatars.githubusercontent.com/u/4853149?v=4",
+      "prs_created": 2,
+      "total_files_changed": 14,
+      "total_additions": 1607,
+      "total_deletions": 521,
+      "avg_time_to_merge_hours": 21.32,
+      "reviews_given": 5,
+      "prs_reviewed": 4
+    },
+    "andyzzhao": {
+      "name": "andyzzhao",
+      "avatar_url": "https://avatars.githubusercontent.com/u/34008309?v=4",
+      "prs_created": 1,
+      "total_files_changed": 2,
+      "total_additions": 89,
+      "total_deletions": 15,
+      "avg_time_to_merge_hours": 162.56,
+      "reviews_given": 4,
+      "prs_reviewed": 3
+    },
+    "luke-belton": {
+      "name": "luke-belton",
+      "avatar_url": "https://avatars.githubusercontent.com/u/58511679?v=4",
+      "prs_created": 1,
+      "total_files_changed": 1,
+      "total_additions": 4,
+      "total_deletions": 1,
+      "avg_time_to_merge_hours": 3.18,
+      "reviews_given": 0,
+      "prs_reviewed": 0
+    },
+    "christiaan-ph": {
+      "name": "christiaan-ph",
+      "avatar_url": "https://avatars.githubusercontent.com/u/252863363?v=4",
+      "prs_created": 1,
+      "total_files_changed": 2,
+      "total_additions": 7,
+      "total_deletions": 28,
+      "avg_time_to_merge_hours": 67.5,
+      "reviews_given": 0,
+      "prs_reviewed": 0
+    },
+    "hex-security-app[bot]": {
+      "name": "hex-security-app[bot]",
+      "avatar_url": "https://avatars.githubusercontent.com/in/2665233?v=4",
+      "prs_created": 0,
+      "total_files_changed": 0,
+      "total_additions": 0,
+      "total_deletions": 0,
+      "avg_time_to_merge_hours": 0,
+      "reviews_given": 2,
+      "prs_reviewed": 1
+    },
+    "gustavohstrassburger": {
+      "name": "gustavohstrassburger",
+      "avatar_url": "https://avatars.githubusercontent.com/u/9598562?u=51c54456138f0dd737572683160bbc83e85e182b&v=4",
+      "prs_created": 0,
+      "total_files_changed": 0,
+      "total_additions": 0,
+      "total_deletions": 0,
+      "avg_time_to_merge_hours": 0,
+      "reviews_given": 1,
+      "prs_reviewed": 1
+    },
+    "orian": {
+      "name": "orian",
+      "avatar_url": "https://avatars.githubusercontent.com/u/144554?u=1480c9278a51623d32eef2d8a2182f0f5328b1bb&v=4",
+      "prs_created": 0,
+      "total_files_changed": 0,
+      "total_additions": 0,
+      "total_deletions": 0,
+      "avg_time_to_merge_hours": 0,
+      "reviews_given": 3,
+      "prs_reviewed": 1
+    }
+  },
+  "prs": [
+    {
+      "author_username": "rafaeelaudibert",
+      "title": "feat: Add DomainConnect for workflows and proxy",
+      "files_changed": 27,
+      "additions": 1622,
+      "deletions": 53,
+      "time_to_merge_hours": 35.85,
+      "created_at": "2026-02-12T15:14:33Z",
+      "merged_at": "2026-02-14T03:05:51Z",
+      "comments_count": 6,
+      "reviews_count": 12,
+      "reviewers": [
+        "rafaeelaudibert",
+        "graphite-app[bot]",
+        "greptile-apps[bot]",
+        "github-advanced-security[bot]",
+        "fercgomes"
+      ]
+    },
+    {
+      "author_username": "fercgomes",
+      "title": "feat: add smoothing for area charts",
+      "files_changed": 5,
+      "additions": 51,
+      "deletions": 5,
+      "time_to_merge_hours": 1.55,
+      "created_at": "2026-02-14T01:00:39Z",
+      "merged_at": "2026-02-14T02:33:35Z",
+      "comments_count": 4,
+      "reviews_count": 3,
+      "reviewers": [
+        "graphite-app[bot]",
+        "greptile-apps[bot]",
+        "rafaeelaudibert"
+      ]
+    },
+    {
+      "author_username": "fercgomes",
+      "title": "fix: content shift on quick start popover",
+      "files_changed": 6,
+      "additions": 143,
+      "deletions": 106,
+      "time_to_merge_hours": 47.04,
+      "created_at": "2026-02-12T02:31:50Z",
+      "merged_at": "2026-02-14T01:34:11Z",
+      "comments_count": 3,
+      "reviews_count": 4,
+      "reviewers": [
+        "fercgomes",
+        "rafaeelaudibert"
+      ]
+    },
+    {
+      "author_username": "eli-r-ph",
+      "title": "fix(deduplicator): fix structured logging",
+      "files_changed": 2,
+      "additions": 4,
+      "deletions": 50,
+      "time_to_merge_hours": 0.65,
+      "created_at": "2026-02-14T00:49:21Z",
+      "merged_at": "2026-02-14T01:28:23Z",
+      "comments_count": 0,
+      "reviews_count": 3,
+      "reviewers": [
+        "nickbest-ph",
+        "eli-r-ph"
+      ]
+    },
+    {
+      "author_username": "rafaeelaudibert",
+      "title": "fix: Go back to catalog",
+      "files_changed": 18,
+      "additions": 85,
+      "deletions": 76,
+      "time_to_merge_hours": 6.2,
+      "created_at": "2026-02-13T16:57:33Z",
+      "merged_at": "2026-02-13T23:09:40Z",
+      "comments_count": 5,
+      "reviews_count": 2,
+      "reviewers": [
+        "graphite-app[bot]",
+        "lucasheriques"
+      ]
+    },
+    {
+      "author_username": "meikelmosby",
+      "title": "feat(workflows): raise variable size limit to 5KB and error on overflow",
+      "files_changed": 2,
+      "additions": 37,
+      "deletions": 11,
+      "time_to_merge_hours": 14.24,
+      "created_at": "2026-02-13T08:54:10Z",
+      "merged_at": "2026-02-13T23:08:26Z",
+      "comments_count": 1,
+      "reviews_count": 2,
+      "reviewers": [
+        "greptile-apps[bot]",
+        "havenbarnes"
+      ]
+    },
+    {
+      "author_username": "rafaeelaudibert",
+      "title": "feat: Single series name display when breakdown is enabled",
+      "files_changed": 52,
+      "additions": 196,
+      "deletions": 59,
+      "time_to_merge_hours": 171.45,
+      "created_at": "2026-02-06T19:26:19Z",
+      "merged_at": "2026-02-13T22:53:32Z",
+      "comments_count": 9,
+      "reviews_count": 7,
+      "reviewers": [
+        "thmsobrmlr",
+        "fercgomes",
+        "Piccirello",
+        "rafaeelaudibert"
+      ]
+    },
+    {
+      "author_username": "ReeceJones",
+      "title": "feat: add inter-project transfer support for cohorts and actions",
+      "files_changed": 6,
+      "additions": 1066,
+      "deletions": 47,
+      "time_to_merge_hours": 72.43,
+      "created_at": "2026-02-10T21:11:02Z",
+      "merged_at": "2026-02-13T21:37:05Z",
+      "comments_count": 3,
+      "reviews_count": 5,
+      "reviewers": [
+        "graphite-app[bot]",
+        "ReeceJones",
+        "greptile-apps[bot]",
+        "yasen-posthog"
+      ]
+    },
+    {
+      "author_username": "ReeceJones",
+      "title": "feat: add basics for project->project resource transfers",
+      "files_changed": 17,
+      "additions": 1127,
+      "deletions": 1,
+      "time_to_merge_hours": 166.25,
+      "created_at": "2026-02-06T22:58:57Z",
+      "merged_at": "2026-02-13T21:14:10Z",
+      "comments_count": 11,
+      "reviews_count": 11,
+      "reviewers": [
+        "graphite-app[bot]",
+        "ReeceJones",
+        "greptile-apps[bot]",
+        "yasen-posthog"
+      ]
+    },
+    {
+      "author_username": "eli-r-ph",
+      "title": "fix(deduplicator): rebalance tracking counter bug",
+      "files_changed": 7,
+      "additions": 113,
+      "deletions": 27,
+      "time_to_merge_hours": 2.2,
+      "created_at": "2026-02-13T19:44:28Z",
+      "merged_at": "2026-02-13T21:56:37Z",
+      "comments_count": 0,
+      "reviews_count": 2,
+      "reviewers": [
+        "nickbest-ph",
+        "eli-r-ph"
+      ]
+    },
+    {
+      "author_username": "eli-r-ph",
+      "title": "feat(deduplicator): new consumer for output topic rewind on rebalance/app startup",
+      "files_changed": 10,
+      "additions": 684,
+      "deletions": 179,
+      "time_to_merge_hours": 18.84,
+      "created_at": "2026-02-13T02:58:28Z",
+      "merged_at": "2026-02-13T21:49:02Z",
+      "comments_count": 0,
+      "reviews_count": 2,
+      "reviewers": [
+        "nickbest-ph",
+        "greptile-apps[bot]"
+      ]
+    },
+    {
+      "author_username": "adboio",
+      "title": "feat(product tours): UX enhancement for tour element settings",
+      "files_changed": 12,
+      "additions": 726,
+      "deletions": 251,
+      "time_to_merge_hours": 69.97,
+      "created_at": "2026-02-10T23:35:21Z",
+      "merged_at": "2026-02-13T21:33:29Z",
+      "comments_count": 7,
+      "reviews_count": 5,
+      "reviewers": [
+        "graphite-app[bot]",
+        "greptile-apps[bot]",
+        "adboio",
+        "lucasheriques"
+      ]
+    },
+    {
+      "author_username": "adamleithp",
+      "title": "fix(ux): restore vertical centering in side panel content container",
+      "files_changed": 13,
+      "additions": 1,
+      "deletions": 1,
+      "time_to_merge_hours": 0.84,
+      "created_at": "2026-02-13T20:10:47Z",
+      "merged_at": "2026-02-13T21:01:12Z",
+      "comments_count": 2,
+      "reviews_count": 3,
+      "reviewers": [
+        "jordanm-posthog",
+        "Twixes"
+      ]
+    },
+    {
+      "author_username": "nickbest-ph",
+      "title": "feat(rust-builds): adds personhog-router to rust CI",
+      "files_changed": 2,
+      "additions": 9,
+      "deletions": 0,
+      "time_to_merge_hours": 40.76,
+      "created_at": "2026-02-12T03:39:48Z",
+      "merged_at": "2026-02-13T20:25:14Z",
+      "comments_count": 1,
+      "reviews_count": 1,
+      "reviewers": [
+        "pl"
+      ]
+    },
+    {
+      "author_username": "adboio",
+      "title": "chore(surveys): autogenerate sdk parity docs",
+      "files_changed": 14,
+      "additions": 276,
+      "deletions": 38,
+      "time_to_merge_hours": 500.23,
+      "created_at": "2026-01-23T23:14:01Z",
+      "merged_at": "2026-02-13T19:27:35Z",
+      "comments_count": 12,
+      "reviews_count": 5,
+      "reviewers": [
+        "graphite-app[bot]",
+        "webjunkie",
+        "greptile-apps[bot]"
+      ]
+    },
+    {
+      "author_username": "Radu-Raicea",
+      "title": "revert(llm-analytics): make LLM analytics scene tab-aware",
+      "files_changed": 35,
+      "additions": 153,
+      "deletions": 332,
+      "time_to_merge_hours": 1.92,
+      "created_at": "2026-02-13T17:20:39Z",
+      "merged_at": "2026-02-13T19:15:34Z",
+      "comments_count": 2,
+      "reviews_count": 3,
+      "reviewers": [
+        "graphite-app[bot]",
+        "greptile-apps[bot]",
+        "andrewm4894"
+      ]
+    },
+    {
+      "author_username": "adboio",
+      "title": "chore(product tours): remove ProductToursToolbarButton",
+      "files_changed": 9,
+      "additions": 85,
+      "deletions": 121,
+      "time_to_merge_hours": 90.16,
+      "created_at": "2026-02-10T00:54:50Z",
+      "merged_at": "2026-02-13T19:04:19Z",
+      "comments_count": 5,
+      "reviews_count": 2,
+      "reviewers": [
+        "greptile-apps[bot]",
+        "lucasheriques"
+      ]
+    },
+    {
+      "author_username": "veryayskiy",
+      "title": "fix: capture_internal instead of posthoganalytics.capture",
+      "files_changed": 5,
+      "additions": 278,
+      "deletions": 27,
+      "time_to_merge_hours": 2.68,
+      "created_at": "2026-02-13T16:11:31Z",
+      "merged_at": "2026-02-13T18:52:33Z",
+      "comments_count": 2,
+      "reviews_count": 10,
+      "reviewers": [
+        "pauldambra",
+        "greptile-apps[bot]",
+        "veryayskiy"
+      ]
+    },
+    {
+      "author_username": "andehen",
+      "title": "fix(experiment): fix null conversion when constructing arrays for funnel UDF",
+      "files_changed": 4,
+      "additions": 32,
+      "deletions": 32,
+      "time_to_merge_hours": 3.01,
+      "created_at": "2026-02-13T15:29:53Z",
+      "merged_at": "2026-02-13T18:30:33Z",
+      "comments_count": 2,
+      "reviews_count": 2,
+      "reviewers": [
+        "greptile-apps[bot]",
+        "jurajmajerik"
+      ]
+    },
+    {
+      "author_username": "pauldambra",
+      "title": "chore: more framerate tracking",
+      "files_changed": 1,
+      "additions": 1,
+      "deletions": 1,
+      "time_to_merge_hours": 0.33,
+      "created_at": "2026-02-13T18:09:11Z",
+      "merged_at": "2026-02-13T18:28:41Z",
+      "comments_count": 3,
+      "reviews_count": 1,
+      "reviewers": [
+        "TueHaulund"
+      ]
+    },
+    {
+      "author_username": "rafaeelaudibert",
+      "title": "feat: Add AI referral source tracking in signup flow",
+      "files_changed": 6,
+      "additions": 150,
+      "deletions": 8,
+      "time_to_merge_hours": 20.74,
+      "created_at": "2026-02-12T21:39:30Z",
+      "merged_at": "2026-02-13T18:23:58Z",
+      "comments_count": 2,
+      "reviews_count": 3,
+      "reviewers": [
+        "graphite-app[bot]",
+        "greptile-apps[bot]",
+        "natalia-amorim"
+      ]
+    },
+    {
+      "author_username": "pauldambra",
+      "title": "chore: remove kea app state logging \u00a7",
+      "files_changed": 7,
+      "additions": 2,
+      "deletions": 43,
+      "time_to_merge_hours": 0.6,
+      "created_at": "2026-02-13T17:45:41Z",
+      "merged_at": "2026-02-13T18:21:57Z",
+      "comments_count": 4,
+      "reviews_count": 6,
+      "reviewers": [
+        "pauldambra",
+        "copilot-pull-request-reviewer[bot]",
+        "rafaeelaudibert"
+      ]
+    },
+    {
+      "author_username": "Radu-Raicea",
+      "title": "fix(llma): fix limit for traces and generations",
+      "files_changed": 2,
+      "additions": 2,
+      "deletions": 0,
+      "time_to_merge_hours": 0.34,
+      "created_at": "2026-02-13T17:45:50Z",
+      "merged_at": "2026-02-13T18:06:11Z",
+      "comments_count": 2,
+      "reviews_count": 2,
+      "reviewers": [
+        "richardsolomou",
+        "andrewm4894"
+      ]
+    },
+    {
+      "author_username": "jabahamondes",
+      "title": "feat(marketing-analytics): integrate external data sources and refres\u2026",
+      "files_changed": 2,
+      "additions": 14,
+      "deletions": 2,
+      "time_to_merge_hours": 96.14,
+      "created_at": "2026-02-09T17:55:50Z",
+      "merged_at": "2026-02-13T18:04:04Z",
+      "comments_count": 1,
+      "reviews_count": 5,
+      "reviewers": [
+        "lricoy",
+        "jabahamondes",
+        "greptile-apps[bot]",
+        "jordanm-posthog"
+      ]
+    },
+    {
+      "author_username": "jonmcwest",
+      "title": "feat(logs): add session recording button to log-row-fab + extract and unit test getSessionIdFromLogAttributes",
+      "files_changed": 5,
+      "additions": 79,
+      "deletions": 23,
+      "time_to_merge_hours": 75.41,
+      "created_at": "2026-02-10T14:14:16Z",
+      "merged_at": "2026-02-13T17:38:53Z",
+      "comments_count": 5,
+      "reviews_count": 5,
+      "reviewers": [
+        "frankh",
+        "graphite-app[bot]",
+        "greptile-apps[bot]",
+        "copilot-pull-request-reviewer[bot]"
+      ]
+    },
+    {
+      "author_username": "adboio",
+      "title": "fix(toolbar): filter out invalid URLs from authorized URL suggestions",
+      "files_changed": 2,
+      "additions": 15,
+      "deletions": 1,
+      "time_to_merge_hours": 17.84,
+      "created_at": "2026-02-12T23:47:34Z",
+      "merged_at": "2026-02-13T17:38:14Z",
+      "comments_count": 1,
+      "reviews_count": 1,
+      "reviewers": [
+        "fercgomes"
+      ]
+    },
+    {
+      "author_username": "adboio",
+      "title": "chore(product tours): toolbar UX enhancements",
+      "files_changed": 2,
+      "additions": 107,
+      "deletions": 28,
+      "time_to_merge_hours": 91.25,
+      "created_at": "2026-02-09T22:18:57Z",
+      "merged_at": "2026-02-13T17:33:50Z",
+      "comments_count": 3,
+      "reviews_count": 4,
+      "reviewers": [
+        "graphite-app[bot]",
+        "greptile-apps[bot]",
+        "lucasheriques",
+        "adboio"
+      ]
+    },
+    {
+      "author_username": "andrewm4894",
+      "title": "chore(llma): bump summarization concurrent teams from 8 to 20",
+      "files_changed": 1,
+      "additions": 1,
+      "deletions": 1,
+      "time_to_merge_hours": 24.0,
+      "created_at": "2026-02-12T17:21:39Z",
+      "merged_at": "2026-02-13T17:21:50Z",
+      "comments_count": 0,
+      "reviews_count": 2,
+      "reviewers": [
+        "carlos-marchal-ph",
+        "veryayskiy"
+      ]
+    },
+    {
+      "author_username": "andrewm4894",
+      "title": "feat(llma): add clustering and coordinator Prometheus metrics",
+      "files_changed": 8,
+      "additions": 407,
+      "deletions": 0,
+      "time_to_merge_hours": 76.21,
+      "created_at": "2026-02-10T13:07:41Z",
+      "merged_at": "2026-02-13T17:20:18Z",
+      "comments_count": 1,
+      "reviews_count": 13,
+      "reviewers": [
+        "Radu-Raicea",
+        "greptile-apps[bot]",
+        "graphite-app[bot]",
+        "andrewm4894"
+      ]
+    },
+    {
+      "author_username": "fasyy612",
+      "title": "fix: replay modal stuck on buffering",
+      "files_changed": 8,
+      "additions": 14,
+      "deletions": 10,
+      "time_to_merge_hours": 0.91,
+      "created_at": "2026-02-13T16:25:15Z",
+      "merged_at": "2026-02-13T17:19:53Z",
+      "comments_count": 2,
+      "reviews_count": 1,
+      "reviewers": [
+        "TueHaulund"
+      ]
+    },
+    {
+      "author_username": "rossgray",
+      "title": "chore(batch-exports): remove temporary keyless S3 auth setting after rollout",
+      "files_changed": 2,
+      "additions": 1,
+      "deletions": 6,
+      "time_to_merge_hours": 0.41,
+      "created_at": "2026-02-13T16:53:28Z",
+      "merged_at": "2026-02-13T17:18:06Z",
+      "comments_count": 0,
+      "reviews_count": 2,
+      "reviewers": [
+        "Piccirello",
+        "veryayskiy"
+      ]
+    },
+    {
+      "author_username": "sakce",
+      "title": "fix(endpoints): openapi spec route no longer wrong data types/refresh",
+      "files_changed": 2,
+      "additions": 140,
+      "deletions": 21,
+      "time_to_merge_hours": 0.35,
+      "created_at": "2026-02-13T16:52:44Z",
+      "merged_at": "2026-02-13T17:13:44Z",
+      "comments_count": 2,
+      "reviews_count": 2,
+      "reviewers": [
+        "andrewjmcgehee",
+        "greptile-apps[bot]"
+      ]
+    },
+    {
+      "author_username": "Piccirello",
+      "title": "feat: auto scope joins to current team/org",
+      "files_changed": 6,
+      "additions": 101,
+      "deletions": 3,
+      "time_to_merge_hours": 61.6,
+      "created_at": "2026-02-11T03:19:36Z",
+      "merged_at": "2026-02-13T16:55:50Z",
+      "comments_count": 0,
+      "reviews_count": 4,
+      "reviewers": [
+        "mariusandra",
+        "andehen",
+        "greptile-apps[bot]",
+        "rossgray"
+      ]
+    },
+    {
+      "author_username": "sortafreel",
+      "title": "feat(signals): Track video generation",
+      "files_changed": 2,
+      "additions": 67,
+      "deletions": 5,
+      "time_to_merge_hours": 1.1,
+      "created_at": "2026-02-13T15:48:21Z",
+      "merged_at": "2026-02-13T16:54:33Z",
+      "comments_count": 0,
+      "reviews_count": 3,
+      "reviewers": [
+        "Twixes",
+        "sortafreel"
+      ]
+    },
+    {
+      "author_username": "adboio",
+      "title": "fix(product tours): fix drag-n-drop step re-ordering",
+      "files_changed": 1,
+      "additions": 1,
+      "deletions": 4,
+      "time_to_merge_hours": 90.78,
+      "created_at": "2026-02-09T22:06:15Z",
+      "merged_at": "2026-02-13T16:52:48Z",
+      "comments_count": 3,
+      "reviews_count": 3,
+      "reviewers": [
+        "greptile-apps[bot]",
+        "lucasheriques",
+        "adboio"
+      ]
+    },
+    {
+      "author_username": "adamleithp",
+      "title": "chore(ux): sidepanel styles love",
+      "files_changed": 30,
+      "additions": 20,
+      "deletions": 15,
+      "time_to_merge_hours": 2.36,
+      "created_at": "2026-02-13T14:24:17Z",
+      "merged_at": "2026-02-13T16:45:51Z",
+      "comments_count": 2,
+      "reviews_count": 1,
+      "reviewers": [
+        "fercgomes"
+      ]
+    },
+    {
+      "author_username": "anirudhpillai",
+      "title": "fix(funnels): allow duplicating tab when editing insight",
+      "files_changed": 1,
+      "additions": 15,
+      "deletions": 11,
+      "time_to_merge_hours": 0.51,
+      "created_at": "2026-02-13T16:13:54Z",
+      "merged_at": "2026-02-13T16:44:25Z",
+      "comments_count": 1,
+      "reviews_count": 1,
+      "reviewers": [
+        "mariusandra"
+      ]
+    },
+    {
+      "author_username": "posthog-js-upgrader[bot]",
+      "title": "chore(deps): Update posthog-js to 1.347.2",
+      "files_changed": 11,
+      "additions": 42,
+      "deletions": 42,
+      "time_to_merge_hours": 2.25,
+      "created_at": "2026-02-13T14:24:09Z",
+      "merged_at": "2026-02-13T16:39:08Z",
+      "comments_count": 2,
+      "reviews_count": 1,
+      "reviewers": [
+        "rafaeelaudibert"
+      ]
+    },
+    {
+      "author_username": "andrewjmcgehee",
+      "title": "fix(modeling): succeed jobs which return no results",
+      "files_changed": 2,
+      "additions": 14,
+      "deletions": 1,
+      "time_to_merge_hours": 351.62,
+      "created_at": "2026-01-30T01:00:34Z",
+      "merged_at": "2026-02-13T16:37:53Z",
+      "comments_count": 1,
+      "reviews_count": 4,
+      "reviewers": [
+        "graphite-app[bot]",
+        "greptile-apps[bot]",
+        "sakce"
+      ]
+    },
+    {
+      "author_username": "adboio",
+      "title": "chore(product tours): simplify back-to-posthog flow from toolbar",
+      "files_changed": 2,
+      "additions": 16,
+      "deletions": 43,
+      "time_to_merge_hours": 90.91,
+      "created_at": "2026-02-09T21:40:10Z",
+      "merged_at": "2026-02-13T16:34:40Z",
+      "comments_count": 3,
+      "reviews_count": 4,
+      "reviewers": [
+        "greptile-apps[bot]",
+        "lucasheriques",
+        "adboio"
+      ]
+    },
+    {
+      "author_username": "mendral-app[bot]",
+      "title": "fix(test): mock `managed-viewsets` feature flag in session recording snapshot tests",
+      "files_changed": 2,
+      "additions": 125,
+      "deletions": 22,
+      "time_to_merge_hours": 2.37,
+      "created_at": "2026-02-13T14:04:51Z",
+      "merged_at": "2026-02-13T16:26:56Z",
+      "comments_count": 4,
+      "reviews_count": 4,
+      "reviewers": [
+        "webjunkie",
+        "greptile-apps[bot]",
+        "copilot-pull-request-reviewer[bot]",
+        "mendral-app[bot]"
+      ]
+    },
+    {
+      "author_username": "ksvat",
+      "title": "fix(replay): force clear snapshots when unmounted",
+      "files_changed": 1,
+      "additions": 10,
+      "deletions": 1,
+      "time_to_merge_hours": 11.87,
+      "created_at": "2026-02-13T04:12:54Z",
+      "merged_at": "2026-02-13T16:04:51Z",
+      "comments_count": 3,
+      "reviews_count": 3,
+      "reviewers": [
+        "TueHaulund",
+        "graphite-app[bot]",
+        "greptile-apps[bot]"
+      ]
+    },
+    {
+      "author_username": "joshsny",
+      "title": "fix(gateway): remove blocking flush call",
+      "files_changed": 2,
+      "additions": 157,
+      "deletions": 3,
+      "time_to_merge_hours": 0.16,
+      "created_at": "2026-02-13T15:49:36Z",
+      "merged_at": "2026-02-13T15:59:20Z",
+      "comments_count": 0,
+      "reviews_count": 5,
+      "reviewers": [
+        "charlesvien",
+        "skoob13",
+        "copilot-pull-request-reviewer[bot]",
+        "joshsny"
+      ]
+    },
+    {
+      "author_username": "pl",
+      "title": "chore: use underscores for dlq headers (capture)",
+      "files_changed": 1,
+      "additions": 9,
+      "deletions": 9,
+      "time_to_merge_hours": 0.76,
+      "created_at": "2026-02-13T15:10:15Z",
+      "merged_at": "2026-02-13T15:55:46Z",
+      "comments_count": 0,
+      "reviews_count": 3,
+      "reviewers": [
+        "z0br0wn",
+        "lmenezes",
+        "greptile-apps[bot]"
+      ]
+    },
+    {
+      "author_username": "ksvat",
+      "title": "fix(replay): remove tab awareness",
+      "files_changed": 1,
+      "additions": 20,
+      "deletions": 60,
+      "time_to_merge_hours": 12.87,
+      "created_at": "2026-02-13T02:57:57Z",
+      "merged_at": "2026-02-13T15:50:25Z",
+      "comments_count": 3,
+      "reviews_count": 1,
+      "reviewers": [
+        "TueHaulund"
+      ]
+    },
+    {
+      "author_username": "adamleithp",
+      "title": "fix: slow un-reactive context panel opening on dashboards",
+      "files_changed": 26,
+      "additions": 36,
+      "deletions": 193,
+      "time_to_merge_hours": 3.79,
+      "created_at": "2026-02-13T12:02:16Z",
+      "merged_at": "2026-02-13T15:49:40Z",
+      "comments_count": 4,
+      "reviews_count": 9,
+      "reviewers": [
+        "pauldambra",
+        "graphite-app[bot]",
+        "yasen-posthog",
+        "adamleithp"
+      ]
+    },
+    {
+      "author_username": "robbie-c",
+      "title": "feat(devex): Run run_clickhouse_statement_in_parallel in a thread pool to support CLICKHOUSE_CONN_POOL_MAX",
+      "files_changed": 4,
+      "additions": 96,
+      "deletions": 130,
+      "time_to_merge_hours": 4.35,
+      "created_at": "2026-02-13T11:18:55Z",
+      "merged_at": "2026-02-13T15:39:46Z",
+      "comments_count": 1,
+      "reviews_count": 4,
+      "reviewers": [
+        "greptile-apps[bot]",
+        "copilot-pull-request-reviewer[bot]",
+        "vdekrijger"
+      ]
+    },
+    {
+      "author_username": "benjackwhite",
+      "title": "feat(cdp): add internal API authentication for Node.js services",
+      "files_changed": 10,
+      "additions": 311,
+      "deletions": 40,
+      "time_to_merge_hours": 413.93,
+      "created_at": "2026-01-27T09:33:31Z",
+      "merged_at": "2026-02-13T15:29:07Z",
+      "comments_count": 3,
+      "reviews_count": 4,
+      "reviewers": [
+        "TueHaulund",
+        "graphite-app[bot]",
+        "Piccirello"
+      ]
+    },
+    {
+      "author_username": "jordanm-posthog",
+      "title": "fix(web-analytics): Use correct path for map assets",
+      "files_changed": 1,
+      "additions": 1,
+      "deletions": 1,
+      "time_to_merge_hours": 0.78,
+      "created_at": "2026-02-13T14:40:21Z",
+      "merged_at": "2026-02-13T15:27:09Z",
+      "comments_count": 1,
+      "reviews_count": 1,
+      "reviewers": [
+        "jabahamondes"
+      ]
+    },
+    {
+      "author_username": "mariusandra",
+      "title": "fix(hogql): limit macro expansion depth",
+      "files_changed": 5,
+      "additions": 123,
+      "deletions": 82,
+      "time_to_merge_hours": 28.48,
+      "created_at": "2026-02-12T10:58:11Z",
+      "merged_at": "2026-02-13T15:27:01Z",
+      "comments_count": 1,
+      "reviews_count": 3,
+      "reviewers": [
+        "georgemunyoro",
+        "greptile-apps[bot]",
+        "Piccirello"
+      ]
+    },
+    {
+      "author_username": "jonmcwest",
+      "title": "refactor(logs): rename tabId to id for consistency across logics and components",
+      "files_changed": 19,
+      "additions": 69,
+      "deletions": 82,
+      "time_to_merge_hours": 5.31,
+      "created_at": "2026-02-13T10:05:08Z",
+      "merged_at": "2026-02-13T15:23:53Z",
+      "comments_count": 3,
+      "reviews_count": 2,
+      "reviewers": [
+        "frankh",
+        "copilot-pull-request-reviewer[bot]"
+      ]
+    },
+    {
+      "author_username": "andrewjmcgehee",
+      "title": "feat(sql-editor): increase default SQL result limit from 100 to 2000",
+      "files_changed": 79,
+      "additions": 7134,
+      "deletions": 7092,
+      "time_to_merge_hours": 188.79,
+      "created_at": "2026-02-05T18:28:33Z",
+      "merged_at": "2026-02-13T15:16:10Z",
+      "comments_count": 7,
+      "reviews_count": 10,
+      "reviewers": [
+        "mariusandra",
+        "andrewjmcgehee",
+        "EDsCODE",
+        "graphite-app[bot]",
+        "greptile-apps[bot]",
+        "sakce",
+        "marandaneto"
+      ]
+    },
+    {
+      "author_username": "sakce",
+      "title": "feat(data-management): add pagination to SQL variables table",
+      "files_changed": 6,
+      "additions": 95,
+      "deletions": 79,
+      "time_to_merge_hours": 46.67,
+      "created_at": "2026-02-11T16:27:53Z",
+      "merged_at": "2026-02-13T15:08:22Z",
+      "comments_count": 3,
+      "reviews_count": 2,
+      "reviewers": [
+        "mariusandra",
+        "graphite-app[bot]"
+      ]
+    },
+    {
+      "author_username": "andrewjmcgehee",
+      "title": "feat(modeling): modeling scene overhaul prepping to move it into prod",
+      "files_changed": 17,
+      "additions": 1249,
+      "deletions": 1027,
+      "time_to_merge_hours": 21.3,
+      "created_at": "2026-02-12T17:22:38Z",
+      "merged_at": "2026-02-13T14:40:45Z",
+      "comments_count": 1,
+      "reviews_count": 23,
+      "reviewers": [
+        "graphite-app[bot]",
+        "andrewjmcgehee",
+        "greptile-apps[bot]",
+        "sakce"
+      ]
+    },
+    {
+      "author_username": "jonmcwest",
+      "title": "refactor(logs): decouple data fetching and other state from logs scene to enable log viewer portability",
+      "files_changed": 16,
+      "additions": 969,
+      "deletions": 1092,
+      "time_to_merge_hours": 19.92,
+      "created_at": "2026-02-12T19:04:29Z",
+      "merged_at": "2026-02-13T14:59:31Z",
+      "comments_count": 3,
+      "reviews_count": 2,
+      "reviewers": [
+        "frankh",
+        "copilot-pull-request-reviewer[bot]"
+      ]
+    },
+    {
+      "author_username": "pl",
+      "title": "refactor: make session replay topics configurable",
+      "files_changed": 3,
+      "additions": 18,
+      "deletions": 11,
+      "time_to_merge_hours": 2.62,
+      "created_at": "2026-02-13T12:16:19Z",
+      "merged_at": "2026-02-13T14:53:29Z",
+      "comments_count": 0,
+      "reviews_count": 4,
+      "reviewers": [
+        "jose-sequeira",
+        "greptile-apps[bot]",
+        "pl"
+      ]
+    },
+    {
+      "author_username": "frankh",
+      "title": "feat(logs): add distributed table migration",
+      "files_changed": 9,
+      "additions": 386,
+      "deletions": 11,
+      "time_to_merge_hours": 1.33,
+      "created_at": "2026-02-13T13:33:08Z",
+      "merged_at": "2026-02-13T14:52:44Z",
+      "comments_count": 1,
+      "reviews_count": 6,
+      "reviewers": [
+        "graphite-app[bot]",
+        "greptile-apps[bot]",
+        "rorylshanks",
+        "copilot-pull-request-reviewer[bot]",
+        "jonmcwest"
+      ]
+    },
+    {
+      "author_username": "andrewm4894",
+      "title": "fix(llma): fix clustering filter sampling and min-items guard",
+      "files_changed": 3,
+      "additions": 10,
+      "deletions": 3,
+      "time_to_merge_hours": 2.83,
+      "created_at": "2026-02-13T12:00:13Z",
+      "merged_at": "2026-02-13T14:50:04Z",
+      "comments_count": 1,
+      "reviews_count": 3,
+      "reviewers": [
+        "chatgpt-codex-connector[bot]",
+        "vdekrijger",
+        "andrewm4894"
+      ]
+    },
+    {
+      "author_username": "richardsolomou",
+      "title": "feat(llm-analytics): make LLM analytics scene tab-aware",
+      "files_changed": 34,
+      "additions": 332,
+      "deletions": 153,
+      "time_to_merge_hours": 42.01,
+      "created_at": "2026-02-11T20:40:16Z",
+      "merged_at": "2026-02-13T14:41:02Z",
+      "comments_count": 3,
+      "reviews_count": 5,
+      "reviewers": [
+        "mariusandra",
+        "greptile-apps[bot]",
+        "graphite-app[bot]"
+      ]
+    },
+    {
+      "author_username": "meikelmosby",
+      "title": "fix(workflows): fix broken layout for vars view",
+      "files_changed": 1,
+      "additions": 7,
+      "deletions": 7,
+      "time_to_merge_hours": 0.58,
+      "created_at": "2026-02-13T14:02:01Z",
+      "merged_at": "2026-02-13T14:36:59Z",
+      "comments_count": 1,
+      "reviews_count": 1,
+      "reviewers": [
+        "havenbarnes"
+      ]
+    },
+    {
+      "author_username": "haacked",
+      "title": "fix(flags): hoist properties computation out of condition loop",
+      "files_changed": 2,
+      "additions": 81,
+      "deletions": 42,
+      "time_to_merge_hours": 164.76,
+      "created_at": "2026-02-06T17:46:57Z",
+      "merged_at": "2026-02-13T14:32:47Z",
+      "comments_count": 0,
+      "reviews_count": 6,
+      "reviewers": [
+        "greptile-apps[bot]",
+        "copilot-pull-request-reviewer[bot]",
+        "matheus-vb",
+        "haacked"
+      ]
+    },
+    {
+      "author_username": "meikelmosby",
+      "title": "fix(cdp): don't crash nodejs server when SES region is not configured",
+      "files_changed": 2,
+      "additions": 50,
+      "deletions": 15,
+      "time_to_merge_hours": 5.06,
+      "created_at": "2026-02-13T09:15:48Z",
+      "merged_at": "2026-02-13T14:19:39Z",
+      "comments_count": 0,
+      "reviews_count": 3,
+      "reviewers": [
+        "pauldambra",
+        "greptile-apps[bot]",
+        "havenbarnes"
+      ]
+    },
+    {
+      "author_username": "yasen-posthog",
+      "title": "chore: deprecate /api/projects/{id}/environments/ endpoint",
+      "files_changed": 6,
+      "additions": 24,
+      "deletions": 269,
+      "time_to_merge_hours": 1.87,
+      "created_at": "2026-02-13T12:27:05Z",
+      "merged_at": "2026-02-13T14:19:09Z",
+      "comments_count": 1,
+      "reviews_count": 2,
+      "reviewers": [
+        "greptile-apps[bot]",
+        "a-lider"
+      ]
+    },
+    {
+      "author_username": "meikelmosby",
+      "title": "feat(workflows): improve ux around variables",
+      "files_changed": 2,
+      "additions": 84,
+      "deletions": 66,
+      "time_to_merge_hours": 24.48,
+      "created_at": "2026-02-12T12:49:46Z",
+      "merged_at": "2026-02-13T13:18:28Z",
+      "comments_count": 2,
+      "reviews_count": 2,
+      "reviewers": [
+        "greptile-apps[bot]",
+        "havenbarnes"
+      ]
+    },
+    {
+      "author_username": "jabahamondes",
+      "title": "fix(settings): reverting previous fix and using unique key per setting",
+      "files_changed": 2,
+      "additions": 3,
+      "deletions": 12,
+      "time_to_merge_hours": 18.09,
+      "created_at": "2026-02-12T19:06:12Z",
+      "merged_at": "2026-02-13T13:11:26Z",
+      "comments_count": 2,
+      "reviews_count": 4,
+      "reviewers": [
+        "jabahamondes",
+        "greptile-apps[bot]",
+        "marandaneto"
+      ]
+    },
+    {
+      "author_username": "fasyy612",
+      "title": "feat: add banner to guide users to replay integration",
+      "files_changed": 6,
+      "additions": 86,
+      "deletions": 9,
+      "time_to_merge_hours": 2.2,
+      "created_at": "2026-02-13T10:58:55Z",
+      "merged_at": "2026-02-13T13:10:40Z",
+      "comments_count": 3,
+      "reviews_count": 1,
+      "reviewers": [
+        "TueHaulund"
+      ]
+    },
+    {
+      "author_username": "z0br0wn",
+      "title": "chore(session-recording): add session recording pipeline",
+      "files_changed": 4,
+      "additions": 113,
+      "deletions": 45,
+      "time_to_merge_hours": 70.65,
+      "created_at": "2026-02-10T14:29:27Z",
+      "merged_at": "2026-02-13T13:08:28Z",
+      "comments_count": 3,
+      "reviews_count": 6,
+      "reviewers": [
+        "z0br0wn",
+        "greptile-apps[bot]",
+        "graphite-app[bot]",
+        "pl"
+      ]
+    },
+    {
+      "author_username": "mp-hog",
+      "title": "feat(experiments): Traffic preview with buckets",
+      "files_changed": 4,
+      "additions": 112,
+      "deletions": 40,
+      "time_to_merge_hours": 23.39,
+      "created_at": "2026-02-12T13:40:06Z",
+      "merged_at": "2026-02-13T13:03:31Z",
+      "comments_count": 2,
+      "reviews_count": 7,
+      "reviewers": [
+        "graphite-app[bot]",
+        "mp-hog",
+        "greptile-apps[bot]",
+        "andehen"
+      ]
+    },
+    {
+      "author_username": "pl",
+      "title": "refactor: implement proper filter map pipeline",
+      "files_changed": 15,
+      "additions": 761,
+      "deletions": 553,
+      "time_to_merge_hours": 69.03,
+      "created_at": "2026-02-10T15:43:59Z",
+      "merged_at": "2026-02-13T12:45:38Z",
+      "comments_count": 2,
+      "reviews_count": 5,
+      "reviewers": [
+        "jose-sequeira",
+        "lmenezes",
+        "greptile-apps[bot]",
+        "pl"
+      ]
+    },
+    {
+      "author_username": "meikelmosby",
+      "title": "chore(workflows): allow unvalidated drafts",
+      "files_changed": 5,
+      "additions": 380,
+      "deletions": 106,
+      "time_to_merge_hours": 167.04,
+      "created_at": "2026-02-06T13:37:18Z",
+      "merged_at": "2026-02-13T12:39:25Z",
+      "comments_count": 3,
+      "reviews_count": 6,
+      "reviewers": [
+        "greptile-apps[bot]",
+        "meikelmosby",
+        "havenbarnes"
+      ]
+    },
+    {
+      "author_username": "jose-sequeira",
+      "title": "chore: Tune distinct_id_usage job",
+      "files_changed": 2,
+      "additions": 39,
+      "deletions": 11,
+      "time_to_merge_hours": 0.71,
+      "created_at": "2026-02-13T10:45:02Z",
+      "merged_at": "2026-02-13T11:27:30Z",
+      "comments_count": 0,
+      "reviews_count": 1,
+      "reviewers": [
+        "pl"
+      ]
+    },
+    {
+      "author_username": "lmenezes",
+      "title": "refactor: extract hog transformation into processing step",
+      "files_changed": 13,
+      "additions": 189,
+      "deletions": 99,
+      "time_to_merge_hours": 97.37,
+      "created_at": "2026-02-09T09:52:57Z",
+      "merged_at": "2026-02-13T11:15:05Z",
+      "comments_count": 0,
+      "reviews_count": 18,
+      "reviewers": [
+        "graphite-app[bot]",
+        "greptile-apps[bot]",
+        "lmenezes",
+        "jose-sequeira",
+        "pl"
+      ]
+    },
+    {
+      "author_username": "yasen-posthog",
+      "title": "chore(auth): exempt non-sensitive user actions from re-authentication",
+      "files_changed": 4,
+      "additions": 113,
+      "deletions": 63,
+      "time_to_merge_hours": 1.67,
+      "created_at": "2026-02-13T09:34:41Z",
+      "merged_at": "2026-02-13T11:14:52Z",
+      "comments_count": 1,
+      "reviews_count": 3,
+      "reviewers": [
+        "graphite-app[bot]",
+        "greptile-apps[bot]",
+        "a-lider"
+      ]
+    },
+    {
+      "author_username": "clickhouse-sync-posthog[bot]",
+      "title": "chore(ci): sync ClickHouse versions from infra",
+      "files_changed": 1,
+      "additions": 4,
+      "deletions": 4,
+      "time_to_merge_hours": 49.0,
+      "created_at": "2026-02-11T10:04:17Z",
+      "merged_at": "2026-02-13T11:04:26Z",
+      "comments_count": 0,
+      "reviews_count": 1,
+      "reviewers": [
+        "vdekrijger"
+      ]
+    },
+    {
+      "author_username": "estefaniarabadan",
+      "title": "chore(data-imports): upgrade Google Ads API from v19 to v23",
+      "files_changed": 4,
+      "additions": 54,
+      "deletions": 40,
+      "time_to_merge_hours": 16.97,
+      "created_at": "2026-02-12T17:57:09Z",
+      "merged_at": "2026-02-13T10:55:12Z",
+      "comments_count": 1,
+      "reviews_count": 1,
+      "reviewers": [
+        "MarconLP"
+      ]
+    },
+    {
+      "author_username": "hpouillot",
+      "title": "fix(err): update nuxt config",
+      "files_changed": 2,
+      "additions": 11,
+      "deletions": 18,
+      "time_to_merge_hours": 18.9,
+      "created_at": "2026-02-12T15:47:20Z",
+      "merged_at": "2026-02-13T10:41:03Z",
+      "comments_count": 2,
+      "reviews_count": 1,
+      "reviewers": [
+        "ablaszkiewicz"
+      ]
+    },
+    {
+      "author_username": "mendral-app[bot]",
+      "title": "ci(workflows): skip Calculate running time job on Dependabot PRs",
+      "files_changed": 4,
+      "additions": 8,
+      "deletions": 8,
+      "time_to_merge_hours": 0.36,
+      "created_at": "2026-02-13T10:07:47Z",
+      "merged_at": "2026-02-13T10:29:26Z",
+      "comments_count": 2,
+      "reviews_count": 2,
+      "reviewers": [
+        "webjunkie",
+        "copilot-pull-request-reviewer[bot]"
+      ]
+    },
+    {
+      "author_username": "TueHaulund",
+      "title": "fix(Replay): throttle blob loading for long recordings",
+      "files_changed": 2,
+      "additions": 106,
+      "deletions": 9,
+      "time_to_merge_hours": 11.76,
+      "created_at": "2026-02-12T22:26:20Z",
+      "merged_at": "2026-02-13T10:12:00Z",
+      "comments_count": 2,
+      "reviews_count": 6,
+      "reviewers": [
+        "pauldambra",
+        "greptile-apps[bot]",
+        "TueHaulund",
+        "ksvat"
+      ]
+    },
+    {
+      "author_username": "k11kirky",
+      "title": "feat: signal inbox readiness",
+      "files_changed": 8,
+      "additions": 1255,
+      "deletions": 0,
+      "time_to_merge_hours": 47.82,
+      "created_at": "2026-02-11T10:16:34Z",
+      "merged_at": "2026-02-13T10:05:43Z",
+      "comments_count": 4,
+      "reviews_count": 4,
+      "reviewers": [
+        "graphite-app[bot]",
+        "greptile-apps[bot]",
+        "joshsny"
+      ]
+    },
+    {
+      "author_username": "pauldambra",
+      "title": "feat: add quick filter support for Pageview URLs and Screens",
+      "files_changed": 25,
+      "additions": 1019,
+      "deletions": 96,
+      "time_to_merge_hours": 142.82,
+      "created_at": "2026-02-07T11:09:29Z",
+      "merged_at": "2026-02-13T09:58:50Z",
+      "comments_count": 8,
+      "reviews_count": 8,
+      "reviewers": [
+        "thmsobrmlr",
+        "graphite-app[bot]",
+        "greptile-apps[bot]",
+        "copilot-pull-request-reviewer[bot]",
+        "chatgpt-codex-connector[bot]"
+      ]
+    },
+    {
+      "author_username": "clr182",
+      "title": "fix: show correct tooltip when no recording exists for a person",
+      "files_changed": 1,
+      "additions": 3,
+      "deletions": 1,
+      "time_to_merge_hours": 18.49,
+      "created_at": "2026-02-12T15:18:15Z",
+      "merged_at": "2026-02-13T09:47:34Z",
+      "comments_count": 1,
+      "reviews_count": 1,
+      "reviewers": [
+        "TueHaulund"
+      ]
+    },
+    {
+      "author_username": "fasyy612",
+      "title": "fix: player splits in half",
+      "files_changed": 5,
+      "additions": 153,
+      "deletions": 102,
+      "time_to_merge_hours": 19.23,
+      "created_at": "2026-02-12T14:32:30Z",
+      "merged_at": "2026-02-13T09:46:11Z",
+      "comments_count": 4,
+      "reviews_count": 8,
+      "reviewers": [
+        "pauldambra",
+        "fasyy612"
+      ]
+    },
+    {
+      "author_username": "sampennington",
+      "title": "fix(insights): Stop long breakdown name overflowing",
+      "files_changed": 2,
+      "additions": 4,
+      "deletions": 2,
+      "time_to_merge_hours": 17.59,
+      "created_at": "2026-02-12T16:08:56Z",
+      "merged_at": "2026-02-13T09:44:35Z",
+      "comments_count": 1,
+      "reviews_count": 1,
+      "reviewers": [
+        "gesh"
+      ]
+    },
+    {
+      "author_username": "adamleithp",
+      "title": "chore: storybook for search",
+      "files_changed": 7,
+      "additions": 169,
+      "deletions": 3,
+      "time_to_merge_hours": 138.35,
+      "created_at": "2026-02-07T15:19:40Z",
+      "merged_at": "2026-02-13T09:40:30Z",
+      "comments_count": 3,
+      "reviews_count": 2,
+      "reviewers": [
+        "sakce",
+        "greptile-apps[bot]"
+      ]
+    },
+    {
+      "author_username": "vdekrijger",
+      "title": "chore(alerts): Also clean up the DB",
+      "files_changed": 2,
+      "additions": 32,
+      "deletions": 1,
+      "time_to_merge_hours": 67.4,
+      "created_at": "2026-02-10T13:56:09Z",
+      "merged_at": "2026-02-13T09:20:06Z",
+      "comments_count": 3,
+      "reviews_count": 4,
+      "reviewers": [
+        "thmsobrmlr",
+        "greptile-apps[bot]",
+        "vdekrijger"
+      ]
+    },
+    {
+      "author_username": "webjunkie",
+      "title": "chore(devex): skip lint-staged during merge commits",
+      "files_changed": 2,
+      "additions": 49,
+      "deletions": 18,
+      "time_to_merge_hours": 13.23,
+      "created_at": "2026-02-12T19:51:12Z",
+      "merged_at": "2026-02-13T09:04:50Z",
+      "comments_count": 1,
+      "reviews_count": 5,
+      "reviewers": [
+        "pauldambra",
+        "graphite-app[bot]",
+        "chatgpt-codex-connector[bot]",
+        "copilot-pull-request-reviewer[bot]"
+      ]
+    },
+    {
+      "author_username": "veryayskiy",
+      "title": "feat: show sent/read in customer messages",
+      "files_changed": 8,
+      "additions": 65,
+      "deletions": 3,
+      "time_to_merge_hours": 1.57,
+      "created_at": "2026-02-13T07:28:05Z",
+      "merged_at": "2026-02-13T09:02:33Z",
+      "comments_count": 1,
+      "reviews_count": 3,
+      "reviewers": [
+        "webjunkie",
+        "greptile-apps[bot]",
+        "veryayskiy"
+      ]
+    },
+    {
+      "author_username": "webjunkie",
+      "title": "feat(devex): Add Slack notifications for priority review PRs",
+      "files_changed": 1,
+      "additions": 149,
+      "deletions": 0,
+      "time_to_merge_hours": 0.6,
+      "created_at": "2026-02-13T08:08:04Z",
+      "merged_at": "2026-02-13T08:44:17Z",
+      "comments_count": 1,
+      "reviews_count": 4,
+      "reviewers": [
+        "oliverb123",
+        "greptile-apps[bot]",
+        "copilot-pull-request-reviewer[bot]",
+        "chatgpt-codex-connector[bot]"
+      ]
+    },
+    {
+      "author_username": "robbie-c",
+      "title": "feat(devex): Don't log errors 77 times",
+      "files_changed": 2,
+      "additions": 36,
+      "deletions": 9,
+      "time_to_merge_hours": 15.35,
+      "created_at": "2026-02-12T17:08:53Z",
+      "merged_at": "2026-02-13T08:29:45Z",
+      "comments_count": 1,
+      "reviews_count": 10,
+      "reviewers": [
+        "graphite-app[bot]",
+        "webjunkie",
+        "greptile-apps[bot]",
+        "copilot-pull-request-reviewer[bot]",
+        "robbie-c"
+      ]
+    },
+    {
+      "author_username": "veryayskiy",
+      "title": "chore: reload tickets on update / send",
+      "files_changed": 1,
+      "additions": 7,
+      "deletions": 1,
+      "time_to_merge_hours": 0.36,
+      "created_at": "2026-02-13T07:42:10Z",
+      "merged_at": "2026-02-13T08:03:34Z",
+      "comments_count": 1,
+      "reviews_count": 1,
+      "reviewers": [
+        "richardsolomou"
+      ]
+    },
+    {
+      "author_username": "webjunkie",
+      "title": "chore(team): add Team extensions pattern with shared helpers",
+      "files_changed": 8,
+      "additions": 204,
+      "deletions": 44,
+      "time_to_merge_hours": 259.84,
+      "created_at": "2026-02-02T12:11:03Z",
+      "merged_at": "2026-02-13T08:01:29Z",
+      "comments_count": 3,
+      "reviews_count": 6,
+      "reviewers": [
+        "graphite-app[bot]",
+        "webjunkie",
+        "copilot-pull-request-reviewer[bot]",
+        "rafaeelaudibert"
+      ]
+    },
+    {
+      "author_username": "tatoalo",
+      "title": "feat(sandbox): LLM gateway local passthrough local-remote sandbox",
+      "files_changed": 7,
+      "additions": 70,
+      "deletions": 0,
+      "time_to_merge_hours": 15.76,
+      "created_at": "2026-02-12T15:51:01Z",
+      "merged_at": "2026-02-13T07:36:33Z",
+      "comments_count": 0,
+      "reviews_count": 5,
+      "reviewers": [
+        "skoob13",
+        "tatoalo",
+        "joshsny"
+      ]
+    },
+    {
+      "author_username": "webjunkie",
+      "title": "chore(flox): extract on-activate to script",
+      "files_changed": 3,
+      "additions": 262,
+      "deletions": 124,
+      "time_to_merge_hours": 17.68,
+      "created_at": "2026-02-12T13:54:13Z",
+      "merged_at": "2026-02-13T07:34:59Z",
+      "comments_count": 2,
+      "reviews_count": 4,
+      "reviewers": [
+        "pauldambra",
+        "greptile-apps[bot]",
+        "copilot-pull-request-reviewer[bot]",
+        "chatgpt-codex-connector[bot]"
+      ]
+    },
+    {
+      "author_username": "sampennington",
+      "title": "fix(Insights): Fixes funnel tooltips not showing",
+      "files_changed": 1,
+      "additions": 2,
+      "deletions": 2,
+      "time_to_merge_hours": 0.25,
+      "created_at": "2026-02-13T07:04:39Z",
+      "merged_at": "2026-02-13T07:19:53Z",
+      "comments_count": 1,
+      "reviews_count": 1,
+      "reviewers": [
+        "veryayskiy"
+      ]
+    },
+    {
+      "author_username": "posthog-js-upgrader[bot]",
+      "title": "chore(deps): Update posthog-js to 1.347.1",
+      "files_changed": 11,
+      "additions": 91,
+      "deletions": 125,
+      "time_to_merge_hours": 0.32,
+      "created_at": "2026-02-13T05:19:25Z",
+      "merged_at": "2026-02-13T05:38:47Z",
+      "comments_count": 2,
+      "reviews_count": 2,
+      "reviewers": [
+        "greptile-apps[bot]",
+        "adboio"
+      ]
+    },
+    {
+      "author_username": "adboio",
+      "title": "fix(posthog-ai): remove flickering ai header text",
+      "files_changed": 1,
+      "additions": 4,
+      "deletions": 3,
+      "time_to_merge_hours": 3.12,
+      "created_at": "2026-02-13T01:17:55Z",
+      "merged_at": "2026-02-13T04:25:10Z",
+      "comments_count": 2,
+      "reviews_count": 1,
+      "reviewers": [
+        "adamleithp"
+      ]
+    },
+    {
+      "author_username": "adamleithp",
+      "title": "fix: open in sidepanel, recent convos in sidepanel, clean up some panel stuff",
+      "files_changed": 5,
+      "additions": 73,
+      "deletions": 26,
+      "time_to_merge_hours": 1.0,
+      "created_at": "2026-02-13T03:22:50Z",
+      "merged_at": "2026-02-13T04:22:53Z",
+      "comments_count": 1,
+      "reviews_count": 1,
+      "reviewers": [
+        "adboio"
+      ]
+    },
+    {
+      "author_username": "adamleithp",
+      "title": "feat(ux): promote new tooltips",
+      "files_changed": 4,
+      "additions": 3,
+      "deletions": 198,
+      "time_to_merge_hours": 59.69,
+      "created_at": "2026-02-10T16:20:34Z",
+      "merged_at": "2026-02-13T04:01:58Z",
+      "comments_count": 4,
+      "reviews_count": 2,
+      "reviewers": [
+        "sakce",
+        "greptile-apps[bot]"
+      ]
+    },
+    {
+      "author_username": "adamleithp",
+      "title": "sql editor: remove maxtool, add to scene title",
+      "files_changed": 6,
+      "additions": 133,
+      "deletions": 38,
+      "time_to_merge_hours": 6.93,
+      "created_at": "2026-02-12T20:54:35Z",
+      "merged_at": "2026-02-13T03:50:14Z",
+      "comments_count": 1,
+      "reviews_count": 1,
+      "reviewers": [
+        "rafaeelaudibert"
+      ]
+    },
+    {
+      "author_username": "andrewjmcgehee",
+      "title": "feat(sql-editor): add user preference for new tab behavior",
+      "files_changed": 8,
+      "additions": 72,
+      "deletions": 8,
+      "time_to_merge_hours": 199.78,
+      "created_at": "2026-02-04T19:06:50Z",
+      "merged_at": "2026-02-13T02:53:55Z",
+      "comments_count": 4,
+      "reviews_count": 0,
+      "reviewers": []
+    },
+    {
+      "author_username": "eli-r-ph",
+      "title": "feat(deduplicator): persist metadata.json from checkpoint imports to local store",
+      "files_changed": 4,
+      "additions": 151,
+      "deletions": 64,
+      "time_to_merge_hours": 1.93,
+      "created_at": "2026-02-13T00:53:54Z",
+      "merged_at": "2026-02-13T02:49:46Z",
+      "comments_count": 0,
+      "reviews_count": 1,
+      "reviewers": [
+        "nickbest-ph"
+      ]
+    },
+    {
+      "author_username": "nickbest-ph",
+      "title": "chore(admin): rms editable state field from batch import",
+      "files_changed": 1,
+      "additions": 1,
+      "deletions": 1,
+      "time_to_merge_hours": 0.84,
+      "created_at": "2026-02-13T01:08:09Z",
+      "merged_at": "2026-02-13T01:58:35Z",
+      "comments_count": 1,
+      "reviews_count": 1,
+      "reviewers": [
+        "eli-r-ph"
+      ]
+    },
+    {
+      "author_username": "eli-r-ph",
+      "title": "feat(deduplicator): implement offset rewind on checkpoint import",
+      "files_changed": 9,
+      "additions": 428,
+      "deletions": 7,
+      "time_to_merge_hours": 313.59,
+      "created_at": "2026-01-30T23:37:07Z",
+      "merged_at": "2026-02-13T01:12:45Z",
+      "comments_count": 1,
+      "reviews_count": 5,
+      "reviewers": [
+        "graphite-app[bot]",
+        "greptile-apps[bot]",
+        "lmenezes",
+        "jose-sequeira",
+        "eli-r-ph"
+      ]
+    },
+    {
+      "author_username": "ablaszkiewicz",
+      "title": "feat: add react native error boundary docs",
+      "files_changed": 1,
+      "additions": 63,
+      "deletions": 0,
+      "time_to_merge_hours": 1.14,
+      "created_at": "2026-02-12T23:41:21Z",
+      "merged_at": "2026-02-13T00:49:46Z",
+      "comments_count": 1,
+      "reviews_count": 2,
+      "reviewers": [
+        "sakce",
+        "copilot-pull-request-reviewer[bot]"
+      ]
+    },
+    {
+      "author_username": "mendral-app[bot]",
+      "title": "ci(node): publish full SHA tags for node image",
+      "files_changed": 1,
+      "additions": 1,
+      "deletions": 0,
+      "time_to_merge_hours": 29.67,
+      "created_at": "2026-02-11T18:02:12Z",
+      "merged_at": "2026-02-12T23:42:24Z",
+      "comments_count": 1,
+      "reviews_count": 1,
+      "reviewers": [
+        "eli-r-ph"
+      ]
+    },
+    {
+      "author_username": "jordanm-posthog",
+      "title": "feat(web-analytics): Add new regions map to web analytics",
+      "files_changed": 12,
+      "additions": 94853,
+      "deletions": 1,
+      "time_to_merge_hours": 235.72,
+      "created_at": "2026-02-03T03:50:59Z",
+      "merged_at": "2026-02-12T23:34:09Z",
+      "comments_count": 1,
+      "reviews_count": 3,
+      "reviewers": [
+        "jordanm-posthog",
+        "greptile-apps[bot]",
+        "lricoy"
+      ]
+    },
+    {
+      "author_username": "Twixes",
+      "title": "feat(signals): Add Inbox scene with signal reports",
+      "files_changed": 20,
+      "additions": 493,
+      "deletions": 132,
+      "time_to_merge_hours": 147.04,
+      "created_at": "2026-02-06T20:04:35Z",
+      "merged_at": "2026-02-12T23:06:51Z",
+      "comments_count": 5,
+      "reviews_count": 15,
+      "reviewers": [
+        "oliverb123",
+        "graphite-app[bot]",
+        "greptile-apps[bot]",
+        "Twixes",
+        "sortafreel"
+      ]
+    },
+    {
+      "author_username": "adboio",
+      "title": "fix(product tours): do not break selection mode when dom changes",
+      "files_changed": 1,
+      "additions": 8,
+      "deletions": 8,
+      "time_to_merge_hours": 21.57,
+      "created_at": "2026-02-12T01:31:39Z",
+      "merged_at": "2026-02-12T23:05:56Z",
+      "comments_count": 3,
+      "reviews_count": 1,
+      "reviewers": [
+        "rafaeelaudibert"
+      ]
+    },
+    {
+      "author_username": "andrewm4894",
+      "title": "chore(llma): Update default batch sizes for processing",
+      "files_changed": 2,
+      "additions": 3,
+      "deletions": 3,
+      "time_to_merge_hours": 3.36,
+      "created_at": "2026-02-12T19:44:15Z",
+      "merged_at": "2026-02-12T23:05:39Z",
+      "comments_count": 0,
+      "reviews_count": 1,
+      "reviewers": [
+        "veryayskiy"
+      ]
+    },
+    {
+      "author_username": "Twixes",
+      "title": "chore(admin): Add integration models to Django admin",
+      "files_changed": 3,
+      "additions": 78,
+      "deletions": 0,
+      "time_to_merge_hours": 0.68,
+      "created_at": "2026-02-12T22:24:40Z",
+      "merged_at": "2026-02-12T23:05:21Z",
+      "comments_count": 0,
+      "reviews_count": 3,
+      "reviewers": [
+        "greptile-apps[bot]",
+        "Twixes",
+        "rafaeelaudibert"
+      ]
+    },
+    {
+      "author_username": "mariusandra",
+      "title": "feat(frontend): new reselect",
+      "files_changed": 6,
+      "additions": 189,
+      "deletions": 175,
+      "time_to_merge_hours": 58.04,
+      "created_at": "2026-02-10T12:54:48Z",
+      "merged_at": "2026-02-12T22:57:00Z",
+      "comments_count": 2,
+      "reviews_count": 6,
+      "reviewers": [
+        "graphite-app[bot]",
+        "greptile-apps[bot]",
+        "ksvat"
+      ]
+    },
+    {
+      "author_username": "darkopia",
+      "title": "fix: audio mute plugin error",
+      "files_changed": 1,
+      "additions": 1,
+      "deletions": 1,
+      "time_to_merge_hours": 0.32,
+      "created_at": "2026-02-12T22:35:18Z",
+      "merged_at": "2026-02-12T22:54:36Z",
+      "comments_count": 2,
+      "reviews_count": 1,
+      "reviewers": [
+        "pauldambra"
+      ]
+    },
+    {
+      "author_username": "Twixes",
+      "title": "refactor(signals): Move Temporal workloads to video export worker",
+      "files_changed": 11,
+      "additions": 33,
+      "deletions": 37,
+      "time_to_merge_hours": 51.71,
+      "created_at": "2026-02-10T18:47:23Z",
+      "merged_at": "2026-02-12T22:29:42Z",
+      "comments_count": 1,
+      "reviews_count": 5,
+      "reviewers": [
+        "oliverb123",
+        "tatoalo",
+        "greptile-apps[bot]",
+        "Twixes"
+      ]
+    },
+    {
+      "author_username": "nickbest-ph",
+      "title": "chore(admin): make state of batch import editable in admin",
+      "files_changed": 1,
+      "additions": 1,
+      "deletions": 1,
+      "time_to_merge_hours": 0.44,
+      "created_at": "2026-02-12T21:46:16Z",
+      "merged_at": "2026-02-12T22:12:36Z",
+      "comments_count": 1,
+      "reviews_count": 2,
+      "reviewers": [
+        "greptile-apps[bot]",
+        "eli-r-ph"
+      ]
+    },
+    {
+      "author_username": "adboio",
+      "title": "chore(product tours): clean up step updates in toolbar logic",
+      "files_changed": 2,
+      "additions": 19,
+      "deletions": 59,
+      "time_to_merge_hours": 42.71,
+      "created_at": "2026-02-09T21:30:26Z",
+      "merged_at": "2026-02-11T16:12:50Z",
+      "comments_count": 3,
+      "reviews_count": 2,
+      "reviewers": [
+        "greptile-apps[bot]",
+        "lucasheriques"
+      ]
+    },
+    {
+      "author_username": "Twixes",
+      "title": "fix(signals): Skip eventless sessions altogether",
+      "files_changed": 4,
+      "additions": 26,
+      "deletions": 51,
+      "time_to_merge_hours": 5.55,
+      "created_at": "2026-02-12T16:25:24Z",
+      "merged_at": "2026-02-12T21:58:12Z",
+      "comments_count": 4,
+      "reviews_count": 1,
+      "reviewers": [
+        "oliverb123"
+      ]
+    },
+    {
+      "author_username": "a-lider",
+      "title": "feat: add link to access control in the roles table",
+      "files_changed": 2,
+      "additions": 42,
+      "deletions": 0,
+      "time_to_merge_hours": 34.17,
+      "created_at": "2026-02-11T11:46:01Z",
+      "merged_at": "2026-02-12T21:56:18Z",
+      "comments_count": 2,
+      "reviews_count": 4,
+      "reviewers": [
+        "greptile-apps[bot]",
+        "ReeceJones",
+        "a-lider"
+      ]
+    },
+    {
+      "author_username": "jordanm-posthog",
+      "title": "feat(web-analytics): Allow filter on cohort in web analytics dashboard",
+      "files_changed": 14,
+      "additions": 502,
+      "deletions": 56,
+      "time_to_merge_hours": 355.54,
+      "created_at": "2026-01-29T02:21:43Z",
+      "merged_at": "2026-02-12T21:53:53Z",
+      "comments_count": 2,
+      "reviews_count": 2,
+      "reviewers": [
+        "lricoy",
+        "jordanm-posthog"
+      ]
+    },
+    {
+      "author_username": "Twixes",
+      "title": "chore: Remove git itself from Flox manifest",
+      "files_changed": 1,
+      "additions": 1,
+      "deletions": 2,
+      "time_to_merge_hours": 0.4,
+      "created_at": "2026-02-12T21:15:38Z",
+      "merged_at": "2026-02-12T21:39:20Z",
+      "comments_count": 0,
+      "reviews_count": 1,
+      "reviewers": [
+        "adamleithp"
+      ]
+    },
+    {
+      "author_username": "nickbest-ph",
+      "title": "fix(batch-import-worker): person processing filter fix",
+      "files_changed": 2,
+      "additions": 42,
+      "deletions": 12,
+      "time_to_merge_hours": 0.6,
+      "created_at": "2026-02-12T21:01:22Z",
+      "merged_at": "2026-02-12T21:37:21Z",
+      "comments_count": 0,
+      "reviews_count": 2,
+      "reviewers": [
+        "greptile-apps[bot]",
+        "eli-r-ph"
+      ]
+    },
+    {
+      "author_username": "mendral-app[bot]",
+      "title": "fix(security): add CustomerJourney to IDOR semgrep rules",
+      "files_changed": 2,
+      "additions": 6,
+      "deletions": 2,
+      "time_to_merge_hours": 1.4,
+      "created_at": "2026-02-12T19:20:30Z",
+      "merged_at": "2026-02-12T20:44:34Z",
+      "comments_count": 2,
+      "reviews_count": 1,
+      "reviewers": [
+        "rafaeelaudibert"
+      ]
+    },
+    {
+      "author_username": "rodrigoi",
+      "title": "fix(experiments): replace sanitization with validation errors.",
+      "files_changed": 2,
+      "additions": 169,
+      "deletions": 24,
+      "time_to_merge_hours": 1.25,
+      "created_at": "2026-02-12T20:18:14Z",
+      "merged_at": "2026-02-12T21:33:13Z",
+      "comments_count": 1,
+      "reviews_count": 6,
+      "reviewers": [
+        "adamleithp",
+        "mp-hog",
+        "greptile-apps[bot]",
+        "rodrigoi"
+      ]
+    },
+    {
+      "author_username": "Twixes",
+      "title": "fix(dev): Add git-lfs to Flox manifest",
+      "files_changed": 1,
+      "additions": 2,
+      "deletions": 0,
+      "time_to_merge_hours": 2.2,
+      "created_at": "2026-02-12T16:23:48Z",
+      "merged_at": "2026-02-12T18:35:51Z",
+      "comments_count": 0,
+      "reviews_count": 4,
+      "reviewers": [
+        "graphite-app[bot]",
+        "webjunkie",
+        "greptile-apps[bot]",
+        "andrewm4894"
+      ]
+    },
+    {
+      "author_username": "rafaeelaudibert",
+      "title": "refactor: Add posthog-rails to onboarding",
+      "files_changed": 26,
+      "additions": 522,
+      "deletions": 10,
+      "time_to_merge_hours": 150.06,
+      "created_at": "2026-02-06T15:13:12Z",
+      "merged_at": "2026-02-12T21:17:00Z",
+      "comments_count": 10,
+      "reviews_count": 2,
+      "reviewers": [
+        "greptile-apps[bot]",
+        "fercgomes"
+      ]
+    },
+    {
+      "author_username": "veryayskiy",
+      "title": "chore: support ticket number on the side",
+      "files_changed": 3,
+      "additions": 18,
+      "deletions": 6,
+      "time_to_merge_hours": 1.51,
+      "created_at": "2026-02-12T19:36:22Z",
+      "merged_at": "2026-02-12T21:06:58Z",
+      "comments_count": 1,
+      "reviews_count": 2,
+      "reviewers": [
+        "greptile-apps[bot]",
+        "arthurdedeus"
+      ]
+    },
+    {
+      "author_username": "veryayskiy",
+      "title": "chore: support save button and person link",
+      "files_changed": 2,
+      "additions": 29,
+      "deletions": 8,
+      "time_to_merge_hours": 0.63,
+      "created_at": "2026-02-12T19:54:35Z",
+      "merged_at": "2026-02-12T20:32:23Z",
+      "comments_count": 1,
+      "reviews_count": 4,
+      "reviewers": [
+        "greptile-apps[bot]",
+        "arthurdedeus",
+        "veryayskiy"
+      ]
+    },
+    {
+      "author_username": "nickbest-ph",
+      "title": "fix(prop-defs): type matching for utm prop defs doesnt capture initial",
+      "files_changed": 2,
+      "additions": 62,
+      "deletions": 1,
+      "time_to_merge_hours": 19.12,
+      "created_at": "2026-02-12T00:57:20Z",
+      "merged_at": "2026-02-12T20:04:32Z",
+      "comments_count": 0,
+      "reviews_count": 1,
+      "reviewers": [
+        "eli-r-ph"
+      ]
+    },
+    {
+      "author_username": "skoob13",
+      "title": "fix(mcp): revert query run endpoints",
+      "files_changed": 1,
+      "additions": 30,
+      "deletions": 0,
+      "time_to_merge_hours": 0.23,
+      "created_at": "2026-02-12T19:33:21Z",
+      "merged_at": "2026-02-12T19:47:03Z",
+      "comments_count": 0,
+      "reviews_count": 2,
+      "reviewers": [
+        "graphite-app[bot]",
+        "rafaeelaudibert"
+      ]
+    },
+    {
+      "author_username": "arthurdedeus",
+      "title": "fix: Restore all references to posthog-js to point to catalog",
+      "files_changed": 8,
+      "additions": 21,
+      "deletions": 45,
+      "time_to_merge_hours": 0.34,
+      "created_at": "2026-02-12T19:08:56Z",
+      "merged_at": "2026-02-12T19:29:18Z",
+      "comments_count": 1,
+      "reviews_count": 1,
+      "reviewers": [
+        "rafaeelaudibert"
+      ]
+    },
+    {
+      "author_username": "arthurdedeus",
+      "title": "fix: Rebuild lockfile",
+      "files_changed": 2,
+      "additions": 111,
+      "deletions": 58,
+      "time_to_merge_hours": 0.6,
+      "created_at": "2026-02-12T18:27:40Z",
+      "merged_at": "2026-02-12T19:03:39Z",
+      "comments_count": 3,
+      "reviews_count": 3,
+      "reviewers": [
+        "graphite-app[bot]",
+        "rafaeelaudibert"
+      ]
+    },
+    {
+      "author_username": "eli-r-ph",
+      "title": "feat(deduplicator): ensure root cause is displayed in error logs",
+      "files_changed": 20,
+      "additions": 144,
+      "deletions": 142,
+      "time_to_merge_hours": 16.96,
+      "created_at": "2026-02-12T01:54:25Z",
+      "merged_at": "2026-02-12T18:51:45Z",
+      "comments_count": 0,
+      "reviews_count": 1,
+      "reviewers": [
+        "nickbest-ph"
+      ]
+    },
+    {
+      "author_username": "ordehi",
+      "title": "fix(experiments): reject invalid metric kinds instead of silently skipping",
+      "files_changed": 2,
+      "additions": 63,
+      "deletions": 10,
+      "time_to_merge_hours": 23.88,
+      "created_at": "2026-02-11T18:56:19Z",
+      "merged_at": "2026-02-12T18:48:55Z",
+      "comments_count": 2,
+      "reviews_count": 3,
+      "reviewers": [
+        "github-advanced-security[bot]",
+        "greptile-apps[bot]",
+        "rodrigoi"
+      ]
+    },
+    {
+      "author_username": "jonmcwest",
+      "title": "feat(logs): add feedback button to header and remove feedback banner",
+      "files_changed": 1,
+      "additions": 11,
+      "deletions": 11,
+      "time_to_merge_hours": 7.52,
+      "created_at": "2026-02-12T11:11:21Z",
+      "merged_at": "2026-02-12T18:42:25Z",
+      "comments_count": 5,
+      "reviews_count": 4,
+      "reviewers": [
+        "frankh",
+        "jonmcwest",
+        "greptile-apps[bot]",
+        "copilot-pull-request-reviewer[bot]"
+      ]
+    },
+    {
+      "author_username": "yasen-posthog",
+      "title": "chore(approvals): nav to resource page after approval action instead of settings",
+      "files_changed": 4,
+      "additions": 61,
+      "deletions": 58,
+      "time_to_merge_hours": 4.67,
+      "created_at": "2026-02-12T13:29:42Z",
+      "merged_at": "2026-02-12T18:10:05Z",
+      "comments_count": 2,
+      "reviews_count": 2,
+      "reviewers": [
+        "greptile-apps[bot]",
+        "ReeceJones"
+      ]
+    },
+    {
+      "author_username": "yasen-posthog",
+      "title": "feat(ai): expose activity logs in Posthog AI read_data tool",
+      "files_changed": 10,
+      "additions": 1403,
+      "deletions": 0,
+      "time_to_merge_hours": 150.7,
+      "created_at": "2026-02-06T11:27:50Z",
+      "merged_at": "2026-02-12T18:09:52Z",
+      "comments_count": 1,
+      "reviews_count": 3,
+      "reviewers": [
+        "graphite-app[bot]",
+        "ReeceJones",
+        "yasen-posthog"
+      ]
+    },
+    {
+      "author_username": "arthurdedeus",
+      "title": "feat: Add customer journeys tab in customer analytics scene",
+      "files_changed": 22,
+      "additions": 932,
+      "deletions": 21,
+      "time_to_merge_hours": 69.17,
+      "created_at": "2026-02-09T20:55:54Z",
+      "merged_at": "2026-02-12T18:06:08Z",
+      "comments_count": 5,
+      "reviews_count": 2,
+      "reviewers": [
+        "greptile-apps[bot]",
+        "adboio"
+      ]
+    },
+    {
+      "author_username": "rafaeelaudibert",
+      "title": "refactor: Log usage event for every single user in org",
+      "files_changed": 3,
+      "additions": 32,
+      "deletions": 32,
+      "time_to_merge_hours": 63.95,
+      "created_at": "2026-02-10T02:06:33Z",
+      "merged_at": "2026-02-12T18:03:31Z",
+      "comments_count": 2,
+      "reviews_count": 3,
+      "reviewers": [
+        "graphite-app[bot]",
+        "joethreepwood",
+        "greptile-apps[bot]"
+      ]
+    },
+    {
+      "author_username": "MarconLP",
+      "title": "feat(dwh): add field descriptions",
+      "files_changed": 5,
+      "additions": 13,
+      "deletions": 1,
+      "time_to_merge_hours": 7.3,
+      "created_at": "2026-02-12T10:40:47Z",
+      "merged_at": "2026-02-12T17:58:48Z",
+      "comments_count": 7,
+      "reviews_count": 2,
+      "reviewers": [
+        "greptile-apps[bot]",
+        "Gilbert09"
+      ]
+    },
+    {
+      "author_username": "richardsolomou",
+      "title": "fix(llma): dismiss trial evals banner after adding an API key",
+      "files_changed": 2,
+      "additions": 5,
+      "deletions": 1,
+      "time_to_merge_hours": 0.52,
+      "created_at": "2026-02-12T17:26:38Z",
+      "merged_at": "2026-02-12T17:57:36Z",
+      "comments_count": 2,
+      "reviews_count": 2,
+      "reviewers": [
+        "greptile-apps[bot]",
+        "andrewm4894"
+      ]
+    },
+    {
+      "author_username": "richardsolomou",
+      "title": "fix(llma): round floating point percentages in evaluations table",
+      "files_changed": 1,
+      "additions": 4,
+      "deletions": 2,
+      "time_to_merge_hours": 0.43,
+      "created_at": "2026-02-12T17:26:32Z",
+      "merged_at": "2026-02-12T17:52:36Z",
+      "comments_count": 1,
+      "reviews_count": 1,
+      "reviewers": [
+        "andrewm4894"
+      ]
+    },
+    {
+      "author_username": "andehen",
+      "title": "fix(experiments): reset stale form state when creating a new experiment",
+      "files_changed": 2,
+      "additions": 24,
+      "deletions": 4,
+      "time_to_merge_hours": 26.56,
+      "created_at": "2026-02-11T15:15:27Z",
+      "merged_at": "2026-02-12T17:49:00Z",
+      "comments_count": 1,
+      "reviews_count": 1,
+      "reviewers": [
+        "rodrigoi"
+      ]
+    },
+    {
+      "author_username": "jose-sequeira",
+      "title": "feat: Allow bypass person processing in batch import worker",
+      "files_changed": 6,
+      "additions": 462,
+      "deletions": 4,
+      "time_to_merge_hours": 1.52,
+      "created_at": "2026-02-12T16:14:49Z",
+      "merged_at": "2026-02-12T17:46:18Z",
+      "comments_count": 0,
+      "reviews_count": 5,
+      "reviewers": [
+        "graphite-app[bot]",
+        "greptile-apps[bot]",
+        "lmenezes",
+        "jose-sequeira",
+        "pl"
+      ]
+    },
+    {
+      "author_username": "andrewm4894",
+      "title": "chore(llma): Analytics empty clustering event",
+      "files_changed": 2,
+      "additions": 26,
+      "deletions": 1,
+      "time_to_merge_hours": 31.56,
+      "created_at": "2026-02-11T10:07:56Z",
+      "merged_at": "2026-02-12T17:41:29Z",
+      "comments_count": 2,
+      "reviews_count": 2,
+      "reviewers": [
+        "chatgpt-codex-connector[bot]",
+        "Radu-Raicea"
+      ]
+    },
+    {
+      "author_username": "richardsolomou",
+      "title": "fix(llma): refresh list data after creating prompts, datasets, and evaluations",
+      "files_changed": 3,
+      "additions": 4,
+      "deletions": 0,
+      "time_to_merge_hours": 0.42,
+      "created_at": "2026-02-12T17:12:11Z",
+      "merged_at": "2026-02-12T17:37:20Z",
+      "comments_count": 1,
+      "reviews_count": 1,
+      "reviewers": [
+        "andrewm4894"
+      ]
+    },
+    {
+      "author_username": "MarconLP",
+      "title": "feat: add oauth authentication to github source",
+      "files_changed": 8,
+      "additions": 393,
+      "deletions": 150,
+      "time_to_merge_hours": 166.71,
+      "created_at": "2026-02-05T18:52:06Z",
+      "merged_at": "2026-02-12T17:34:43Z",
+      "comments_count": 7,
+      "reviews_count": 5,
+      "reviewers": [
+        "graphite-app[bot]",
+        "MarconLP",
+        "greptile-apps[bot]",
+        "Gilbert09"
+      ]
+    },
+    {
+      "author_username": "andrewm4894",
+      "title": "fix(llma): cast generation UUIDs to strings for embedding lookup",
+      "files_changed": 1,
+      "additions": 1,
+      "deletions": 1,
+      "time_to_merge_hours": 2.26,
+      "created_at": "2026-02-12T15:04:18Z",
+      "merged_at": "2026-02-12T17:19:49Z",
+      "comments_count": 1,
+      "reviews_count": 1,
+      "reviewers": [
+        "Radu-Raicea"
+      ]
+    },
+    {
+      "author_username": "andrewm4894",
+      "title": "feat(llma): drive team discovery config from feature flag payload",
+      "files_changed": 2,
+      "additions": 225,
+      "deletions": 47,
+      "time_to_merge_hours": 53.54,
+      "created_at": "2026-02-10T11:21:18Z",
+      "merged_at": "2026-02-12T16:53:41Z",
+      "comments_count": 1,
+      "reviews_count": 9,
+      "reviewers": [
+        "greptile-apps[bot]",
+        "Radu-Raicea",
+        "chatgpt-codex-connector[bot]",
+        "andrewm4894"
+      ]
+    },
+    {
+      "author_username": "jabahamondes",
+      "title": "fix(settings): deduplicate web vitals settings in environment view",
+      "files_changed": 1,
+      "additions": 10,
+      "deletions": 1,
+      "time_to_merge_hours": 0.72,
+      "created_at": "2026-02-12T15:21:37Z",
+      "merged_at": "2026-02-12T16:04:44Z",
+      "comments_count": 3,
+      "reviews_count": 1,
+      "reviewers": [
+        "lricoy"
+      ]
+    },
+    {
+      "author_username": "havenbarnes",
+      "title": "fix(workflows): copy variable match display",
+      "files_changed": 1,
+      "additions": 1,
+      "deletions": 1,
+      "time_to_merge_hours": 0.39,
+      "created_at": "2026-02-12T16:16:53Z",
+      "merged_at": "2026-02-12T16:40:13Z",
+      "comments_count": 1,
+      "reviews_count": 2,
+      "reviewers": [
+        "meikelmosby",
+        "copilot-pull-request-reviewer[bot]"
+      ]
+    },
+    {
+      "author_username": "lucasheriques",
+      "title": "fix(surveys): deduplicate responses by submission ID in summary endpoint",
+      "files_changed": 2,
+      "additions": 225,
+      "deletions": 0,
+      "time_to_merge_hours": 205.56,
+      "created_at": "2026-02-04T03:03:08Z",
+      "merged_at": "2026-02-12T16:36:28Z",
+      "comments_count": 3,
+      "reviews_count": 2,
+      "reviewers": [
+        "graphite-app[bot]",
+        "adboio"
+      ]
+    },
+    {
+      "author_username": "hpouillot",
+      "title": "chore(err): cymbal batch event processing endpoint",
+      "files_changed": 52,
+      "additions": 2474,
+      "deletions": 993,
+      "time_to_merge_hours": 151.14,
+      "created_at": "2026-02-06T09:26:43Z",
+      "merged_at": "2026-02-12T16:34:50Z",
+      "comments_count": 0,
+      "reviews_count": 13,
+      "reviewers": [
+        "graphite-app[bot]",
+        "greptile-apps[bot]",
+        "ablaszkiewicz",
+        "hpouillot"
+      ]
+    },
+    {
+      "author_username": "pauldambra",
+      "title": "fix: Add permission check for deleting comments",
+      "files_changed": 4,
+      "additions": 10,
+      "deletions": 2,
+      "time_to_merge_hours": 1.38,
+      "created_at": "2026-02-12T15:12:02Z",
+      "merged_at": "2026-02-12T16:34:37Z",
+      "comments_count": 4,
+      "reviews_count": 5,
+      "reviewers": [
+        "graphite-app[bot]",
+        "greptile-apps[bot]",
+        "copilot-pull-request-reviewer[bot]",
+        "rafaeelaudibert"
+      ]
+    },
+    {
+      "author_username": "matheus-vb",
+      "title": "chore(flags): refactor eval path ownership flow",
+      "files_changed": 2,
+      "additions": 196,
+      "deletions": 162,
+      "time_to_merge_hours": 29.0,
+      "created_at": "2026-02-11T11:27:12Z",
+      "merged_at": "2026-02-12T16:27:11Z",
+      "comments_count": 0,
+      "reviews_count": 1,
+      "reviewers": [
+        "haacked"
+      ]
+    },
+    {
+      "author_username": "jose-sequeira",
+      "title": "chore: Remove hardoced service label",
+      "files_changed": 5,
+      "additions": 6,
+      "deletions": 16,
+      "time_to_merge_hours": 1.97,
+      "created_at": "2026-02-12T14:23:43Z",
+      "merged_at": "2026-02-12T16:22:04Z",
+      "comments_count": 0,
+      "reviews_count": 1,
+      "reviewers": [
+        "eli-r-ph"
+      ]
+    },
+    {
+      "author_username": "adboio",
+      "title": "fix: minimize re-renders on sql editor",
+      "files_changed": 6,
+      "additions": 22,
+      "deletions": 19,
+      "time_to_merge_hours": 16.91,
+      "created_at": "2026-02-11T23:11:29Z",
+      "merged_at": "2026-02-12T16:06:00Z",
+      "comments_count": 3,
+      "reviews_count": 2,
+      "reviewers": [
+        "mariusandra",
+        "greptile-apps[bot]"
+      ]
+    },
+    {
+      "author_username": "skoob13",
+      "title": "feat(posthog-ai): add skill distribution system with Jinja2 templating",
+      "files_changed": 9,
+      "additions": 1504,
+      "deletions": 0,
+      "time_to_merge_hours": 120.79,
+      "created_at": "2026-02-07T15:07:46Z",
+      "merged_at": "2026-02-12T15:55:13Z",
+      "comments_count": 6,
+      "reviews_count": 6,
+      "reviewers": [
+        "webjunkie",
+        "graphite-app[bot]",
+        "tatoalo",
+        "greptile-apps[bot]"
+      ]
+    },
+    {
+      "author_username": "pauldambra",
+      "title": "fix: use a fuzzy int when counting queries, django can run some queries or not based on caching",
+      "files_changed": 2,
+      "additions": 129,
+      "deletions": 132,
+      "time_to_merge_hours": 1.26,
+      "created_at": "2026-02-12T14:35:07Z",
+      "merged_at": "2026-02-12T15:50:42Z",
+      "comments_count": 3,
+      "reviews_count": 4,
+      "reviewers": [
+        "pauldambra",
+        "copilot-pull-request-reviewer[bot]",
+        "vdekrijger",
+        "andrewm4894"
+      ]
+    },
+    {
+      "author_username": "haacked",
+      "title": "feat(flags): add teams usage of flags metrics",
+      "files_changed": 4,
+      "additions": 582,
+      "deletions": 1,
+      "time_to_merge_hours": 50.84,
+      "created_at": "2026-02-10T12:55:36Z",
+      "merged_at": "2026-02-12T15:45:56Z",
+      "comments_count": 7,
+      "reviews_count": 11,
+      "reviewers": [
+        "dmarticus",
+        "copilot-pull-request-reviewer[bot]",
+        "haacked"
+      ]
+    },
+    {
+      "author_username": "fasyy612",
+      "title": "fix: making sidebar header more flexible",
+      "files_changed": 4,
+      "additions": 9,
+      "deletions": 9,
+      "time_to_merge_hours": 5.0,
+      "created_at": "2026-02-12T10:43:52Z",
+      "merged_at": "2026-02-12T15:43:46Z",
+      "comments_count": 3,
+      "reviews_count": 2,
+      "reviewers": [
+        "TueHaulund",
+        "greptile-apps[bot]"
+      ]
+    },
+    {
+      "author_username": "sakce",
+      "title": "fix: multi-var endpoints with a call wrapped around a variable",
+      "files_changed": 3,
+      "additions": 199,
+      "deletions": 8,
+      "time_to_merge_hours": 31.06,
+      "created_at": "2026-02-11T08:37:30Z",
+      "merged_at": "2026-02-12T15:40:51Z",
+      "comments_count": 4,
+      "reviews_count": 5,
+      "reviewers": [
+        "andrewjmcgehee",
+        "greptile-apps[bot]"
+      ]
+    },
+    {
+      "author_username": "andyzzhao",
+      "title": "fix(exports): use 10k limit per page",
+      "files_changed": 2,
+      "additions": 89,
+      "deletions": 15,
+      "time_to_merge_hours": 162.56,
+      "created_at": "2026-02-05T21:06:05Z",
+      "merged_at": "2026-02-12T15:39:25Z",
+      "comments_count": 1,
+      "reviews_count": 6,
+      "reviewers": [
+        "andyzzhao",
+        "greptile-apps[bot]",
+        "vdekrijger"
+      ]
+    },
+    {
+      "author_username": "scheduled-actions-posthog[bot]",
+      "title": "chore(llma): Update LLM costs",
+      "files_changed": 2,
+      "additions": 37,
+      "deletions": 46,
+      "time_to_merge_hours": 5.33,
+      "created_at": "2026-02-12T10:15:47Z",
+      "merged_at": "2026-02-12T15:35:25Z",
+      "comments_count": 0,
+      "reviews_count": 1,
+      "reviewers": [
+        "Radu-Raicea"
+      ]
+    },
+    {
+      "author_username": "rafaeelaudibert",
+      "title": "fix: Update Discussions delete icon",
+      "files_changed": 3,
+      "additions": 2,
+      "deletions": 2,
+      "time_to_merge_hours": 0.69,
+      "created_at": "2026-02-12T14:45:39Z",
+      "merged_at": "2026-02-12T15:26:55Z",
+      "comments_count": 4,
+      "reviews_count": 3,
+      "reviewers": [
+        "pauldambra",
+        "rafaeelaudibert"
+      ]
+    },
+    {
+      "author_username": "sakce",
+      "title": "fix: validate HogQL variables placeholder on create/update of endpoint",
+      "files_changed": 3,
+      "additions": 209,
+      "deletions": 21,
+      "time_to_merge_hours": 24.72,
+      "created_at": "2026-02-11T14:35:08Z",
+      "merged_at": "2026-02-12T15:18:33Z",
+      "comments_count": 2,
+      "reviews_count": 1,
+      "reviewers": [
+        "andrewjmcgehee"
+      ]
+    },
+    {
+      "author_username": "adamleithp",
+      "title": "fix: new account menu project settings wasn't working",
+      "files_changed": 1,
+      "additions": 18,
+      "deletions": 15,
+      "time_to_merge_hours": 0.63,
+      "created_at": "2026-02-12T14:35:30Z",
+      "merged_at": "2026-02-12T15:13:26Z",
+      "comments_count": 1,
+      "reviews_count": 3,
+      "reviewers": [
+        "graphite-app[bot]",
+        "greptile-apps[bot]",
+        "marandaneto"
+      ]
+    },
+    {
+      "author_username": "mendral-app[bot]",
+      "title": "fix(ci): use brace pattern for bundle size exclude to actually filter chunks",
+      "files_changed": 1,
+      "additions": 1,
+      "deletions": 3,
+      "time_to_merge_hours": 0.15,
+      "created_at": "2026-02-12T14:56:05Z",
+      "merged_at": "2026-02-12T15:05:20Z",
+      "comments_count": 1,
+      "reviews_count": 1,
+      "reviewers": [
+        "pauldambra"
+      ]
+    },
+    {
+      "author_username": "meikelmosby",
+      "title": "feat(workflows): add frontend registry for workflows",
+      "files_changed": 15,
+      "additions": 711,
+      "deletions": 383,
+      "time_to_merge_hours": 28.21,
+      "created_at": "2026-02-11T10:43:37Z",
+      "merged_at": "2026-02-12T14:56:17Z",
+      "comments_count": 2,
+      "reviews_count": 4,
+      "reviewers": [
+        "greptile-apps[bot]",
+        "havenbarnes"
+      ]
+    },
+    {
+      "author_username": "gesh",
+      "title": "fix(insights): property group filters responsiveness",
+      "files_changed": 49,
+      "additions": 16,
+      "deletions": 15,
+      "time_to_merge_hours": 1.57,
+      "created_at": "2026-02-12T13:20:26Z",
+      "merged_at": "2026-02-12T14:54:32Z",
+      "comments_count": 3,
+      "reviews_count": 1,
+      "reviewers": [
+        "anirudhpillai"
+      ]
+    },
+    {
+      "author_username": "hpouillot",
+      "title": "feat(err): add Jira integration ",
+      "files_changed": 5,
+      "additions": 88,
+      "deletions": 8,
+      "time_to_merge_hours": 1.18,
+      "created_at": "2026-02-12T13:40:59Z",
+      "merged_at": "2026-02-12T14:51:51Z",
+      "comments_count": 2,
+      "reviews_count": 2,
+      "reviewers": [
+        "greptile-apps[bot]",
+        "ablaszkiewicz"
+      ]
+    },
+    {
+      "author_username": "luke-belton",
+      "title": "fix: Keep ImpersonationNotice draggable position within window bounds",
+      "files_changed": 1,
+      "additions": 4,
+      "deletions": 1,
+      "time_to_merge_hours": 3.18,
+      "created_at": "2026-02-12T11:39:34Z",
+      "merged_at": "2026-02-12T14:50:19Z",
+      "comments_count": 2,
+      "reviews_count": 1,
+      "reviewers": [
+        "clr182"
+      ]
+    },
+    {
+      "author_username": "vdekrijger",
+      "title": "feat(cohorts): Emit a total cohort metric during cohort calculations",
+      "files_changed": 3,
+      "additions": 76,
+      "deletions": 66,
+      "time_to_merge_hours": 1.48,
+      "created_at": "2026-02-12T13:21:03Z",
+      "merged_at": "2026-02-12T14:49:50Z",
+      "comments_count": 2,
+      "reviews_count": 1,
+      "reviewers": [
+        "dmarticus"
+      ]
+    },
+    {
+      "author_username": "jose-sequeira",
+      "title": "fix: slack file upload",
+      "files_changed": 2,
+      "additions": 132,
+      "deletions": 132,
+      "time_to_merge_hours": 0.81,
+      "created_at": "2026-02-12T13:41:29Z",
+      "merged_at": "2026-02-12T14:29:50Z",
+      "comments_count": 1,
+      "reviews_count": 2,
+      "reviewers": [
+        "lmenezes",
+        "greptile-apps[bot]"
+      ]
+    },
+    {
+      "author_username": "fasyy612",
+      "title": "feat: drag resizing of replay network waterfall URL field",
+      "files_changed": 8,
+      "additions": 468,
+      "deletions": 9,
+      "time_to_merge_hours": 15.79,
+      "created_at": "2026-02-11T22:40:59Z",
+      "merged_at": "2026-02-12T14:28:30Z",
+      "comments_count": 2,
+      "reviews_count": 1,
+      "reviewers": [
+        "TueHaulund"
+      ]
+    },
+    {
+      "author_username": "pauldambra",
+      "title": "feat(feature-flags): add loading state to feature flag active toggle",
+      "files_changed": 1,
+      "additions": 2,
+      "deletions": 0,
+      "time_to_merge_hours": 23.82,
+      "created_at": "2026-02-11T14:27:38Z",
+      "merged_at": "2026-02-12T14:16:42Z",
+      "comments_count": 2,
+      "reviews_count": 2,
+      "reviewers": [
+        "dmarticus",
+        "copilot-pull-request-reviewer[bot]"
+      ]
+    },
+    {
+      "author_username": "pauldambra",
+      "title": "fix: track dropped frames in framerate monitoring",
+      "files_changed": 2,
+      "additions": 33,
+      "deletions": 0,
+      "time_to_merge_hours": 17.6,
+      "created_at": "2026-02-11T20:40:33Z",
+      "merged_at": "2026-02-12T14:16:16Z",
+      "comments_count": 1,
+      "reviews_count": 2,
+      "reviewers": [
+        "TueHaulund",
+        "copilot-pull-request-reviewer[bot]"
+      ]
+    },
+    {
+      "author_username": "jose-sequeira",
+      "title": "chore: Update python slack sdk",
+      "files_changed": 6,
+      "additions": 12,
+      "deletions": 13,
+      "time_to_merge_hours": 3.47,
+      "created_at": "2026-02-12T09:39:59Z",
+      "merged_at": "2026-02-12T13:07:55Z",
+      "comments_count": 1,
+      "reviews_count": 1,
+      "reviewers": [
+        "webjunkie"
+      ]
+    },
+    {
+      "author_username": "christiaan-ph",
+      "title": "fix(insights): dismiss chart tooltip on scroll in any container",
+      "files_changed": 2,
+      "additions": 7,
+      "deletions": 28,
+      "time_to_merge_hours": 67.5,
+      "created_at": "2026-02-09T18:38:32Z",
+      "merged_at": "2026-02-12T14:08:30Z",
+      "comments_count": 2,
+      "reviews_count": 1,
+      "reviewers": [
+        "sampennington"
+      ]
+    },
+    {
+      "author_username": "pl",
+      "title": "fix: apply skip person processing forcefully",
+      "files_changed": 2,
+      "additions": 19,
+      "deletions": 5,
+      "time_to_merge_hours": 0.61,
+      "created_at": "2026-02-12T13:05:22Z",
+      "merged_at": "2026-02-12T13:41:53Z",
+      "comments_count": 0,
+      "reviews_count": 1,
+      "reviewers": [
+        "jose-sequeira"
+      ]
+    },
+    {
+      "author_username": "mp-hog",
+      "title": "feat(experiments): Add visual traffic preview to the experiment form",
+      "files_changed": 3,
+      "additions": 136,
+      "deletions": 20,
+      "time_to_merge_hours": 24.37,
+      "created_at": "2026-02-11T12:35:33Z",
+      "merged_at": "2026-02-12T12:57:28Z",
+      "comments_count": 4,
+      "reviews_count": 3,
+      "reviewers": [
+        "andehen",
+        "greptile-apps[bot]",
+        "rodrigoi"
+      ]
+    },
+    {
+      "author_username": "Twixes",
+      "title": "chore: move mock_video_segments_embeddings.npy to Git LFS",
+      "files_changed": 4,
+      "additions": 67,
+      "deletions": 65,
+      "time_to_merge_hours": 1.65,
+      "created_at": "2026-02-12T11:38:22Z",
+      "merged_at": "2026-02-12T13:17:05Z",
+      "comments_count": 2,
+      "reviews_count": 2,
+      "reviewers": [
+        "greptile-apps[bot]",
+        "sortafreel"
+      ]
+    },
+    {
+      "author_username": "meikelmosby",
+      "title": "feat(workflows): introduce registry pattern for backend",
+      "files_changed": 9,
+      "additions": 322,
+      "deletions": 183,
+      "time_to_merge_hours": 27.03,
+      "created_at": "2026-02-11T10:02:19Z",
+      "merged_at": "2026-02-12T13:03:51Z",
+      "comments_count": 0,
+      "reviews_count": 3,
+      "reviewers": [
+        "graphite-app[bot]",
+        "greptile-apps[bot]",
+        "havenbarnes"
+      ]
+    },
+    {
+      "author_username": "vdekrijger",
+      "title": "fix(cohorts): Reduce replication lag issue for cohorts",
+      "files_changed": 2,
+      "additions": 41,
+      "deletions": 9,
+      "time_to_merge_hours": 4.03,
+      "created_at": "2026-02-12T08:47:29Z",
+      "merged_at": "2026-02-12T12:49:27Z",
+      "comments_count": 1,
+      "reviews_count": 1,
+      "reviewers": [
+        "rorylshanks"
+      ]
+    },
+    {
+      "author_username": "MarconLP",
+      "title": "feat(dwh): add incremental support for github",
+      "files_changed": 7,
+      "additions": 1105,
+      "deletions": 72,
+      "time_to_merge_hours": 163.71,
+      "created_at": "2026-02-05T16:55:39Z",
+      "merged_at": "2026-02-12T12:38:02Z",
+      "comments_count": 5,
+      "reviews_count": 5,
+      "reviewers": [
+        "graphite-app[bot]",
+        "greptile-apps[bot]",
+        "Gilbert09",
+        "chatgpt-codex-connector[bot]"
+      ]
+    },
+    {
+      "author_username": "dmarticus",
+      "title": "feat(flags): fast-follow with some things that the PR should've had",
+      "files_changed": 7,
+      "additions": 854,
+      "deletions": 153,
+      "time_to_merge_hours": 1.04,
+      "created_at": "2026-02-12T11:21:28Z",
+      "merged_at": "2026-02-12T12:24:03Z",
+      "comments_count": 2,
+      "reviews_count": 1,
+      "reviewers": [
+        "matheus-vb"
+      ]
+    },
+    {
+      "author_username": "jose-sequeira",
+      "title": "feat: Produce person updates with last_seen_at",
+      "files_changed": 5,
+      "additions": 23,
+      "deletions": 0,
+      "time_to_merge_hours": 1.14,
+      "created_at": "2026-02-12T11:14:04Z",
+      "merged_at": "2026-02-12T12:22:38Z",
+      "comments_count": 0,
+      "reviews_count": 2,
+      "reviewers": [
+        "lmenezes"
+      ]
+    },
+    {
+      "author_username": "ablaszkiewicz",
+      "title": "feat: rename autocapture triggers in remote config",
+      "files_changed": 2,
+      "additions": 15,
+      "deletions": 20,
+      "time_to_merge_hours": 13.43,
+      "created_at": "2026-02-11T22:49:03Z",
+      "merged_at": "2026-02-12T12:15:01Z",
+      "comments_count": 1,
+      "reviews_count": 4,
+      "reviewers": [
+        "greptile-apps[bot]",
+        "copilot-pull-request-reviewer[bot]",
+        "hpouillot",
+        "ablaszkiewicz"
+      ]
+    },
+    {
+      "author_username": "sakce",
+      "title": "fix: dont fail on non-existent variables being passed to endpoint/run",
+      "files_changed": 1,
+      "additions": 1,
+      "deletions": 1,
+      "time_to_merge_hours": 0.36,
+      "created_at": "2026-02-12T11:23:16Z",
+      "merged_at": "2026-02-12T11:45:09Z",
+      "comments_count": 2,
+      "reviews_count": 2,
+      "reviewers": [
+        "greptile-apps[bot]",
+        "andrewm4894"
+      ]
+    },
+    {
+      "author_username": "vdekrijger",
+      "title": "fix(alerts): widen alert modal to prevent destination toolbar overflow",
+      "files_changed": 3,
+      "additions": 1,
+      "deletions": 1,
+      "time_to_merge_hours": 70.11,
+      "created_at": "2026-02-09T13:34:33Z",
+      "merged_at": "2026-02-12T11:41:01Z",
+      "comments_count": 3,
+      "reviews_count": 1,
+      "reviewers": [
+        "andyzzhao"
+      ]
+    },
+    {
+      "author_username": "skoob13",
+      "title": "feat(mcp): v2 with sql",
+      "files_changed": 24,
+      "additions": 913,
+      "deletions": 67,
+      "time_to_merge_hours": 169.21,
+      "created_at": "2026-02-05T10:21:23Z",
+      "merged_at": "2026-02-12T11:33:52Z",
+      "comments_count": 2,
+      "reviews_count": 9,
+      "reviewers": [
+        "rafaeelaudibert",
+        "greptile-apps[bot]",
+        "joshsny",
+        "skoob13",
+        "hex-security-app[bot]",
+        "tatoalo"
+      ]
+    },
+    {
+      "author_username": "adamleithp",
+      "title": "chore(ux): sidepanel removal near final touches (offramp, fixes)",
+      "files_changed": 29,
+      "additions": 1286,
+      "deletions": 730,
+      "time_to_merge_hours": 43.99,
+      "created_at": "2026-02-10T15:31:12Z",
+      "merged_at": "2026-02-12T11:30:25Z",
+      "comments_count": 2,
+      "reviews_count": 3,
+      "reviewers": [
+        "mariusandra",
+        "graphite-app[bot]",
+        "greptile-apps[bot]"
+      ]
+    },
+    {
+      "author_username": "andrewm4894",
+      "title": "feat(llma): support trace_filters for generation-level clustering",
+      "files_changed": 2,
+      "additions": 177,
+      "deletions": 18,
+      "time_to_merge_hours": 2.08,
+      "created_at": "2026-02-12T09:19:27Z",
+      "merged_at": "2026-02-12T11:24:32Z",
+      "comments_count": 3,
+      "reviews_count": 3,
+      "reviewers": [
+        "richardsolomou",
+        "chatgpt-codex-connector[bot]",
+        "andrewm4894"
+      ]
+    },
+    {
+      "author_username": "dmarticus",
+      "title": "feat(feature-flags): Add 'select all matching' for bulk delete",
+      "files_changed": 7,
+      "additions": 753,
+      "deletions": 368,
+      "time_to_merge_hours": 41.61,
+      "created_at": "2026-02-10T17:39:06Z",
+      "merged_at": "2026-02-12T11:15:50Z",
+      "comments_count": 3,
+      "reviews_count": 6,
+      "reviewers": [
+        "graphite-app[bot]",
+        "gustavohstrassburger",
+        "greptile-apps[bot]",
+        "dmarticus"
+      ]
+    },
+    {
+      "author_username": "TueHaulund",
+      "title": "feat(session-replay): add recordings storage abstraction module",
+      "files_changed": 9,
+      "additions": 1301,
+      "deletions": 0,
+      "time_to_merge_hours": 22.25,
+      "created_at": "2026-02-11T12:56:20Z",
+      "merged_at": "2026-02-12T11:11:32Z",
+      "comments_count": 0,
+      "reviews_count": 2,
+      "reviewers": [
+        "fasyy612",
+        "greptile-apps[bot]"
+      ]
+    },
+    {
+      "author_username": "oliverb123",
+      "title": "fix(sig): validate export usability",
+      "files_changed": 2,
+      "additions": 86,
+      "deletions": 65,
+      "time_to_merge_hours": 12.17,
+      "created_at": "2026-02-11T22:48:35Z",
+      "merged_at": "2026-02-12T10:58:35Z",
+      "comments_count": 2,
+      "reviews_count": 5,
+      "reviewers": [
+        "oliverb123",
+        "greptile-apps[bot]",
+        "copilot-pull-request-reviewer[bot]",
+        "sortafreel"
+      ]
+    },
+    {
+      "author_username": "gesh",
+      "title": "feat(insights): autoname insights with AI",
+      "files_changed": 8,
+      "additions": 213,
+      "deletions": 50,
+      "time_to_merge_hours": 43.01,
+      "created_at": "2026-02-10T15:37:28Z",
+      "merged_at": "2026-02-12T10:38:20Z",
+      "comments_count": 5,
+      "reviews_count": 8,
+      "reviewers": [
+        "sampennington",
+        "graphite-app[bot]",
+        "greptile-apps[bot]",
+        "github-advanced-security[bot]",
+        "gesh"
+      ]
+    },
+    {
+      "author_username": "haacked",
+      "title": "feat(flags): add cache size metric to HyperCache",
+      "files_changed": 2,
+      "additions": 78,
+      "deletions": 17,
+      "time_to_merge_hours": 23.41,
+      "created_at": "2026-02-11T11:12:32Z",
+      "merged_at": "2026-02-12T10:37:03Z",
+      "comments_count": 1,
+      "reviews_count": 8,
+      "reviewers": [
+        "copilot-pull-request-reviewer[bot]",
+        "matheus-vb",
+        "haacked"
+      ]
+    },
+    {
+      "author_username": "vdekrijger",
+      "title": "fix(alerts): Preserve insight context when navigating to CDP creation form to preserve back button functionality",
+      "files_changed": 6,
+      "additions": 40,
+      "deletions": 14,
+      "time_to_merge_hours": 71.36,
+      "created_at": "2026-02-09T11:11:25Z",
+      "merged_at": "2026-02-12T10:33:12Z",
+      "comments_count": 2,
+      "reviews_count": 4,
+      "reviewers": [
+        "andyzzhao",
+        "greptile-apps[bot]",
+        "vdekrijger"
+      ]
+    },
+    {
+      "author_username": "tatoalo",
+      "title": "fix(twig): fix task progress ui",
+      "files_changed": 3,
+      "additions": 17,
+      "deletions": 1,
+      "time_to_merge_hours": 15.94,
+      "created_at": "2026-02-11T18:28:16Z",
+      "merged_at": "2026-02-12T10:24:43Z",
+      "comments_count": 2,
+      "reviews_count": 3,
+      "reviewers": [
+        "tatoalo",
+        "greptile-apps[bot]",
+        "joshsny"
+      ]
+    },
+    {
+      "author_username": "jurajmajerik",
+      "title": "fix(experiments): Disable row limit in pre-aggregation",
+      "files_changed": 1,
+      "additions": 2,
+      "deletions": 2,
+      "time_to_merge_hours": 17.71,
+      "created_at": "2026-02-11T16:40:05Z",
+      "merged_at": "2026-02-12T10:22:57Z",
+      "comments_count": 0,
+      "reviews_count": 1,
+      "reviewers": [
+        "andehen"
+      ]
+    },
+    {
+      "author_username": "jose-sequeira",
+      "title": "feat: Support person last_seen at in django and CH",
+      "files_changed": 14,
+      "additions": 133,
+      "deletions": 91,
+      "time_to_merge_hours": 23.06,
+      "created_at": "2026-02-11T11:16:24Z",
+      "merged_at": "2026-02-12T10:19:57Z",
+      "comments_count": 2,
+      "reviews_count": 8,
+      "reviewers": [
+        "mariusandra",
+        "graphite-app[bot]",
+        "greptile-apps[bot]",
+        "arthurdedeus",
+        "orian",
+        "jose-sequeira"
+      ]
+    }
+  ]
+}
